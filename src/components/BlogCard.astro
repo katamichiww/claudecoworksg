@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  slug: string;
+  tags?: string[];
+  readingTime: number;
+}
+
+const { title, description, date, slug, tags = [], readingTime } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-SG', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<article class="group p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-brand-300 dark:hover:border-brand-700 hover:shadow-md transition-all duration-200 flex flex-col">
+  <div class="flex flex-wrap gap-1.5 mb-3">
+    {tags.slice(0, 3).map((tag) => (
+      <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+        #{tag}
+      </span>
+    ))}
+  </div>
+  <a href={`/blog/${slug}`} class="flex-1">
+    <h3 class="font-semibold text-lg mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors leading-snug">
+      {title}
+    </h3>
+  </a>
+  <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">{description}</p>
+  <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-500 mt-auto">
+    <time datetime={date.toISOString()}>{formattedDate}</time>
+    <span>{readingTime} min read</span>
+  </div>
+</article>

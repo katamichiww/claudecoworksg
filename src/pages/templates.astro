@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmailCapture from '../components/EmailCapture.astro';
+
+const categories = [
+  { icon: '✉️', label: 'Email & comms templates' },
+  { icon: '📊', label: 'Report generation prompts' },
+  { icon: '🎯', label: 'Content repurposing workflows' },
+  { icon: '🔍', label: 'Research synthesis chains' },
+  { icon: '📋', label: 'Meeting & project templates' },
+  { icon: '🚀', label: 'Proposal & pitch frameworks' },
+];
+---
+
+<BaseLayout
+  title="Templates & Prompts — Claude Cowork"
+  description="A growing library of tested prompt templates and workflow blueprints for AI operators."
+>
+  <section class="max-w-4xl mx-auto px-4 py-20 text-center">
+    <div class="inline-block text-5xl mb-6">📋</div>
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Templates &amp; Prompts</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-10">
+      A curated library of tested prompt templates and workflow blueprints — designed for non-technical professionals who want repeatable results from any AI tool.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-3 text-left mb-14 max-w-2xl mx-auto">
+      {categories.map(({ icon, label }) => (
+        <div class="flex items-center gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+          <span class="text-xl flex-shrink-0">{icon}</span>
+          <span class="text-sm font-medium">{label}</span>
+          <span class="ml-auto text-xs text-gray-400 dark:text-gray-600 whitespace-nowrap">Coming soon</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="max-w-md mx-auto">
+      <EmailCapture
+        heading="Get early access to templates"
+        subheading="We'll notify you when the library launches and send you our first batch of templates free."
+        buttonText="Notify me"
+      />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import UseCaseCard from '../components/UseCaseCard.astro';
+import BlogCard from '../components/BlogCard.astro';
+import EmailCapture from '../components/EmailCapture.astro';
+import PoweredByAnchr from '../components/PoweredByAnchr.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const recentPosts = allPosts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
+function readingTime(body: string): number {
+  return Math.max(1, Math.ceil(body.split(/\s+/).length / 200));
+}
+
+const useCases = [
+  {
+    icon: '📧',
+    title: 'Email & Comms Workflows',
+    description: 'Turn a single well-crafted prompt into a reusable template for client emails, follow-ups, and internal updates.',
+    time: '15 min to set up',
+  },
+  {
+    icon: '📊',
+    title: 'Report Generation',
+    description: 'Feed in raw data, get a structured executive summary — every time, in your format, at your standard.',
+    time: '30 min to automate',
+  },
+  {
+    icon: '🎯',
+    title: 'Content Repurposing',
+    description: 'One piece of content → blog post, LinkedIn update, email newsletter, social snippets. Systematically.',
+    time: '20 min to design',
+  },
+  {
+    icon: '🔍',
+    title: 'Research & Synthesis',
+    description: 'Replace 3-hour research sessions with a 20-minute structured prompt chain that returns exactly what you need.',
+    time: '45 min to build',
+  },
+  {
+    icon: '📋',
+    title: 'Meeting Prep & Notes',
+    description: 'From agenda to action items — a workflow that handles prep, captures key points, and writes the follow-up.',
+    time: '10 min to implement',
+  },
+  {
+    icon: '🚀',
+    title: 'Proposal & Pitch Decks',
+    description: "A system that takes your briefing notes and returns a first-draft proposal in your company's voice and structure.",
+    time: '60 min to design',
+  },
+];
+---
+
+<BaseLayout title="Claude Cowork — Build real AI workflows. Powered by ANCHR AI Labs.">
+  <Hero />
+
+  <!-- Use Cases Grid -->
+  <section class="py-16 md:py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Fast wins for professionals</h2>
+        <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+          These aren't demos. They're real workflows professionals are using today — built with AI tools you already have.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {useCases.map((uc) => <UseCaseCard {...uc} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Blog Posts -->
+  <section class="py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-2">Latest from the blog</h2>
+          <p class="text-gray-600 dark:text-gray-400">Daily breakdowns. Real workflows. No fluff.</p>
+        </div>
+        <a href="/blog" class="text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline hidden sm:block">
+          All posts →
+        </a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {recentPosts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.date}
+            slug={post.slug}
+            tags={post.data.tags}
+            readingTime={readingTime(post.body)}
+          />
+        ))}
+      </div>
+      <div class="mt-6 sm:hidden">
+        <a href="/blog" class="text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline">
+          All posts →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Templates Teaser + Email Capture -->
+  <section class="py-16 md:py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold mb-3">Templates &amp; Prompts</h2>
+        <p class="text-gray-600 dark:text-gray-400">
+          We're building a library of tested prompt templates and workflow blueprints.{' '}
+          <a href="/templates" class="text-brand-600 dark:text-brand-400 hover:underline">Preview what's coming →</a>
+        </p>
+      </div>
+      <EmailCapture
+        heading="Get the weekly AI systems playbook"
+        subheading="One workflow breakdown, one prompt template, every week — free for operators."
+      />
+    </div>
+  </section>
+
+  <!-- From Prompts to Systems -->
+  <section class="py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-block text-5xl mb-6">🌉</div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">From prompts to systems</h2>
+      <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-12">
+        Tools change. Systems scale. Here's the three-step shift we teach.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6 text-left">
+        <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+          <div class="text-2xl font-bold text-gray-200 dark:text-gray-700 mb-3">01</div>
+          <h3 class="font-semibold text-lg mb-2">Learn the tool</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Pick any AI tool — Claude, ChatGPT, Gemini. Learn what it can do for your specific role and tasks.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800">
+          <div class="text-2xl font-bold text-brand-200 dark:text-brand-800 mb-3">02</div>
+          <h3 class="font-semibold text-lg mb-2">Design the workflow</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Map out the process. Define inputs, outputs, and checkpoints. Document what works so anyone can run it.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-accent-50 dark:bg-accent-900/20 border border-accent-200 dark:border-accent-800">
+          <div class="text-2xl font-bold text-accent-200 dark:text-accent-800 mb-3">03</div>
+          <h3 class="font-semibold text-lg mb-2">Scale the system</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Once it's documented, it's teachable. Once it's teachable, it scales. That's how prompts become systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Powered By ANCHR AI Labs -->
+  <PoweredByAnchr />
+
+  <!-- Final CTA -->
+  <section class="py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to become an operator?</h2>
+      <p class="text-gray-600 dark:text-gray-400 mb-8">
+        Join our next workshop and build your first production-ready AI system in a single session — no coding required.
+      </p>
+      <a
+        href="/workshops"
+        class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-colors shadow-sm"
+      >
+        View workshops &amp; bootcamps →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

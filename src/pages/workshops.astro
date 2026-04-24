@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmailCapture from '../components/EmailCapture.astro';
+
+const workshops = [
+  {
+    badge: 'Most popular',
+    icon: '⚡',
+    title: 'AI Systems in 60 Minutes',
+    type: 'Live Workshop',
+    desc: 'Build your first complete, repeatable AI workflow from scratch. Designed for non-technical professionals. No coding required.',
+    features: [
+      'Workflow design framework',
+      'Live build session',
+      'Take-home template kit',
+      'Follow-up Q&A',
+    ],
+  },
+  {
+    badge: 'For teams',
+    icon: '🏢',
+    title: 'Corporate AI Operator Training',
+    type: 'Custom Program',
+    desc: "A full-day or multi-session program tailored to your team's specific workflows and business context. Includes workflow audit and implementation.",
+    features: [
+      'Workflow audit',
+      'Custom prompt library',
+      'Team-specific systems',
+      'Ongoing support option',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Workshops & Bootcamps — ANCHR AI Labs"
+  description="Practical, hands-on AI systems training for professionals. Build real workflows, not just prompts."
+>
+  <section class="max-w-4xl mx-auto px-4 py-16">
+    <div class="text-center mb-16">
+      <div class="inline-block text-5xl mb-6">🚀</div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Workshops &amp; Bootcamps</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+        Practical, hands-on training for professionals ready to move from experimenting with AI to building systems that actually scale.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-16">
+      {workshops.map(({ badge, icon, title, type, desc, features }) => (
+        <div class="relative p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+          <div class="absolute -top-3 left-6">
+            <span class="px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-semibold">{badge}</span>
+          </div>
+          <div class="text-3xl mb-4 mt-2">{icon}</div>
+          <div class="text-xs font-semibold text-brand-600 dark:text-brand-400 mb-1 uppercase tracking-wider">{type}</div>
+          <h2 class="text-xl font-bold mb-3">{title}</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">{desc}</p>
+          <ul class="space-y-2">
+            {features.map((f) => (
+              <li class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4 text-brand-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mb-14">
+      <p class="text-gray-500 dark:text-gray-500 text-sm mb-6">
+        Full scheduling and registration details coming soon. Join the list to be notified first.
+      </p>
+      <div class="max-w-md mx-auto">
+        <EmailCapture
+          heading="Be first in line"
+          subheading="Get notified when workshops open for registration — plus our AI systems starter kit."
+          buttonText="Reserve my spot"
+        />
+      </div>
+    </div>
+
+    <div class="text-center p-8 rounded-2xl bg-gray-950 text-white">
+      <h3 class="text-xl font-bold mb-2">Need something custom?</h3>
+      <p class="text-gray-400 text-sm mb-4">
+        We design bespoke AI systems programs for corporate teams and high-growth companies. Let's talk about what you need.
+      </p>
+      <p class="text-brand-400 font-medium">
+        Reach us at{' '}
+        <a href="mailto:hello@anchr.ai" class="hover:underline">hello@anchr.ai</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,44 @@
+---
+interface Props {
+  heading?: string;
+  subheading?: string;
+  buttonText?: string;
+  formspreeId?: string;
+}
+
+const {
+  heading = 'Get the weekly AI systems playbook',
+  subheading = 'One workflow breakdown, one prompt template, every week. Free.',
+  buttonText = 'Send me the playbook',
+  formspreeId = 'YOUR_FORMSPREE_ID',
+} = Astro.props;
+---
+
+<div class="bg-gradient-to-br from-brand-50 to-accent-50/40 dark:from-gray-900 dark:to-gray-900 border border-brand-100 dark:border-gray-800 rounded-2xl p-8">
+  <h3 class="text-xl font-bold mb-2">{heading}</h3>
+  <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">{subheading}</p>
+
+  <form
+    action={`https://formspree.io/f/${formspreeId}`}
+    method="POST"
+    class="flex flex-col sm:flex-row gap-3"
+  >
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="you@company.com"
+      class="flex-1 px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
+    />
+    <button
+      type="submit"
+      class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition-colors whitespace-nowrap"
+    >
+      {buttonText}
+    </button>
+  </form>
+
+  <p class="text-xs text-gray-500 dark:text-gray-500 mt-3">
+    No spam. Unsubscribe any time. Replace <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">YOUR_FORMSPREE_ID</code> in <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">EmailCapture.astro</code> with your Formspree form ID to activate.
+  </p>
+</div>
