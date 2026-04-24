@@ -20,31 +20,51 @@ const formattedDate = date.toLocaleDateString('en-SG', {
 ---
 
 <BaseLayout title={`${title} — Claude Cowork`} description={description}>
-  <article class="max-w-2xl mx-auto px-4 py-16">
+  <article class="max-w-2xl mx-auto px-5 py-16">
     <header class="mb-10">
-      <div class="flex flex-wrap gap-2 mb-4">
+      <!-- Tags -->
+      <div class="flex flex-wrap gap-2 mb-5">
         {tags.map((tag) => (
-          <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300">
+          <span class="inline-flex items-center px-3 py-1 rounded-full bg-sky/20 dark:bg-sky/15 font-mono text-[9px] tracking-[1.5px] uppercase text-navy/70 dark:text-sky">
             #{tag}
           </span>
         ))}
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">{title}</h1>
+
+      <!-- Headline in Clash Display -->
+      <h1 class="font-display font-semibold text-3xl md:text-4xl leading-tight text-navy dark:text-salt mb-4">
+        {title}
+      </h1>
+
       {description && (
-        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">{description}</p>
+        <p class="font-sans font-extrabold text-navy/50 dark:text-salt/50 text-lg mb-5 leading-relaxed">
+          {description}
+        </p>
       )}
-      <div class="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-500">
+
+      <!-- Metadata in DM Mono -->
+      <div class="flex items-center gap-3 font-mono text-[10px] tracking-[1.5px] uppercase text-navy/40 dark:text-salt/40">
         <time datetime={date.toISOString()}>{formattedDate}</time>
-        <span aria-hidden="true">·</span>
+        <span>·</span>
         <span>{readingTime} min read</span>
       </div>
+
+      <!-- Divider -->
+      <div class="mt-8 h-px bg-sand dark:bg-white/10"></div>
     </header>
 
-    <div class="prose prose-gray dark:prose-invert max-w-none prose-a:text-brand-600 dark:prose-a:text-brand-400 prose-headings:font-bold">
+    <!-- Prose body -->
+    <div class="prose prose-gray dark:prose-invert max-w-none
+      prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight
+      prose-p:font-sans prose-p:font-extrabold prose-p:text-navy/70 dark:prose-p:text-salt/70
+      prose-li:font-ui prose-li:text-navy/70 dark:prose-li:text-salt/70
+      prose-strong:text-navy dark:prose-strong:text-salt
+      prose-a:text-sea dark:prose-a:text-sky prose-a:no-underline hover:prose-a:underline
+    ">
       <slot />
     </div>
 
-    <div class="mt-16">
+    <div class="mt-14">
       <BridgeCTA />
     </div>
   </article>

@@ -22,73 +22,99 @@ const offerings = [
 
 <BaseLayout
   title="About — ANCHR AI Labs"
-  description="ANCHR AI Labs is the company behind Claude Cowork, building AI systems for professionals and businesses in Singapore and globally."
+  description="ANCHR AI Labs is the company behind Claude Cowork, building AI systems for professionals and businesses."
 >
-  <section class="max-w-3xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold mb-4">About ANCHR AI Labs</h1>
-    <p class="text-lg text-gray-600 dark:text-gray-400 mb-14">
-      The authority behind Claude Cowork — building AI systems, training operators, and helping businesses move from prompt users to system builders.
-    </p>
-
-    <div class="space-y-14">
-      <div>
-        <h2 class="text-2xl font-bold mb-5">What we do</h2>
-        <div class="grid sm:grid-cols-3 gap-4">
-          {offerings.map(({ icon, title, desc }) => (
-            <div class="p-5 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-              <div class="text-2xl mb-3">{icon}</div>
-              <h3 class="font-semibold mb-2">{title}</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{desc}</p>
-            </div>
-          ))}
-        </div>
+  <!-- Header -->
+  <div class="relative overflow-hidden bg-navy px-5 py-14">
+    <div class="grid-bg absolute inset-0 pointer-events-none"></div>
+    <!-- Watermark anchor -->
+    <div
+      class="absolute right-0 top-1/2 -translate-y-1/2 font-playfair text-[16rem] leading-none pointer-events-none select-none"
+      style="color: rgba(189,213,234,0.04);"
+      aria-hidden="true"
+    >⚓</div>
+    <div class="relative max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <span class="w-2 h-2 rounded-full bg-terra"></span>
+        <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky">ANCHR AI Labs</span>
       </div>
+      <h1 class="font-display font-semibold text-4xl md:text-5xl text-salt tracking-tight mb-3">About</h1>
+      <p class="font-sans font-extrabold text-salt/50 text-lg max-w-md leading-relaxed">
+        The authority behind Claude Cowork — building AI systems, training operators, and helping businesses move from prompt users to system builders.
+      </p>
+    </div>
+  </div>
 
-      <div>
-        <h2 class="text-2xl font-bold mb-5">Our perspective</h2>
-        <div class="prose dark:prose-invert max-w-none prose-a:text-brand-600 dark:prose-a:text-brand-400">
-          <p>
-            AI tools are getting better every month. Claude, ChatGPT, Gemini — the models will keep improving. But a better model doesn't automatically mean better outcomes for your business.
-          </p>
-          <p>
-            What actually creates leverage is <strong>process</strong>. A team with documented, tested, repeatable AI workflows will always outperform a team that relies on individual prompting skill — no matter how good the underlying model gets.
-          </p>
-          <p>
-            We're tool-agnostic because we believe the tools will change. Systems scale.
-          </p>
-          <blockquote>
-            "Most people use AI tools. Operators build systems."
-          </blockquote>
-          <p>
-            Claude Cowork is the content and learning hub where we share what we know. ANCHR AI Labs is where we do the work with clients.
-          </p>
-        </div>
-      </div>
+  <section class="max-w-3xl mx-auto px-5 py-14 space-y-14">
 
-      <div>
-        <h2 class="text-2xl font-bold mb-5">Founder</h2>
-        <div class="flex gap-6 items-start p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-brand-400 to-accent-500 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
-            A
+    <!-- What we do -->
+    <div>
+      <h2 class="font-display font-semibold text-2xl text-navy dark:text-salt tracking-tight mb-5">What we do</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        {offerings.map(({ icon, title, desc }) => (
+          <div class="p-5 rounded-2xl border border-sand dark:border-white/10 bg-salt dark:bg-white/5">
+            <div class="text-2xl mb-3">{icon}</div>
+            <h3 class="font-display font-semibold text-[15px] text-navy dark:text-salt mb-2">{title}</h3>
+            <p class="font-ui text-[13px] text-navy/60 dark:text-salt/50 leading-relaxed">{desc}</p>
           </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Perspective -->
+    <div>
+      <h2 class="font-display font-semibold text-2xl text-navy dark:text-salt tracking-tight mb-5">Our perspective</h2>
+      <div class="prose dark:prose-invert max-w-none
+        prose-headings:font-display prose-p:font-sans prose-p:font-extrabold
+        prose-p:text-navy/70 dark:prose-p:text-salt/70
+        prose-blockquote:font-playfair prose-blockquote:italic
+        prose-strong:text-navy dark:prose-strong:text-salt
+      ">
+        <p>
+          AI tools are getting better every month. Claude, ChatGPT, Gemini — the models will keep improving. But a better model doesn't automatically mean better outcomes for your business.
+        </p>
+        <p>
+          What actually creates leverage is <strong>process</strong>. A team with documented, tested, repeatable AI workflows will always outperform a team that relies on individual prompting skill.
+        </p>
+        <p>We're tool-agnostic because we believe the tools will change. Systems scale.</p>
+        <blockquote>"Most people use AI tools. Operators build systems."</blockquote>
+        <p>
+          Claude Cowork is the content and learning hub where we share what we know. ANCHR AI Labs is where we do the work with clients.
+        </p>
+      </div>
+    </div>
+
+    <!-- Founder card -->
+    <div>
+      <h2 class="font-display font-semibold text-2xl text-navy dark:text-salt tracking-tight mb-5">Founder</h2>
+      <div class="relative overflow-hidden rounded-2xl bg-navy p-6">
+        <div class="grid-bg absolute inset-0 pointer-events-none"></div>
+        <div class="relative flex gap-5 items-start">
+          <div
+            class="w-14 h-14 rounded-xl flex items-center justify-center text-salt font-display font-semibold text-2xl flex-shrink-0"
+            style="background: linear-gradient(135deg, #4A90A4, #C17F5A);"
+          >A</div>
           <div>
-            <h3 class="font-bold text-lg mb-1">Founder, ANCHR AI Labs</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-500 mb-3">Singapore · AI Systems · PR Strategy</p>
-            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p class="font-display font-semibold text-[17px] text-salt mb-0.5">Founder, ANCHR AI Labs</p>
+            <p class="font-mono text-[9px] tracking-[1px] uppercase text-sky/60 mb-3">Singapore · AI Systems · PR Strategy</p>
+            <p class="font-ui text-[13px] text-salt/60 leading-relaxed">
               100+ global speaking engagements on AI, communications, and business systems. PR and AI positioning expert helping founders and corporate teams build authority in an AI-first world.
             </p>
           </div>
         </div>
       </div>
-
-      <div class="text-center pt-2">
-        <a
-          href="/workshops"
-          class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-colors"
-        >
-          Work with us →
-        </a>
-      </div>
     </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <a
+        href="/workshops"
+        class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-navy dark:bg-salt text-salt dark:text-navy font-sans font-extrabold text-[17px] transition-transform hover:scale-[0.97]"
+      >
+        <span class="w-2.5 h-2.5 rounded-full bg-sky dark:bg-sea"></span>
+        Work with us →
+      </a>
+    </div>
+
   </section>
 </BaseLayout>

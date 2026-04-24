@@ -30,6 +30,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+
+    <!-- ANCHR AI Labs fonts -->
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/dm-sans/index.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/dm-sans/800.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/outfit/400.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/dm-mono/500.css" rel="stylesheet" />
+
     <!-- Prevent dark mode flash -->
     <script is:inline>
       const t = localStorage.getItem('theme');
@@ -38,7 +50,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       }
     </script>
   </head>
-  <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-200 min-h-screen flex flex-col">
+  <body class="bg-salt dark:bg-navy text-navy dark:text-salt font-sans transition-colors duration-200 min-h-screen flex flex-col">
     <Header />
     <main class="flex-1">
       <slot />
@@ -46,3 +58,46 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <Footer />
   </body>
 </html>
+
+<style is:global>
+  /* Graph-paper grid texture — dark sections */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(189, 213, 234, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(189, 213, 234, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  /* Subtle grid for light sections */
+  .grid-bg-light {
+    background-image:
+      linear-gradient(rgba(30, 43, 56, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 43, 56, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  /* Prose typography overrides */
+  .prose :where(blockquote) {
+    border-left-color: #4A90A4;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15em;
+    color: #1E2B38;
+  }
+  .dark .prose :where(blockquote) {
+    color: #BDD5EA;
+  }
+  .prose :where(a) {
+    color: #4A90A4;
+    text-decoration-color: rgba(74, 144, 164, 0.4);
+  }
+  .prose :where(code):not(:where(pre code)) {
+    background: rgba(189, 213, 234, 0.2);
+    color: #1E2B38;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 0.875em;
+  }
+  .dark .prose :where(code):not(:where(pre code)) {
+    background: rgba(189, 213, 234, 0.1);
+    color: #BDD5EA;
+  }
+</style>

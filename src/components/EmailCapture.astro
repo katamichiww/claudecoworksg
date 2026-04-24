@@ -14,9 +14,15 @@ const {
 } = Astro.props;
 ---
 
-<div class="bg-gradient-to-br from-brand-50 to-accent-50/40 dark:from-gray-900 dark:to-gray-900 border border-brand-100 dark:border-gray-800 rounded-2xl p-8">
-  <h3 class="text-xl font-bold mb-2">{heading}</h3>
-  <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">{subheading}</p>
+<!-- Announcement-bar style (Sky Blue — brand motif) -->
+<div class="bg-sky dark:bg-navy border border-sky/30 dark:border-sky/20 rounded-2xl p-7">
+  <div class="flex items-start gap-3 mb-5">
+    <span class="text-terra text-2xl leading-none mt-0.5">⚓</span>
+    <div>
+      <h3 class="font-display font-semibold text-[18px] text-navy dark:text-salt leading-snug mb-1">{heading}</h3>
+      <p class="font-ui text-[13px] text-navy/70 dark:text-salt/60">{subheading}</p>
+    </div>
+  </div>
 
   <form
     action={`https://formspree.io/f/${formspreeId}`}
@@ -28,17 +34,18 @@ const {
       name="email"
       required
       placeholder="you@company.com"
-      class="flex-1 px-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"
+      class="flex-1 px-4 py-2.5 rounded-full border border-navy/20 dark:border-white/20 bg-salt dark:bg-navy/60 text-navy dark:text-salt font-ui text-sm placeholder:text-navy/40 dark:placeholder:text-salt/40 focus:outline-none focus:ring-2 focus:ring-sea dark:focus:ring-sky focus:border-transparent transition"
     />
     <button
       type="submit"
-      class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition-colors whitespace-nowrap"
+      class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-navy dark:bg-salt text-salt dark:text-navy font-sans font-extrabold text-[15px] transition-transform hover:scale-[0.97] whitespace-nowrap"
     >
+      <span class="w-2 h-2 rounded-full bg-sky dark:bg-sea flex-shrink-0"></span>
       {buttonText}
     </button>
   </form>
 
-  <p class="text-xs text-gray-500 dark:text-gray-500 mt-3">
-    No spam. Unsubscribe any time. Replace <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">YOUR_FORMSPREE_ID</code> in <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">EmailCapture.astro</code> with your Formspree form ID to activate.
+  <p class="font-mono text-[9px] tracking-[1px] uppercase text-navy/40 dark:text-salt/40 mt-3">
+    No spam · Unsubscribe any time · Replace <code class="normal-case tracking-normal text-[10px]">YOUR_FORMSPREE_ID</code> in EmailCapture.astro to activate
   </p>
 </div>

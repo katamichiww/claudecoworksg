@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Ticker from '../components/Ticker.astro';
 import Hero from '../components/Hero.astro';
 import UseCaseCard from '../components/UseCaseCard.astro';
 import BlogCard from '../components/BlogCard.astro';
@@ -57,36 +58,54 @@ const useCases = [
 ---
 
 <BaseLayout title="Claude Cowork — Build real AI workflows. Powered by ANCHR AI Labs.">
+
+  <!-- ① Hero — navy + grid -->
   <Hero />
 
-  <!-- Use Cases Grid -->
-  <section class="py-16 md:py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+  <!-- ② Ticker — Sky Blue scrolling band -->
+  <Ticker />
+
+  <!-- ③ Use Cases Grid — Sand Cream bg -->
+  <section class="py-16 md:py-20 px-5 bg-sand dark:bg-white/[3%]">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Fast wins for professionals</h2>
-        <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
-          These aren't demos. They're real workflows professionals are using today — built with AI tools you already have.
+        <div class="inline-flex items-center gap-2 mb-4">
+          <span class="font-mono text-[10px] tracking-[2px] uppercase text-sea dark:text-sky">Fast Wins</span>
+        </div>
+        <h2 class="font-display font-semibold text-3xl md:text-4xl text-navy dark:text-salt mb-3 tracking-tight">
+          Real workflows for real professionals
+        </h2>
+        <p class="font-ui text-navy/60 dark:text-salt/50 max-w-lg mx-auto text-[15px]">
+          Not demos. Not theory. Actual workflows that professionals are running today — built with AI tools you already have.
         </p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {useCases.map((uc) => <UseCaseCard {...uc} />)}
       </div>
     </div>
   </section>
 
-  <!-- Latest Blog Posts -->
-  <section class="py-16 md:py-20 px-4">
+  <!-- ④ Latest Blog Posts -->
+  <section class="py-16 md:py-20 px-5 bg-salt dark:bg-navy">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-end justify-between mb-10">
         <div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-2">Latest from the blog</h2>
-          <p class="text-gray-600 dark:text-gray-400">Daily breakdowns. Real workflows. No fluff.</p>
+          <div class="inline-flex items-center gap-2 mb-3">
+            <span class="font-mono text-[10px] tracking-[2px] uppercase text-sea dark:text-sky">Daily Updates</span>
+          </div>
+          <h2 class="font-display font-semibold text-3xl md:text-4xl text-navy dark:text-salt tracking-tight">
+            Latest from the blog
+          </h2>
+          <p class="font-ui text-navy/60 dark:text-salt/50 text-[15px] mt-1">Daily breakdowns. Real workflows. No fluff.</p>
         </div>
-        <a href="/blog" class="text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline hidden sm:block">
+        <a
+          href="/blog"
+          class="hidden sm:inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[1.5px] uppercase text-sea dark:text-sky hover:underline"
+        >
           All posts →
         </a>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {recentPosts.map((post) => (
           <BlogCard
             title={post.data.title}
@@ -99,21 +118,26 @@ const useCases = [
         ))}
       </div>
       <div class="mt-6 sm:hidden">
-        <a href="/blog" class="text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline">
+        <a href="/blog" class="font-mono text-[10px] tracking-[1.5px] uppercase text-sea dark:text-sky hover:underline">
           All posts →
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Templates Teaser + Email Capture -->
-  <section class="py-16 md:py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+  <!-- ⑤ Templates & Email Capture — Sky Blue (announcement bar style) -->
+  <section class="py-16 md:py-20 px-5 bg-sand dark:bg-white/[3%]">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-8">
-        <h2 class="text-3xl font-bold mb-3">Templates &amp; Prompts</h2>
-        <p class="text-gray-600 dark:text-gray-400">
-          We're building a library of tested prompt templates and workflow blueprints.{' '}
-          <a href="/templates" class="text-brand-600 dark:text-brand-400 hover:underline">Preview what's coming →</a>
+        <div class="inline-flex items-center gap-2 mb-3">
+          <span class="font-mono text-[10px] tracking-[2px] uppercase text-sea dark:text-sky">Lead Magnet</span>
+        </div>
+        <h2 class="font-display font-semibold text-3xl text-navy dark:text-salt mb-2 tracking-tight">
+          Templates &amp; Prompts
+        </h2>
+        <p class="font-ui text-navy/60 dark:text-salt/50 text-[15px]">
+          We're building a library of tested workflow blueprints.{' '}
+          <a href="/templates" class="text-sea dark:text-sky hover:underline">Preview what's coming →</a>
         </p>
       </div>
       <EmailCapture
@@ -123,33 +147,38 @@ const useCases = [
     </div>
   </section>
 
-  <!-- From Prompts to Systems -->
-  <section class="py-16 md:py-20 px-4">
+  <!-- ⑥ From Prompts to Systems — the bridge -->
+  <section class="py-16 md:py-20 px-5 bg-salt dark:bg-navy">
     <div class="max-w-4xl mx-auto text-center">
-      <div class="inline-block text-5xl mb-6">🌉</div>
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">From prompts to systems</h2>
-      <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-12">
-        Tools change. Systems scale. Here's the three-step shift we teach.
+      <div class="inline-flex items-center gap-2 mb-4">
+        <span class="font-mono text-[10px] tracking-[2px] uppercase text-sea dark:text-sky">The Framework</span>
+      </div>
+      <h2 class="font-display font-semibold text-3xl md:text-4xl text-navy dark:text-salt mb-3 tracking-tight">
+        From prompts <span class="font-playfair italic text-sea dark:text-sky">to systems</span>
+      </h2>
+      <p class="font-ui text-navy/60 dark:text-salt/50 max-w-lg mx-auto text-[15px] mb-14">
+        Tools change. Systems scale. Here's the three-step shift we teach in every workshop.
       </p>
-      <div class="grid md:grid-cols-3 gap-6 text-left">
-        <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
-          <div class="text-2xl font-bold text-gray-200 dark:text-gray-700 mb-3">01</div>
-          <h3 class="font-semibold text-lg mb-2">Learn the tool</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
+
+      <div class="grid md:grid-cols-3 gap-4 text-left">
+        <div class="relative p-6 rounded-2xl border border-sand dark:border-white/10 bg-salt dark:bg-white/5 group hover:border-sky/40 transition-colors">
+          <div class="font-display font-semibold text-3xl text-sand dark:text-white/10 mb-3 group-hover:text-sky/20 dark:group-hover:text-sky/20 transition-colors">01</div>
+          <h3 class="font-display font-semibold text-[17px] text-navy dark:text-salt mb-2">Learn the tool</h3>
+          <p class="font-ui text-[13px] text-navy/60 dark:text-salt/50 leading-relaxed">
             Pick any AI tool — Claude, ChatGPT, Gemini. Learn what it can do for your specific role and tasks.
           </p>
         </div>
-        <div class="p-6 rounded-2xl bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800">
-          <div class="text-2xl font-bold text-brand-200 dark:text-brand-800 mb-3">02</div>
-          <h3 class="font-semibold text-lg mb-2">Design the workflow</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
+        <div class="relative p-6 rounded-2xl border border-sky/40 bg-sky/10 dark:bg-sky/10 group hover:border-sky/70 transition-colors">
+          <div class="font-display font-semibold text-3xl text-sky/30 mb-3">02</div>
+          <h3 class="font-display font-semibold text-[17px] text-navy dark:text-salt mb-2">Design the workflow</h3>
+          <p class="font-ui text-[13px] text-navy/60 dark:text-salt/50 leading-relaxed">
             Map out the process. Define inputs, outputs, and checkpoints. Document what works so anyone can run it.
           </p>
         </div>
-        <div class="p-6 rounded-2xl bg-accent-50 dark:bg-accent-900/20 border border-accent-200 dark:border-accent-800">
-          <div class="text-2xl font-bold text-accent-200 dark:text-accent-800 mb-3">03</div>
-          <h3 class="font-semibold text-lg mb-2">Scale the system</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
+        <div class="relative p-6 rounded-2xl border border-terra/30 bg-terra/5 dark:bg-terra/10 group hover:border-terra/60 transition-colors">
+          <div class="font-display font-semibold text-3xl text-terra/30 mb-3">03</div>
+          <h3 class="font-display font-semibold text-[17px] text-navy dark:text-salt mb-2">Scale the system</h3>
+          <p class="font-ui text-[13px] text-navy/60 dark:text-salt/50 leading-relaxed">
             Once it's documented, it's teachable. Once it's teachable, it scales. That's how prompts become systems.
           </p>
         </div>
@@ -157,22 +186,31 @@ const useCases = [
     </div>
   </section>
 
-  <!-- Powered By ANCHR AI Labs -->
+  <!-- ⑦ Powered By ANCHR — always navy -->
   <PoweredByAnchr />
 
-  <!-- Final CTA -->
-  <section class="py-16 md:py-20 px-4">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to become an operator?</h2>
-      <p class="text-gray-600 dark:text-gray-400 mb-8">
+  <!-- ⑧ Final CTA -->
+  <section class="py-16 md:py-20 px-5 bg-salt dark:bg-navy">
+    <div class="max-w-xl mx-auto text-center">
+      <!-- Highlight bar motif -->
+      <div class="inline-block bg-navy dark:bg-salt px-4 py-2 rounded-md mb-6">
+        <span class="font-display font-semibold text-2xl text-salt dark:text-navy">
+          Ready to become an
+          <span class="font-playfair italic text-sky dark:text-sea"> operator</span>?
+        </span>
+      </div>
+
+      <p class="font-ui text-navy/60 dark:text-salt/50 text-[15px] mb-8">
         Join our next workshop and build your first production-ready AI system in a single session — no coding required.
       </p>
       <a
         href="/workshops"
-        class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-colors shadow-sm"
+        class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-navy dark:bg-salt text-salt dark:text-navy font-sans font-extrabold text-[17px] transition-transform hover:scale-[0.97]"
       >
+        <span class="w-2.5 h-2.5 rounded-full bg-sky dark:bg-sea flex-shrink-0"></span>
         View workshops &amp; bootcamps →
       </a>
     </div>
   </section>
+
 </BaseLayout>

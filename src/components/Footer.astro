@@ -1,45 +1,69 @@
 ---
 ---
 
-<footer class="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
-  <div class="max-w-6xl mx-auto px-4 py-10">
-    <div class="flex flex-col md:flex-row justify-between gap-8">
+<footer class="relative overflow-hidden bg-navy">
+  <!-- Graph-paper grid -->
+  <div class="grid-bg absolute inset-0 pointer-events-none"></div>
+
+  <div class="relative max-w-6xl mx-auto px-5 py-12">
+    <div class="flex flex-col md:flex-row justify-between gap-10 mb-10">
+
+      <!-- Brand -->
       <div class="max-w-xs">
-        <p class="font-bold text-lg mb-1">Claude Cowork</p>
-        <p class="text-sm text-gray-500 dark:text-gray-500 mb-3">claudecowork.sg</p>
-        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-          Most people use AI tools. Operators build systems.
+        <div class="flex items-baseline gap-1 mb-3">
+          <span class="font-display font-semibold text-xl text-salt tracking-tight">Claude Cowork</span>
+          <span class="text-terra text-lg leading-none ml-1">⚓</span>
+        </div>
+        <p class="font-mono text-[9px] tracking-[1px] uppercase text-sky/50 mb-3">claudecowork.sg</p>
+        <p class="font-ui text-[13px] text-salt/50 leading-relaxed">
+          Most people use AI tools.<br />
+          <span class="font-playfair italic text-sky text-[15px]">Operators build systems.</span>
         </p>
       </div>
+
+      <!-- Nav links -->
       <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
         <div>
-          <p class="font-semibold mb-3">Learn</p>
-          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-            <li><a href="/blog" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Blog</a></li>
-            <li><a href="/templates" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Templates</a></li>
+          <p class="font-mono text-[9px] tracking-[2px] uppercase text-sky/50 mb-4">Learn</p>
+          <ul class="space-y-3 font-ui text-[13px] text-salt/50">
+            <li><a href="/blog" class="hover:text-sky transition-colors">Blog</a></li>
+            <li><a href="/templates" class="hover:text-sky transition-colors">Templates</a></li>
           </ul>
         </div>
         <div>
-          <p class="font-semibold mb-3">Work with us</p>
-          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-            <li><a href="/workshops" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Workshops</a></li>
-            <li><a href="/about" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">About</a></li>
+          <p class="font-mono text-[9px] tracking-[2px] uppercase text-sky/50 mb-4">Work with us</p>
+          <ul class="space-y-3 font-ui text-[13px] text-salt/50">
+            <li><a href="/workshops" class="hover:text-sky transition-colors">Workshops</a></li>
+            <li><a href="/about" class="hover:text-sky transition-colors">About</a></li>
           </ul>
         </div>
         <div>
-          <p class="font-semibold mb-3">Subscribe</p>
-          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-            <li><a href="/rss.xml" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">RSS Feed</a></li>
+          <p class="font-mono text-[9px] tracking-[2px] uppercase text-sky/50 mb-4">Subscribe</p>
+          <ul class="space-y-3 font-ui text-[13px] text-salt/50">
+            <li><a href="/rss.xml" class="hover:text-sky transition-colors">RSS Feed</a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="border-t border-gray-200 dark:border-gray-800 mt-8 pt-6 text-sm text-gray-500 dark:text-gray-500 flex flex-col md:flex-row justify-between gap-2">
-      <p>
-        &copy; {new Date().getFullYear()} Claude Cowork. Built &amp; curated by{' '}
-        <a href="/about" class="text-brand-600 dark:text-brand-400 hover:underline">ANCHR AI Labs</a>.
+
+    <!-- Bottom bar -->
+    <div
+      class="border-t pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3"
+      style="border-color: rgba(189,213,234,0.1);"
+    >
+      <!-- ANCHR logo treatment (from brand kit) -->
+      <div class="flex items-baseline gap-0">
+        <span class="font-display font-semibold text-[15px] text-salt/60 tracking-tight">Anchr</span>
+        <span class="font-playfair italic text-sky text-[17px] mx-1">AI</span>
+        <span class="font-mono text-[12px] tracking-[2px] uppercase text-salt/60">Labs</span>
+        <span class="text-terra ml-1 text-[13px]">⚓</span>
+        <span class="font-mono text-[9px] tracking-[1px] uppercase text-salt/30 ml-3">
+          · Built &amp; curated by ANCHR AI Labs
+        </span>
+      </div>
+      <p class="font-mono text-[9px] tracking-[1px] uppercase text-salt/30">
+        &copy; {new Date().getFullYear()} · Tool-agnostic · Systems-first
       </p>
-      <p>Tool-agnostic. Systems-first.</p>
     </div>
   </div>
 </footer>

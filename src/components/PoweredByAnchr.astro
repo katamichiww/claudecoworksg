@@ -1,55 +1,76 @@
 ---
 ---
 
-<section class="py-16 md:py-20 px-4 bg-gray-950 text-white">
-  <div class="max-w-4xl mx-auto">
-    <div class="flex flex-col md:flex-row gap-12 items-start">
+<section class="relative overflow-hidden bg-navy py-16 md:py-20 px-5">
+  <!-- Graph-paper grid -->
+  <div class="grid-bg absolute inset-0 pointer-events-none"></div>
+
+  <!-- Watermark anchor -->
+  <div
+    class="absolute right-0 bottom-0 font-playfair text-[18rem] leading-none pointer-events-none select-none translate-x-16 translate-y-8"
+    style="color: rgba(189,213,234,0.04);"
+    aria-hidden="true"
+  >⚓</div>
+
+  <div class="relative max-w-4xl mx-auto">
+    <!-- Eyebrow -->
+    <div class="inline-flex items-center gap-2.5 mb-6">
+      <span class="w-2 h-2 rounded-full bg-terra"></span>
+      <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky">ANCHR AI Labs</span>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-10 items-start">
+      <!-- Left: copy -->
       <div class="flex-1">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-sm font-medium mb-6">
-          <span class="w-2 h-2 rounded-full bg-brand-400"></span>
-          ANCHR AI Labs
-        </div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-          The authority behind<br />Claude Cowork
+        <h2 class="font-display font-semibold text-3xl md:text-4xl text-salt leading-tight mb-4">
+          The authority<br />
+          <span class="font-playfair italic text-sky">behind</span> Claude Cowork
         </h2>
-        <p class="text-gray-400 leading-relaxed mb-6">
-          ANCHR AI Labs is the company behind Claude Cowork. We design AI systems for businesses, run bootcamps for professionals, and deliver corporate training for teams making the shift from AI users to AI operators.
+        <p class="font-sans font-extrabold text-salt/50 text-[15px] leading-relaxed mb-7">
+          ANCHR AI Labs designs AI systems for businesses, runs bootcamps for professionals, and delivers corporate training for teams making the shift from AI users to AI operators.
         </p>
-        <ul class="space-y-3 text-sm text-gray-400 mb-8">
+
+        <ul class="space-y-3 mb-8">
           {[
             '100+ global speaking engagements on AI, PR, and business systems',
             'PR + AI positioning expertise for founders and corporate teams',
             'AI systems consulting for businesses ready to scale beyond prompts',
           ].map((item) => (
-            <li class="flex items-start gap-3">
-              <span class="mt-0.5 w-5 h-5 rounded-full bg-brand-600/20 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                </svg>
-              </span>
+            <li class="flex items-start gap-3 font-ui text-[13px] text-salt/60">
+              <svg class="w-4 h-4 text-sea flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
               {item}
             </li>
           ))}
         </ul>
+
         <a
           href="/about"
-          class="inline-flex items-center gap-2 text-brand-400 font-semibold hover:text-brand-300 transition-colors"
+          class="inline-flex items-center gap-2 font-mono text-[11px] tracking-[1.5px] uppercase text-sky hover:text-salt transition-colors"
         >
           Learn more about ANCHR AI Labs →
         </a>
       </div>
 
-      <div class="md:w-64 bg-white/5 border border-white/10 rounded-2xl p-6 flex-shrink-0">
-        <div class="w-12 h-12 rounded-xl bg-brand-600/30 flex items-center justify-center mb-4 text-2xl">
-          🧭
+      <!-- Right: info card (brand kit layout card style) -->
+      <div
+        class="md:w-60 rounded-2xl p-6 flex-shrink-0 border"
+        style="background: rgba(189,213,234,0.07); border-color: rgba(189,213,234,0.2);"
+      >
+        <div
+          class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
+          style="background: rgba(193,127,90,0.2);"
+        >
+          ⚓
         </div>
-        <p class="font-semibold mb-1">Founded in Singapore</p>
-        <p class="text-sm text-gray-400 mb-5">
-          Building at the intersection of AI systems, communications strategy, and operator training.
+        <p class="font-display font-semibold text-salt text-[15px] mb-1">Founded in Singapore</p>
+        <p class="font-ui text-[12px] text-salt/50 mb-5 leading-relaxed">
+          AI systems, communications strategy, and operator training.
         </p>
-        <div class="border-t border-white/10 pt-4">
-          <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">What we offer</p>
-          <ul class="space-y-2 text-sm text-gray-400">
+        <div class="border-t pt-4" style="border-color: rgba(189,213,234,0.15);">
+          <p class="font-mono text-[8px] tracking-[1.5px] uppercase text-sky/50 mb-3">What we offer</p>
+          <ul class="space-y-2 font-ui text-[12px] text-salt/60">
             <li>→ AI Systems Bootcamp</li>
             <li>→ Corporate Training</li>
             <li>→ 1:1 Consulting</li>

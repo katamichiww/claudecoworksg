@@ -16,19 +16,32 @@ const categories = [
   title="Templates & Prompts — Claude Cowork"
   description="A growing library of tested prompt templates and workflow blueprints for AI operators."
 >
-  <section class="max-w-4xl mx-auto px-4 py-20 text-center">
-    <div class="inline-block text-5xl mb-6">📋</div>
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Templates &amp; Prompts</h1>
-    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-10">
-      A curated library of tested prompt templates and workflow blueprints — designed for non-technical professionals who want repeatable results from any AI tool.
-    </p>
+  <!-- Header -->
+  <div class="relative overflow-hidden bg-navy px-5 py-14">
+    <div class="grid-bg absolute inset-0 pointer-events-none"></div>
+    <div class="relative max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <span class="w-2 h-2 rounded-full bg-terra"></span>
+        <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky">Coming Soon</span>
+      </div>
+      <h1 class="font-display font-semibold text-4xl md:text-5xl text-salt tracking-tight mb-4">
+        Templates &amp; Prompts
+      </h1>
+      <p class="font-sans font-extrabold text-salt/50 text-lg max-w-lg mx-auto leading-relaxed">
+        A curated library of tested prompt templates and workflow blueprints — for professionals who want repeatable results from any AI tool.
+      </p>
+    </div>
+  </div>
 
-    <div class="grid sm:grid-cols-2 gap-3 text-left mb-14 max-w-2xl mx-auto">
+  <section class="max-w-4xl mx-auto px-5 py-14">
+    <div class="grid sm:grid-cols-2 gap-3 mb-14">
       {categories.map(({ icon, label }) => (
-        <div class="flex items-center gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        <div class="flex items-center gap-3 p-4 rounded-xl border border-sand dark:border-white/10 bg-salt dark:bg-white/5">
           <span class="text-xl flex-shrink-0">{icon}</span>
-          <span class="text-sm font-medium">{label}</span>
-          <span class="ml-auto text-xs text-gray-400 dark:text-gray-600 whitespace-nowrap">Coming soon</span>
+          <span class="font-display font-semibold text-[14px] text-navy dark:text-salt">{label}</span>
+          <span class="ml-auto font-mono text-[9px] tracking-[1px] uppercase text-navy/30 dark:text-salt/30 whitespace-nowrap">
+            Coming soon
+          </span>
         </div>
       ))}
     </div>
@@ -36,7 +49,7 @@ const categories = [
     <div class="max-w-md mx-auto">
       <EmailCapture
         heading="Get early access to templates"
-        subheading="We'll notify you when the library launches and send you our first batch of templates free."
+        subheading="We'll notify you when the library launches and send you the first batch free."
         buttonText="Notify me"
       />
     </div>
