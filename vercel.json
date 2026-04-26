@@ -1,4 +1,4 @@
 {
-  "buildCommand": "mkdir -p dist && cp *.html dist/ && cp styles.css dist/ && cp nav.js dist/ && cp -r uploads dist/",
+  "buildCommand": "mkdir -p dist && cp *.html dist/ && cp styles.css dist/ && cp nav.js dist/ && cp sitemap.xml dist/ && cp robots.txt dist/ && cp -r uploads dist/",
   "outputDirectory": "dist"
 }
