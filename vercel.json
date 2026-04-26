@@ -1,4 +1,14 @@
 {
   "buildCommand": "mkdir -p dist && cp *.html dist/ && cp styles.css dist/ && cp nav.js dist/ && cp sitemap.xml dist/ && cp robots.txt dist/ && cp -r uploads dist/",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [{ "key": "Content-Type", "value": "application/xml" }]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain" }]
+    }
+  ]
 }
