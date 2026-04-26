@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cowork SG Community — AI Workflows for Non-Technical Professionals</title>
+  <meta name="description" content="Join the Cowork SG Community — a growing group of non-technical professionals learning to use AI tools like Claude, ChatGPT, and Gemini to build real workflows, save time, and get results." />
+  <meta name="keywords" content="claude workflows, claude cowork, claude code, cowork sg community, AI workflows Singapore, AI for non-technical professionals" />
+  <link rel="canonical" href="https://claudecowork.sg/" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      color: white;
+      padding: 6rem 0 5.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 85% 50%, rgba(232,97,74,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 15% 80%, rgba(245,168,32,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .hero-eyebrow .pill {
+      background: rgba(232,97,74,0.2);
+      border: 1px solid rgba(232,97,74,0.35);
+      color: #FF9A87;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .hero-trust {
+      margin-top: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+    }
+    .trust-faces {
+      display: flex;
+      align-items: center;
+    }
+    .trust-face {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--navy);
+      margin-left: -10px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .trust-face:first-child { margin-left: 0; }
+    .trust-text {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.45;
+    }
+    .trust-text strong { color: white; }
+
+    /* HERO CARD */
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+    .hero-card-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.25rem;
+    }
+    .hero-card-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-card-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .hc-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+    .hc-body h4 { font-size: 0.88rem; font-weight: 600; color: white; margin-bottom: 0.2rem; }
+    .hc-body p  { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.4; }
+
+    /* ── TOOLS STRIP ── */
+    .tools-strip {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+    }
+    .tools-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .tools-label { font-size: 0.72rem; color: var(--ink-3); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    .tool-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--ink-2);
+    }
+    .tool-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+    }
+
+    /* ── COMMUNITY INTRO ── */
+    .community-intro {
+      padding: 5.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .community-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .community-intro h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0.75rem 0 1.25rem;
+    }
+    .community-intro h2 em { font-style: italic; color: var(--coral); }
+    .community-intro p {
+      font-size: 0.95rem;
+      color: var(--ink-2);
+      line-height: 1.8;
+      margin-bottom: 1.1rem;
+    }
+    .community-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .comm-stat {
+      background: var(--bg);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+    .comm-stat-num {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .comm-stat-label {
+      font-size: 0.75rem;
+      color: var(--ink-3);
+      margin-top: 0.35rem;
+      line-height: 1.4;
+    }
+
+    /* ── WHO IT'S FOR ── */
+    .for-section {
+      padding: 5rem 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .for-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3.5rem;
+    }
+    .for-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0.75rem 0 1rem;
+    }
+    .for-header p { font-size: 0.95rem; color: var(--ink-2); line-height: 1.7; }
+
+    .for-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .for-card {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .for-card:hover {
+      border-color: var(--coral);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(27,43,75,0.08);
+    }
+    .for-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .for-card h3 { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.5rem; }
+    .for-card p  { font-size: 0.82rem; color: var(--ink-2); line-height: 1.6; }
+
+    /* ── TRANSFORMATION ── */
+    .transform-section {
+      padding: 5.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .transform-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 3.5rem;
+    }
+    .transform-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .transform-cols {
+      display: grid;
+      grid-template-columns: 1fr 72px 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .transform-col h3 {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .from h3 { color: var(--ink-3); }
+    .to   h3 { color: var(--coral); }
+
+    .t-item {
+      padding: 0.9rem 1.1rem;
+      border-radius: var(--radius);
+      font-size: 0.92rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .from .t-item {
+      background: var(--surface-2);
+      color: var(--ink-3);
+      text-decoration: line-through;
+      text-decoration-color: var(--border);
+    }
+    .to .t-item {
+      background: #FEF3F1;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .to .t-item .check { color: var(--coral); font-weight: 700; }
+
+    .transform-arrow-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding-top: 2rem;
+    }
+    .arrow-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--coral);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    /* ── WHAT YOU GET ── */
+    .what-section {
+      padding: 5.5rem 0;
+      background: var(--navy);
+      color: white;
+    }
+    .what-section .label { color: var(--orange); }
+    .what-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0.75rem 0 1rem;
+      color: white;
+    }
+    .what-section > .container > p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 3.5rem;
+    }
+
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .what-card {
+      background: rgba(255,255,255,0.04);
+      padding: 2rem 1.75rem;
+      transition: background var(--transition);
+    }
+    .what-card:hover { background: rgba(255,255,255,0.08); }
+    .what-num {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.12);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .what-card h3 { font-size: 1rem; font-weight: 700; color: white; margin-bottom: 0.6rem; }
+    .what-card p  { font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+    /* ── LEAD MAGNET ── */
+    .lead-section {
+      padding: 5.5rem 0;
+      background: linear-gradient(135deg, #FEF3F1 0%, #FFF8EC 100%);
+      border-top: 1px solid #F0D8D3;
+      border-bottom: 1px solid #F0D8D3;
+    }
+    .lead-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .lead-left h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin: 0.75rem 0 1.1rem;
+    }
+    .lead-left p {
+      font-size: 0.93rem;
+      color: var(--ink-2);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .lead-features { list-style: none; margin-top: 1.25rem; }
+    .lead-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.88rem;
+      color: var(--ink-2);
+      padding: 0.5rem 0;
+    }
+    .lead-features li::before {
+      content: '✓';
+      color: var(--coral);
+      font-weight: 700;
+      width: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .testimonials h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0.75rem 0 2.5rem;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .testimonial-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color var(--transition);
+    }
+    .testimonial-card:hover { border-color: var(--coral); }
+    .t-stars { color: var(--orange); font-size: 0.85rem; margin-bottom: 0.9rem; }
+    .t-quote { font-size: 0.9rem; color: var(--ink); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .t-person h4 { font-size: 0.85rem; font-weight: 700; }
+    .t-person span { font-size: 0.75rem; color: var(--ink-3); }
+
+    /* ── HERO EVENT PHOTO ── */
+    .hero-event-photo {
+      margin-top: 2.5rem;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      max-width: 560px;
+    }
+    .hero-event-photo img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .hero-photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(27,43,75,0.85));
+      color: rgba(255,255,255,0.85);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 1.25rem 1rem 0.75rem;
+    }
+
+    /* ── PHOTOS STRIP ── */
+    .photos-strip {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .photos-strip-header {
+      margin-bottom: 2rem;
+    }
+    .photos-strip-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-top: 0.5rem;
+    }
+    .photos-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 1rem;
+      height: 420px;
+    }
+    .photos-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      height: 280px;
+      margin-top: 1rem;
+    }
+    .photo-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .photo-card:hover img { transform: scale(1.03); }
+    .photo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(27,43,75,0.8));
+      color: rgba(255,255,255,0.9);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 1.5rem 1rem 0.85rem;
+    }
+    .photos-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .photos-right .photo-card {
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .photos-grid { grid-template-columns: 1fr; height: auto; }
+      .photos-grid-bottom { grid-template-columns: 1fr; height: auto; }
+      .photo-card { height: 220px; }
+      .hero-event-photo { display: none; }
+    }
+
+    /* ── FREE BANNER ── */
+    .free-banner {
+      background: var(--navy);
+      border-bottom: 3px solid var(--coral);
+      padding: 0.9rem 0;
+    }
+    .free-banner-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .free-badge {
+      background: var(--coral);
+      color: white;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .free-banner-inner p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+    }
+    .free-banner-inner p strong { color: white; }
+    .free-banner-cta {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--orange);
+      white-space: nowrap;
+      transition: color var(--transition);
+    }
+    .free-banner-cta:hover { color: white; }
+
+    /* ── BLOG ── */
+    .blog-section {
+      padding: 5.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .blog-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .blog-title {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin: 0.6rem 0 0.5rem;
+    }
+    .blog-sub { font-size: 0.92rem; color: var(--ink-2); line-height: 1.65; max-width: 480px; }
+    .blog-update-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ink-3);
+      white-space: nowrap;
+      padding: 0.5rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22C55E;
+      box-shadow: 0 0 0 0 rgba(34,197,94,0.5);
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+      70%  { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+
+    .blog-coming {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .blog-real-posts {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .blog-post-row {
+      display: block;
+      padding: 2rem 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition), border-color var(--transition);
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-post-row:last-child { border-bottom: none; }
+    .blog-post-row:hover { background: #FEF3F1; border-color: var(--coral); }
+    .blog-post-row:hover .blog-post-read { color: var(--coral); }
+    .blog-post-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.65rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .blog-post-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--coral);
+    }
+    .blog-post-date {
+      font-size: 0.72rem;
+      color: var(--ink-3);
+      font-weight: 600;
+    }
+    .blog-post-row h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+    .blog-post-row p {
+      font-size: 0.85rem;
+      color: var(--ink-2);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .blog-post-read {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy);
+      transition: color var(--transition);
+    }
+    .blog-post-time {
+      font-weight: 400;
+      color: var(--ink-3);
+      margin-left: 0.25rem;
+    }
+    .blog-more-coming {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: var(--surface);
+      border: 1.5px dashed var(--border);
+      border-radius: var(--radius);
+      font-size: 0.83rem;
+      color: var(--ink-3);
+    }
+    .blog-more-coming p { margin: 0; }
+    .blog-more-coming a { color: var(--coral); font-weight: 600; }
+
+    /* ── SHOWCASE ── */
+    .showcase-section {
+      padding: 5.5rem 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .showcase-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .showcase-title {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin: 0.6rem 0 0.5rem;
+    }
+    .showcase-sub { font-size: 0.92rem; color: var(--ink-2); line-height: 1.65; max-width: 480px; }
+    .showcase-see-all { flex-shrink: 0; }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .showcase-card {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .showcase-card:hover {
+      border-color: var(--navy);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 24px rgba(27,43,75,0.08);
+    }
+    .showcase-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .showcase-cat {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+    }
+    .showcase-cat.career   { background: #EEF3FF; color: #2D4E9E; }
+    .showcase-cat.content  { background: #FEF3F1; color: var(--coral-dark); }
+    .showcase-cat.sales    { background: #FFF8EC; color: var(--orange-dark); }
+    .showcase-cat.personal { background: #F0FBF9; color: #1A7A6A; }
+
+    .showcase-built {
+      font-size: 0.68rem;
+      color: var(--ink-3);
+      font-weight: 600;
+    }
+    .showcase-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+    .showcase-problem {
+      font-size: 0.8rem;
+      color: var(--ink-3);
+      line-height: 1.55;
+    }
+    .showcase-result {
+      font-size: 0.82rem;
+      color: var(--ink-2);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .showcase-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-light);
+      margin-top: auto;
+    }
+    .s-tool {
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: var(--navy);
+      color: white;
+      padding: 0.22rem 0.6rem;
+      border-radius: 10px;
+    }
+    .s-zero {
+      font-size: 0.68rem;
+      color: var(--ink-3);
+      font-weight: 600;
+    }
+    .showcase-cta {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── WHATSAPP JOIN ── */
+    .whatsapp-join { display: flex; }
+    .wa-card {
+      background: white;
+      border: 1px solid #E8D5D0;
+      border-radius: 10px;
+      padding: 2.25rem;
+      box-shadow: 0 4px 24px rgba(232,97,74,0.08);
+      width: 100%;
+    }
+    .wa-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .wa-card h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--navy); }
+    .wa-card p  { font-size: 0.88rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 1.5rem; }
+    .wa-btn { width: 100%; justify-content: center; margin-bottom: 1.25rem; }
+    .wa-perks { list-style: none; margin-bottom: 1rem; }
+    .wa-perks li {
+      font-size: 0.84rem;
+      color: var(--ink-2);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .wa-perks li:last-child { border-bottom: none; }
+    .wa-perks li::before { content: '✓'; color: var(--coral); font-weight: 700; }
+    .wa-note { font-size: 0.7rem; color: var(--ink-3); text-align: center; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .for-grid { grid-template-columns: 1fr 1fr; }
+      .what-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .community-intro-grid, .lead-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .transform-cols { grid-template-columns: 1fr; }
+      .transform-arrow-col { flex-direction: row; padding-top: 0; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .showcase-grid { grid-template-columns: 1fr 1fr; }
+      .showcase-header { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .for-grid { grid-template-columns: 1fr; }
+      .community-stats { grid-template-columns: 1fr; }
+      .showcase-grid { grid-template-columns: 1fr; }
+      .showcase-cta { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="uploads/Cowork SG Logo Horizontal Larger Text.png" alt="Cowork SG" />
+    </a>
+    <button class="nav-mobile-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#showcase">Showcase</a></li>
+      <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free on WhatsApp</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow fade-up">
+          <span class="pill">Cowork SG Community</span>
+        </div>
+        <h1 class="fade-up">
+          AI Workflows.<br />
+          Built for <em>real</em><br />
+          professionals.
+        </h1>
+        <p class="hero-sub fade-up">
+          Cowork SG is a free community website built for non-technical professionals, by non-technical professionals. We're heavy users of Claude Cowork and Claude Code — and we share everything we learn. Tool-agnostic, always open, always free.
+        </p>
+        <div class="hero-actions fade-up">
+          <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-coral">Join our WhatsApp Community FREE →</a>
+          <a href="about.html" class="btn btn-outline-white">Learn More</a>
+        </div>
+        <div class="hero-event-photo fade-up">
+          <img src="uploads/DSC09401.jpg" alt="Cowork SG community event" />
+          <span class="hero-photo-caption">Cowork SG Community — live in Singapore</span>
+        </div>
+        <div class="hero-trust fade-up">
+          <div class="trust-faces">
+            <div class="trust-face" style="background:var(--coral)">S</div>
+            <div class="trust-face" style="background:var(--orange-dark)">M</div>
+            <div class="trust-face" style="background:#3D5A8A">P</div>
+            <div class="trust-face" style="background:#2E7D6E">R</div>
+            <div class="trust-face" style="background:#7B4E9E">J</div>
+          </div>
+          <p class="trust-text"><strong>Consultants, founders &amp; SME owners</strong><br />learning AI the practical way</p>
+        </div>
+      </div>
+
+      <div class="hero-card fade-up">
+        <div class="hero-card-label">What the community gets</div>
+        <div class="hero-card-item">
+          <div class="hc-icon" style="background:rgba(232,97,74,0.15)">📄</div>
+          <div class="hc-body">
+            <h4>Workflow Guides</h4>
+            <p>Step-by-step systems for Claude, ChatGPT, Gemini &amp; more — shared by the community</p>
+          </div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hc-icon" style="background:rgba(245,168,32,0.15)">📋</div>
+          <div class="hc-body">
+            <h4>Community Blog</h4>
+            <p>Free guides written by non-technical professionals — shared in the WhatsApp group as they go live</p>
+          </div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hc-icon" style="background:rgba(61,90,138,0.15)">📖</div>
+          <div class="hc-body">
+            <h4>Free Blog Resources</h4>
+            <p>Practical guides and how-tos published regularly — free for the community</p>
+          </div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hc-icon" style="background:rgba(46,125,110,0.15)">🎓</div>
+          <div class="hc-body">
+            <h4>Claude Exam Prep</h4>
+            <p>Prepare for Claude certifications together with like-minded professionals</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE RESOURCES BANNER -->
+<div class="free-banner">
+  <div class="container">
+    <div class="free-banner-inner">
+      <div class="free-badge">100% FREE</div>
+      <p>Every resource in the Cowork SG Community is <strong>completely free</strong> — guides, prompts, templates, and blog posts updated regularly for non-technical professionals.</p>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="free-banner-cta">Join the Community →</a>
+    </div>
+  </div>
+</div>
+
+<!-- COMMUNITY PHOTOS STRIP -->
+<section class="photos-strip">
+  <div class="container">
+    <div class="photos-strip-header fade-up">
+      <span class="label label-coral">Community in Action</span>
+      <h2 class="photos-strip-title">Real events. Real people. Real learning.</h2>
+    </div>
+    <div class="photos-grid fade-up">
+      <div class="photo-card photo-card-large">
+        <img src="uploads/DSC09401.jpg" alt="Cowork SG community workshop" />
+        <div class="photo-overlay">Community Workshop · Singapore</div>
+      </div>
+      <div class="photos-right">
+        <div class="photo-card">
+          <img src="uploads/Wanwei Luxury Update.png" alt="Cowork SG community members" />
+          <div class="photo-overlay">Cast Your First InkSpell · AI Event</div>
+        </div>
+        <div class="photo-card">
+          <img src="uploads/Screenshot 2026-04-26 at 8.22.11 PM.png" alt="Sarawak x Singapore AI hackathon" />
+          <div class="photo-overlay">Sarawak × Singapore AI Collaboration</div>
+        </div>
+      </div>
+    </div>
+    <div class="photos-grid-bottom fade-up">
+      <div class="photo-card">
+        <img src="uploads/community-event-group.png" alt="Cowork SG community group photo" />
+        <div class="photo-overlay">Community Meetup · Q&amp;A Session</div>
+      </div>
+      <div class="photo-card">
+        <img src="uploads/community-event-audience.png" alt="Cowork SG community learning session" />
+        <div class="photo-overlay">Live Learning · Community Talk</div>
+      </div>
+      <div class="photo-card">
+        <img src="uploads/community-event-cafe.png" alt="Cowork SG community café event" />
+        <div class="photo-overlay">Intimate Meetup · Café Event</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS STRIP -->
+<div class="tools-strip">
+  <div class="container">
+    <div class="tools-inner">
+      <span class="tools-label">Works with</span>
+      <div class="tool-chip"><span class="tool-dot" style="background:#D97B5A"></span>Claude</div>
+      <div class="tool-chip"><span class="tool-dot" style="background:#19A37F"></span>ChatGPT</div>
+      <div class="tool-chip"><span class="tool-dot" style="background:#4285F4"></span>Gemini</div>
+      <div class="tool-chip"><span class="tool-dot" style="background:#7B61FF"></span>Copilot</div>
+      <div class="tool-chip"><span class="tool-dot" style="background:#20B2AA"></span>Perplexity</div>
+    </div>
+  </div>
+</div>
+
+<!-- COMMUNITY INTRO -->
+<section class="community-intro">
+  <div class="container">
+    <div class="community-intro-grid">
+      <div class="fade-up">
+        <span class="label label-coral">Who We Are</span>
+        <h2>A community built for <em>non-technical</em> professionals.</h2>
+        <p>Cowork SG is a <strong>community website built for non-technical professionals, by non-technical professionals.</strong> We are heavy users of <strong>Claude Cowork</strong> and <strong>Claude Code</strong> ourselves, and built this community to share what we learn in the open.</p>
+        <p>This community is fully tool-agnostic. We share workflows for Claude, ChatGPT, Gemini, and more — whatever works for you, works for us. No gatekeeping. No jargon. Just a community.</p>
+        <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-coral" style="margin-top:0.5rem">Join our WhatsApp Community FREE →</a>
+      </div>
+      <div class="fade-up">
+        <div class="community-stats">
+          <div class="comm-stat">
+            <div class="comm-stat-num">50+</div>
+            <div class="comm-stat-label">Free prompt templates</div>
+          </div>
+          <div class="comm-stat">
+            <div class="comm-stat-num">5</div>
+            <div class="comm-stat-label">Core workflow guides</div>
+          </div>
+          <div class="comm-stat">
+            <div class="comm-stat-num">0</div>
+            <div class="comm-stat-label">Lines of code needed</div>
+          </div>
+        </div>
+        <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.75rem;margin-top:1rem">
+          <p style="font-family:var(--serif);font-size:1.1rem;line-height:1.6;color:var(--navy);font-style:italic;margin-bottom:0.75rem">"I went from spending 4 hours on every proposal to 40 minutes. The community resources changed everything."</p>
+          <p style="font-size:0.78rem;color:var(--ink-3);font-weight:600">Sarah L. · HR Consultant, Singapore</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="for-section">
+  <div class="container">
+    <div class="for-header fade-up">
+      <span class="label">The Cowork SG Community Is For</span>
+      <h2>You don't need to be technical. You need to be motivated.</h2>
+      <p>Every resource in the Cowork SG Community is designed for busy professionals — not developers.</p>
+    </div>
+
+    <div class="for-grid">
+      <div class="for-card fade-up">
+        <div class="for-card-icon" style="background:#FEF3F1">💼</div>
+        <h3>Consultants</h3>
+        <p>Automate proposals, reports, and client comms. Spend more time on billable work.</p>
+      </div>
+      <div class="for-card fade-up">
+        <div class="for-card-icon" style="background:#FFF8EC">🚀</div>
+        <h3>Founders</h3>
+        <p>Wear fewer hats. Build AI systems for content, ops, and client management.</p>
+      </div>
+      <div class="for-card fade-up">
+        <div class="for-card-icon" style="background:#EEF3FF">🏢</div>
+        <h3>SME Owners</h3>
+        <p>Punch above your weight. AI workflows help lean teams operate like bigger ones.</p>
+      </div>
+      <div class="for-card fade-up">
+        <div class="for-card-icon" style="background:#F0FBF9">📊</div>
+        <h3>Corporate Professionals</h3>
+        <p>Left behind by the AI conversation? Start here. Everything is built for your context.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION -->
+<section class="transform-section">
+  <div class="container">
+    <div class="transform-header fade-up">
+      <span class="label">The Community Shift</span>
+      <h2>From random AI usage to real systems</h2>
+      <p style="font-size:0.93rem;color:var(--ink-2);line-height:1.7;">Joining the Cowork SG Community means shifting from guesswork to repeatable leverage.</p>
+    </div>
+
+    <div class="transform-cols">
+      <div class="transform-col from fade-up">
+        <h3>Where you are now</h3>
+        <div class="t-item">Confused about where to start with AI</div>
+        <div class="t-item">Guessing at prompts, getting inconsistent results</div>
+        <div class="t-item">Using AI randomly, no real workflow</div>
+        <div class="t-item">Spending hours on tasks AI could handle</div>
+      </div>
+
+      <div class="transform-arrow-col fade-up">
+        <div class="arrow-circle">→</div>
+      </div>
+
+      <div class="transform-col to fade-up">
+        <h3>Where the community takes you</h3>
+        <div class="t-item"><span class="check">✓</span> Clear, repeatable AI workflows</div>
+        <div class="t-item"><span class="check">✓</span> Consistent outputs you can trust</div>
+        <div class="t-item"><span class="check">✓</span> Systems that run reliably</div>
+        <div class="t-item"><span class="check">✓</span> Hours saved every week</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="what-section">
+  <div class="container">
+    <span class="label fade-up">Community Resources</span>
+    <h2 class="fade-up">Everything the Cowork SG<br />Community gets — free.</h2>
+    <p class="fade-up">Every resource is practical, beginner-friendly, and tested by non-technical professionals in real work situations.</p>
+
+    <div class="what-grid">
+      <div class="what-card fade-up">
+        <div class="what-num">01</div>
+        <h3>Blog — Regularly Updated</h3>
+        <p>Fresh guides, how-tos, and workflow breakdowns published regularly. Always free. Always practical. Always written for non-techies.</p>
+      </div>
+      <div class="what-card fade-up">
+        <div class="what-num">02</div>
+        <h3>Community Blog</h3>
+        <p>Free guides and how-tos written by community members — updated regularly. Always practical, always for non-techies.</p>
+      </div>
+      <div class="what-card fade-up">
+        <div class="what-num">03</div>
+        <h3>Showcase Directory</h3>
+        <p>See what real non-technical practitioners built using AI — real problems, real builds, zero lines of code.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG SECTION -->
+<section class="blog-section" id="blog">
+  <div class="container">
+    <div class="blog-header fade-up">
+      <div>
+        <span class="label label-coral">Community Blog</span>
+        <h2 class="blog-title">Free resources, updated regularly.</h2>
+        <p class="blog-sub">Practical guides and how-tos written for the Cowork SG Community — by non-technical professionals, for non-technical professionals. Always free.</p>
+      </div>
+      <div class="blog-update-badge">
+        <span class="pulse-dot"></span>
+        Regularly updated
+      </div>
+    </div>
+
+    <div class="blog-coming fade-up">
+      <div class="blog-real-posts">
+        <a href="blog-claude-cowork-capabilities.html" class="blog-post-row">
+          <div class="blog-post-meta">
+            <span class="blog-post-tag">Claude · AI Tools</span>
+            <span class="blog-post-date">26 Apr 2026</span>
+          </div>
+          <h3>Claude Cowork: 7 Capabilities You Actually Need to Know</h3>
+          <p>A practical breakdown of Claude Cowork's core capabilities — what's different from Claude Chat, file access, persistent memory, connectors, and skills. Written by a community member who's been using AI for 3 years.</p>
+          <span class="blog-post-read">Read post → <span class="blog-post-time">~8 min</span></span>
+        </a>
+        <a href="blog-claude-whatsapp.html" class="blog-post-row">
+          <div class="blog-post-meta">
+            <span class="blog-post-tag">Claude · WhatsApp · Outreach</span>
+            <span class="blog-post-date">26 Apr 2026</span>
+          </div>
+          <h3>Claude AI Can Now Use WhatsApp — Here's How I Pulled It Off</h3>
+          <p>Hook up your personal WhatsApp to Claude AI — sending messages, reading replies, running personalised outreach — all from inside Claude desktop. Step-by-step setup included.</p>
+          <span class="blog-post-read">Read post → <span class="blog-post-time">~7 min</span></span>
+        </a>
+      </div>
+
+      <div class="blog-more-coming">
+        <span class="pulse-dot"></span>
+        <p>More posts being written by the community. <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp to get every post first →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE DIRECTORY -->
+<section class="showcase-section" id="showcase">
+  <div class="container">
+    <div class="showcase-header fade-up">
+      <div>
+        <span class="label label-navy">Showcase Directory</span>
+        <h2 class="showcase-title">See what non-technical practitioners actually built.</h2>
+        <p class="showcase-sub">Real professionals. Real problems. Real builds. Zero lines of code written by anyone.</p>
+      </div>
+      <a href="https://ainativebootcamp.netlify.app/builds" target="_blank" rel="noopener" class="btn btn-outline showcase-see-all">See ALL Builds ↗</a>
+    </div>
+
+    <div class="showcase-grid">
+      <div class="showcase-card fade-up">
+        <div class="showcase-card-top">
+          <span class="showcase-cat career">Career</span>
+          <span class="showcase-built">Built in 1 day</span>
+        </div>
+        <h3>Career Pivot Content System</h3>
+        <p class="showcase-problem"><strong>Problem:</strong> Struggling to communicate a career change on LinkedIn without sounding desperate or unclear.</p>
+        <p class="showcase-result">Built a 4-week LinkedIn content plan using Claude — showing expertise in new field before making the switch publicly.</p>
+        <div class="showcase-footer"><span class="s-tool">Claude</span><span class="s-zero">0 lines of code</span></div>
+      </div>
+
+      <div class="showcase-card fade-up">
+        <div class="showcase-card-top">
+          <span class="showcase-cat content">Content</span>
+          <span class="showcase-built">Built in 1 day</span>
+        </div>
+        <h3>Monthly Newsletter Machine</h3>
+        <p class="showcase-problem"><strong>Problem:</strong> Spending 6+ hours writing a monthly newsletter that felt inconsistent and rushed.</p>
+        <p class="showcase-result">Built a prompt sequence that generates a full newsletter draft from bullet points in under 30 minutes.</p>
+        <div class="showcase-footer"><span class="s-tool">ChatGPT</span><span class="s-zero">0 lines of code</span></div>
+      </div>
+
+      <div class="showcase-card fade-up">
+        <div class="showcase-card-top">
+          <span class="showcase-cat sales">Sales</span>
+          <span class="showcase-built">Built in 1 day</span>
+        </div>
+        <h3>Personalised Outreach System</h3>
+        <p class="showcase-problem"><strong>Problem:</strong> Cold outreach felt generic and got ignored. No time to personalise 50+ messages manually.</p>
+        <p class="showcase-result">Built an AI workflow that generates personalised outreach from a prospect's LinkedIn profile in 2 minutes.</p>
+        <div class="showcase-footer"><span class="s-tool">Claude</span><span class="s-zero">0 lines of code</span></div>
+      </div>
+
+      <div class="showcase-card fade-up">
+        <div class="showcase-card-top">
+          <span class="showcase-cat personal">Personal</span>
+          <span class="showcase-built">Built in 1 day</span>
+        </div>
+        <h3>Weekly Review + Planner</h3>
+        <p class="showcase-problem"><strong>Problem:</strong> Ending every week feeling busy but unproductive — no clear system for reflection or planning.</p>
+        <p class="showcase-result">Built a Friday review prompt that produces a structured weekly summary and Monday priority list automatically.</p>
+        <div class="showcase-footer"><span class="s-tool">Gemini</span><span class="s-zero">0 lines of code</span></div>
+      </div>
+
+      <div class="showcase-card fade-up">
+        <div class="showcase-card-top">
+          <span class="showcase-cat content">Content</span>
+          <span class="showcase-built">Built in 1 day</span>
+        </div>
+        <h3>LinkedIn Thought Leadership Engine</h3>
+        <p class="showcase-problem"><strong>Problem:</strong> Knew they had expertise to share but couldn't translate industry experience into engaging posts.</p>
+        <p class="showcase-result">Built a prompt system that turns one insight into 5 LinkedIn post variations — choosing the best each week.</p>
+        <div class="showcase-footer"><span class="s-tool">Claude</span><span class="s-zero">0 lines of code</span></div>
+      </div>
+
+      <div class="showcase-card fade-up">
+        <div class="showcase-card-top">
+          <span class="showcase-cat sales">Sales</span>
+          <span class="showcase-built">Built in 1 day</span>
+        </div>
+        <h3>Proposal + Follow-Up Sequence</h3>
+        <p class="showcase-problem"><strong>Problem:</strong> Proposals took hours to write and follow-ups felt awkward — leading to lost deals from lack of follow-through.</p>
+        <p class="showcase-result">Built a full proposal-to-close sequence: draft, scope, pricing justification, and 3-part follow-up — all AI-generated.</p>
+        <div class="showcase-footer"><span class="s-tool">ChatGPT</span><span class="s-zero">0 lines of code</span></div>
+      </div>
+    </div>
+
+    <div class="showcase-cta fade-up">
+      <a href="https://ainativebootcamp.netlify.app/builds" target="_blank" rel="noopener" class="btn btn-navy">See ALL Builds ↗</a>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-coral">Join our WhatsApp Community FREE →</a>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN SECTION -->
+<section class="lead-section" id="join">
+  <div class="container">
+    <div class="lead-inner">
+      <div class="fade-up">
+        <span class="label label-coral">Join the Community</span>
+        <h2 class="lead-left" style="font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.12;letter-spacing:-0.02em;color:var(--navy);margin:0.75rem 0 1.1rem;">A free community for non-technical professionals who take AI seriously.</h2>
+        <p style="font-size:0.93rem;color:var(--ink-2);line-height:1.8;margin-bottom:1rem;">The Cowork SG Community is a WhatsApp group where non-technical professionals come together to learn, share, and grow — using AI tools like Claude, ChatGPT, and Gemini in real, practical ways.</p>
+        <ul class="lead-features">
+          <li>Meet like-minded non-technical professionals on the same journey</li>
+          <li>Prepare for Claude exams and AI certifications together</li>
+          <li>Get new blog posts and resources as they go live</li>
+          <li>Ask questions, share wins, get honest feedback</li>
+          <li>Tool-agnostic — Claude, ChatGPT, Gemini, all welcome</li>
+        </ul>
+      </div>
+
+      <div class="whatsapp-join fade-up">
+        <div class="wa-card">
+          <div class="wa-icon">💬</div>
+          <h3>Join on WhatsApp — It's Free</h3>
+          <p>A community website built for non-technical professionals, by non-technical professionals. No templates to sell. No courses to pitch. Just a genuine community sharing what works.</p>
+          <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-coral wa-btn">Join our WhatsApp Community FREE →</a>
+          <ul class="wa-perks">
+            <li>Meet like-minded professionals on the same journey</li>
+            <li>Prepare for Claude exams together</li>
+            <li>Get blog posts and resources as they go live</li>
+            <li>Ask questions, share wins, get feedback</li>
+          </ul>
+          <p class="wa-note">🔒 WhatsApp group. Free to join. Leave any time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <span class="label fade-up">Community Voices</span>
+    <h2 class="fade-up">What Cowork SG Community members say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I went from spending 4 hours on every proposal to 40 minutes. The community workflows are repeatable, reliable, and the output is better than what I used to produce manually."</p>
+        <div class="t-person">
+          <h4>Sarah L.</h4>
+          <span>Independent HR Consultant · Singapore</span>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I always thought AI was for tech people. The Cowork SG Community resources changed that completely. We built our content system in one afternoon — it's been running on autopilot since."</p>
+        <div class="t-person">
+          <h4>Marcus T.</h4>
+          <span>Founder · SME, F&amp;B Sector</span>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"My whole team was sceptical. Now three of us use AI workflows daily. The community prompts are practical, not theoretical — and that makes all the difference."</p>
+        <div class="t-person">
+          <h4>Priya K.</h4>
+          <span>Department Head · Regional FMCG Company</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="uploads/Cowork SG Logo Dark Background.png" alt="Cowork SG" />
+        </div>
+        <p>AI workflows for non-technical professionals. Practical guides, prompt libraries, and community resources — no coding required.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join Free on WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#showcase">Showcase Directory</a></li>
+          <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join Free ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-powered">
+        Cowork SG Community is powered by <a href="https://anchrlabs.com" target="_blank" rel="noopener">ANCHR AI Labs</a>.
+      </p>
+      <p class="footer-disclaimer">Cowork SG is an independent educational resource and is not affiliated with, endorsed by, or associated with Anthropic or its products. The domain name 'claudecowork.sg' is used for descriptive and informational purposes only. 'Claude' is a trademark of its respective owner. All other trademarks belong to their respective owners.</p>
+      <p class="footer-copy">© 2025 Cowork SG Community · claudecowork.sg</p>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>
