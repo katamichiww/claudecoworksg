@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude AI Can Now Use WhatsApp — Here's How I Pulled It Off | Cowork SG</title>
+  <meta name="description" content="Hook up your personal WhatsApp to Claude AI — sending messages, reading replies, running personalised outreach — all from inside Claude desktop. Step-by-step setup included." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .blog-hero {
+      background: var(--navy);
+      padding: 5rem 2rem 4rem;
+      color: white;
+    }
+    .blog-hero-inner { max-width: 820px; margin: 0 auto; }
+    .blog-hero .label { color: var(--coral); margin-bottom: 1.25rem; }
+    .blog-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .blog-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.55);
+      flex-wrap: wrap;
+    }
+    .blog-hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+
+    .blog-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+    .blog-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: 1.5rem;
+    }
+    .blog-body h2 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 2.5rem 0 1rem;
+    }
+    .blog-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 2rem 0 0.75rem;
+    }
+    .blog-body ul, .blog-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .blog-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: 0.5rem;
+    }
+    .blog-callout {
+      background: var(--surface);
+      border-left: 4px solid var(--coral);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .blog-callout p { margin: 0; font-size: 0.97rem; }
+    .blog-code {
+      background: var(--navy-dark);
+      color: #E8F0FF;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--coral);
+      color: white;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+    }
+    .step-row { display: flex; align-items: flex-start; margin-bottom: 0.5rem; }
+    .step-row h3 { margin: 0; display: flex; align-items: center; }
+    .blog-cta-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .blog-cta-box h3 { font-family: var(--serif); font-size: 1.4rem; color: white; margin-bottom: 0.75rem; }
+    .blog-cta-box p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .blog-back { margin-bottom: 2.5rem; }
+    .blog-back a { font-size: 0.88rem; color: var(--coral); font-weight: 600; }
+    @media (max-width: 768px) {
+      .blog-hero { padding: 3.5rem 1.25rem 2.5rem; }
+      .blog-body { padding: 2.5rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="uploads/cowork-sg-logo.png" alt="Cowork SG" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#blog" class="active">Blog</a></li>
+        <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free →</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <p class="label label-coral">Claude · WhatsApp · Outreach</p>
+      <h1>Claude AI Can Now Use WhatsApp — Here's How I Pulled It Off</h1>
+      <div class="blog-hero-meta">
+        <span>Wan Wei Soh · Cowork SG</span>
+        <span>26 Apr 2026</span>
+        <span>~7 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="blog-body">
+    <div class="blog-back"><a href="index.html#blog">← Back to all posts</a></div>
+
+    <p>
+      A few weeks ago I did something that surprised even me: I got Claude to send personalised WhatsApp messages on my behalf — using my own number, reading real replies, running follow-up sequences — all from inside Claude Code on my Mac. No third-party services, no monthly subscription, no code headaches (mostly).
+    </p>
+    <p>
+      This is the exact setup I use today for community outreach. Here's how to replicate it.
+    </p>
+
+    <div class="blog-callout">
+      <p><strong>Who this is for:</strong> Anyone using Claude Code who wants to connect WhatsApp for personalised outreach, reminders, or follow-ups. No programming background needed — I'll show you exactly what to type.</p>
+    </div>
+
+    <h2>Why WhatsApp + Claude is such a big deal</h2>
+    <p>
+      Most AI tools send emails. Emails get ignored. WhatsApp messages get read — open rates are routinely above 90% for business contacts in Singapore and Southeast Asia. Combining Claude's writing quality with WhatsApp's reach is genuinely powerful.
+    </p>
+    <p>
+      The integration works through <strong>Claude's MCP (Model Context Protocol)</strong> — a standardised way for Claude to talk to external tools. Once wired up, you can say things like <em>"Send a follow-up to everyone who attended the April event but hasn't registered for May"</em> and Claude handles the drafting, personalisation, and sending.
+    </p>
+
+    <h2>What you'll need</h2>
+    <ul>
+      <li>Claude Code installed on Mac or Windows (the desktop app)</li>
+      <li>A personal WhatsApp account (business account works too)</li>
+      <li>Node.js installed (free, takes 2 minutes)</li>
+      <li>About 30 minutes for first-time setup</li>
+    </ul>
+
+    <h2>Step-by-step setup</h2>
+
+    <div class="step-row"><h3><span class="step-number">1</span>Install the WhatsApp MCP server</h3></div>
+    <p>Open your terminal and run:</p>
+    <div class="blog-code">npm install -g @lanekatris/mcp-whatsapp</div>
+    <p>This installs the MCP server that bridges Claude and WhatsApp Web.</p>
+
+    <div class="step-row"><h3><span class="step-number">2</span>Add it to Claude's MCP config</h3></div>
+    <p>In Claude Code, open Settings → MCP Servers → Add Server. Paste this config:</p>
+    <div class="blog-code">{
+  "mcpServers": {
+    "whatsapp": {
+      "command": "npx",
+      "args": ["-y", "@lanekatris/mcp-whatsapp"],
+      "env": {}
+    }
+  }
+}</div>
+
+    <div class="step-row"><h3><span class="step-number">3</span>Authenticate with your WhatsApp</h3></div>
+    <p>
+      The first time you start the MCP server, a QR code will appear in your terminal. Open WhatsApp on your phone → Settings → Linked Devices → Link a Device, then scan the QR code. Done. Your session persists so you only do this once.
+    </p>
+
+    <div class="step-row"><h3><span class="step-number">4</span>Test it in Claude</h3></div>
+    <p>Back in Claude Code, try a simple prompt:</p>
+    <div class="blog-callout">
+      <p><em>"Using WhatsApp, send a message to [your own number] saying 'test from Claude'"</em></p>
+    </div>
+    <p>If it works, you'll receive it on your phone within seconds. If Claude asks for confirmation before sending — that's the safety check working correctly.</p>
+
+    <div class="step-row"><h3><span class="step-number">5</span>Build your first outreach workflow</h3></div>
+    <p>Now the fun part. Here's a real prompt I use for event follow-ups:</p>
+    <div class="blog-callout">
+      <p><em>"Here's a list of people who attended last week's workshop [paste list]. Send each of them a personalised WhatsApp message thanking them by name, referencing the specific topic they said was most useful, and inviting them to next month's session on [topic]. Keep it warm and under 3 sentences."</em></p>
+    </div>
+    <p>Claude drafts each message, shows them to you for review, then sends on confirmation. The personalisation quality is noticeably better than any template tool I've used.</p>
+
+    <h2>Real limits to know about</h2>
+    <ul>
+      <li><strong>WhatsApp's Terms of Service:</strong> Mass cold outreach violates their TOS. This tool is for warm contacts — people who already know you.</li>
+      <li><strong>Rate limits:</strong> Don't blast 500 messages at once. Space them out. Claude will help you batch sensibly.</li>
+      <li><strong>Session drops:</strong> If your phone loses internet, the session disconnects. Re-authenticate as needed.</li>
+      <li><strong>Read receipts:</strong> The MCP can read incoming messages too — useful for tracking replies and automating follow-ups.</li>
+    </ul>
+
+    <h2>What I actually use it for</h2>
+    <p>
+      In the Cowork SG community I use this for: event reminders (sent 24h before, with location), post-event thank-yous with a personalised note, and reaching out to people who expressed interest in a resource but haven't downloaded it yet.
+    </p>
+    <p>
+      The biggest unlock? Combining it with Claude's memory. I keep a running note of each contact's interests and last conversation. When Claude drafts a follow-up, it actually references something specific — which gets replies.
+    </p>
+
+    <div class="blog-cta-box">
+      <h3>Learn this live in the community</h3>
+      <p>We run hands-on sessions where community members set this up together. Join free on WhatsApp and get the next session date.</p>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-coral">Join Cowork SG Free →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="uploads/Cowork SG Logo Dark Background.png" alt="Cowork SG" /></div>
+          <p>Singapore's free AI community for professionals who want to actually use Claude — not just talk about it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Posts</h4>
+          <ul>
+            <li><a href="blog-claude-whatsapp.html">Claude + WhatsApp</a></li>
+            <li><a href="blog-claude-cowork-capabilities.html">7 Claude Capabilities</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Cowork SG. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>

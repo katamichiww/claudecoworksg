@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Cowork: 7 Capabilities You Actually Need to Know | Cowork SG</title>
+  <meta name="description" content="A practical breakdown of Claude Cowork's core capabilities — what's different from Claude Chat, file access, persistent memory, connectors, and skills." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .blog-hero {
+      background: var(--navy);
+      padding: 5rem 2rem 4rem;
+      color: white;
+    }
+    .blog-hero-inner { max-width: 820px; margin: 0 auto; }
+    .blog-hero .label { color: var(--coral); margin-bottom: 1.25rem; }
+    .blog-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .blog-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.55);
+      flex-wrap: wrap;
+    }
+
+    .blog-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+    .blog-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: 1.5rem;
+    }
+    .blog-body h2 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 2.5rem 0 1rem;
+    }
+    .blog-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 2rem 0 0.5rem;
+    }
+    .blog-body ul, .blog-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .blog-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: 0.5rem;
+    }
+    .blog-callout {
+      background: var(--surface);
+      border-left: 4px solid var(--coral);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .blog-callout p { margin: 0; font-size: 0.97rem; }
+    .capability-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 200ms ease, box-shadow 200ms ease;
+    }
+    .capability-card:hover { border-color: var(--coral); box-shadow: 0 4px 16px rgba(232,97,74,0.08); }
+    .capability-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 0.5rem;
+    }
+    .capability-card h3 { margin: 0 0 0.75rem; font-size: 1.1rem; color: var(--navy); }
+    .capability-card p { margin: 0; font-size: 0.97rem; line-height: 1.75; color: var(--ink-2); }
+    .vs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.93rem;
+    }
+    .vs-table th {
+      background: var(--navy);
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .vs-table th:first-child { border-radius: 6px 0 0 0; }
+    .vs-table th:last-child { border-radius: 0 6px 0 0; }
+    .vs-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--ink-2); }
+    .vs-table tr:last-child td { border-bottom: none; }
+    .vs-table tr:nth-child(even) td { background: var(--surface); }
+    .check { color: #22c55e; font-weight: 700; }
+    .cross { color: var(--ink-3); }
+    .blog-cta-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .blog-cta-box h3 { font-family: var(--serif); font-size: 1.4rem; color: white; margin-bottom: 0.75rem; }
+    .blog-cta-box p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .blog-back { margin-bottom: 2.5rem; }
+    .blog-back a { font-size: 0.88rem; color: var(--coral); font-weight: 600; }
+    @media (max-width: 768px) {
+      .blog-hero { padding: 3.5rem 1.25rem 2.5rem; }
+      .blog-body { padding: 2.5rem 1.25rem 4rem; }
+      .vs-table { font-size: 0.82rem; }
+      .vs-table td, .vs-table th { padding: 0.6rem 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="uploads/cowork-sg-logo.png" alt="Cowork SG" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#blog" class="active">Blog</a></li>
+        <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free →</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <p class="label label-coral">Claude · AI Tools</p>
+      <h1>Claude Cowork: 7 Capabilities You Actually Need to Know</h1>
+      <div class="blog-hero-meta">
+        <span>Wan Wei Soh · Cowork SG</span>
+        <span>26 Apr 2026</span>
+        <span>~8 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="blog-body">
+    <div class="blog-back"><a href="index.html#blog">← Back to all posts</a></div>
+
+    <p>
+      I've been using AI tools seriously for three years. In that time I've watched Claude go from a capable chatbot to something that genuinely runs parts of my workflow. But most people I meet are still using Claude the same way they use Google — type a question, read the answer, close the tab.
+    </p>
+    <p>
+      Claude Cowork (Claude's agentic mode, sometimes called Claude Code or Claude Projects in different contexts) is a different product entirely. Here are the seven capabilities that actually matter, explained without the jargon.
+    </p>
+
+    <div class="blog-callout">
+      <p><strong>Quick note:</strong> "Claude Cowork" refers to using Claude in an agentic, persistent context — with file access, memory, and tool connections — as distinct from the standard claude.ai chat interface.</p>
+    </div>
+
+    <h2>Claude Chat vs Claude Cowork</h2>
+    <table class="vs-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Claude Chat</th>
+          <th>Claude Cowork</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Remembers past conversations</td><td class="cross">✗ No</td><td class="check">✓ Yes</td></tr>
+        <tr><td>Reads your files & documents</td><td class="cross">✗ No</td><td class="check">✓ Yes</td></tr>
+        <tr><td>Runs code & actions</td><td class="cross">✗ No</td><td class="check">✓ Yes</td></tr>
+        <tr><td>Connects to external tools</td><td class="cross">✗ No</td><td class="check">✓ Via MCP</td></tr>
+        <tr><td>Works on multi-step tasks</td><td class="cross">Limited</td><td class="check">✓ Yes</td></tr>
+        <tr><td>Edits documents in place</td><td class="cross">✗ No</td><td class="check">✓ Yes</td></tr>
+        <tr><td>Spawns sub-agents</td><td class="cross">✗ No</td><td class="check">✓ Yes</td></tr>
+      </tbody>
+    </table>
+
+    <h2>The 7 capabilities</h2>
+
+    <div class="capability-card">
+      <p class="capability-num">Capability 01</p>
+      <h3>Persistent Memory</h3>
+      <p>Claude can remember context across sessions — your preferences, your ongoing projects, your contacts, your communication style. This changes everything. Instead of re-explaining yourself every conversation, Claude builds a working model of how you operate. For business use, this means you can say "draft a reply in my usual tone" and it actually knows what that means.</p>
+    </div>
+
+    <div class="capability-card">
+      <p class="capability-num">Capability 02</p>
+      <h3>File & Document Access</h3>
+      <p>Point Claude at a folder and it can read, edit, create, and organise files autonomously. Give it your proposal templates, your CRM export, your meeting notes — and it works with them directly. No copying and pasting. This is the capability that turns Claude from a writing assistant into an actual work tool.</p>
+    </div>
+
+    <div class="capability-card">
+      <p class="capability-num">Capability 03</p>
+      <h3>Tool Connections via MCP</h3>
+      <p>MCP (Model Context Protocol) is how Claude connects to external services — WhatsApp, Notion, Google Drive, Slack, databases, APIs. Think of it as Claude's plugin system, but open-source and increasingly well-supported. As of early 2026, there are hundreds of MCP servers available. If a tool has an API, someone has probably built an MCP for it.</p>
+    </div>
+
+    <div class="capability-card">
+      <p class="capability-num">Capability 04</p>
+      <h3>Autonomous Multi-Step Tasks</h3>
+      <p>Claude can take a high-level instruction and execute it across many steps without you supervising every move. "Research the top 10 AI conferences in Southeast Asia, create a spreadsheet with dates and submission deadlines, and draft outreach emails for each" is a real task it can complete end-to-end. You review the output, not every intermediate step.</p>
+    </div>
+
+    <div class="capability-card">
+      <p class="capability-num">Capability 05</p>
+      <h3>Code Execution</h3>
+      <p>Claude can write code and run it — not just generate it for you to copy. This means it can process data, build automations, scrape websites, generate reports, and more, all in a single conversation. You don't need to be technical. You describe what you want, Claude writes and runs the code, and shows you the result.</p>
+    </div>
+
+    <div class="capability-card">
+      <p class="capability-num">Capability 06</p>
+      <h3>Sub-Agents & Parallel Work</h3>
+      <p>For complex projects, Claude can spawn multiple sub-agents to work in parallel — one researching, one drafting, one reviewing — then combine their outputs. This dramatically speeds up work that would otherwise require you to manage different AI sessions manually. It's genuinely useful for anything involving research + writing + formatting in one workflow.</p>
+    </div>
+
+    <div class="capability-card">
+      <p class="capability-num">Capability 07</p>
+      <h3>Custom Instructions & Personas</h3>
+      <p>You can give Claude persistent instructions that shape every response — your brand voice, your preferred formats, rules about what to never do, your role and context. Combined with memory, this means Claude increasingly operates as a trained assistant who knows your business, not a generic AI you're prompting from scratch each time.</p>
+    </div>
+
+    <h2>Where to start if you're new</h2>
+    <p>
+      Don't try to use all seven capabilities at once. Pick one pain point in your work — a repetitive task, a slow process, something you dread doing — and build one workflow around that. Get it working well before expanding.
+    </p>
+    <p>
+      In Cowork SG we share these workflows openly. Members post what's working, what's broken, and what surprised them. That shared learning is why people in the community move faster than those figuring it out alone.
+    </p>
+
+    <div class="blog-cta-box">
+      <h3>See these capabilities in action</h3>
+      <p>Join the community WhatsApp group — we demo these workflows live and share everything for free.</p>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-coral">Join Cowork SG Free →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="uploads/Cowork SG Logo Dark Background.png" alt="Cowork SG" /></div>
+          <p>Singapore's free AI community for professionals who want to actually use Claude — not just talk about it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Posts</h4>
+          <ul>
+            <li><a href="blog-claude-whatsapp.html">Claude + WhatsApp</a></li>
+            <li><a href="blog-claude-cowork-capabilities.html">7 Claude Capabilities</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Cowork SG. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>
