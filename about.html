@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Cowork SG</title>
+  <meta name="description" content="Cowork SG is a not-for-profit community website made by non-technical practitioners, for non-technical practitioners who are heavy users of Claude and other AI tools." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://claudecowork.sg/about.html" />
+  <meta property="og:title" content="About Cowork SG" />
+  <meta property="og:description" content="A not-for-profit community website made by non-technical practitioners, for non-technical practitioners who are heavy users of Claude and other AI tools." />
+  <meta property="og:image" content="https://claudecowork.sg/uploads/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://claudecowork.sg/uploads/og-image.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .about-hero {
+      background: var(--navy);
+      padding: 5rem 2rem 4.5rem;
+      color: white;
+    }
+    .about-hero-inner { max-width: 820px; margin: 0 auto; }
+    .about-hero .label { color: var(--coral); margin-bottom: 1.25rem; }
+    .about-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .about-hero h1 em { font-style: italic; color: var(--orange); }
+    .about-hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    .about-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+    .about-body p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-2);
+      margin-bottom: 1.5rem;
+    }
+    .about-body h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 3rem 0 1rem;
+    }
+    .about-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .about-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem 1.5rem;
+    }
+    .value-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .value-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .value-card p { font-size: 0.9rem; line-height: 1.65; color: var(--ink-2); margin: 0; }
+
+    .founder-card {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2.5rem 0;
+    }
+    .founder-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--navy);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      color: white;
+      font-weight: 700;
+    }
+    .founder-info h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+    .founder-info .founder-title { font-size: 0.83rem; color: var(--coral); font-weight: 600; margin-bottom: 0.75rem; }
+    .founder-info p { font-size: 0.95rem; line-height: 1.75; color: var(--ink-2); margin: 0; }
+
+    .about-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3rem;
+      color: white;
+    }
+    .about-cta h3 { font-family: var(--serif); font-size: 1.5rem; color: white; margin-bottom: 0.75rem; }
+    .about-cta p { color: rgba(255,255,255,0.72); margin-bottom: 1.5rem; font-size: 0.97rem; }
+
+    @media (max-width: 768px) {
+      .about-hero { padding: 3.5rem 1.25rem 3rem; }
+      .about-body { padding: 2.5rem 1.25rem 4rem; }
+      .about-values { grid-template-columns: 1fr; gap: 1rem; }
+      .founder-card { flex-direction: column; gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="uploads/cowork-sg-logo.png" alt="Cowork SG" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#blog">Resources</a></li>
+        <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free →</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <p class="label label-coral">About Cowork SG</p>
+      <h1>Built by practitioners,<br />for <em>practitioners.</em></h1>
+      <p>Cowork SG is a not-for-profit community website made by non-technical practitioners, for non-technical practitioners — heavy users of Claude and other AI tools who share what actually works.</p>
+    </div>
+  </section>
+
+  <div class="about-body">
+
+    <h2>What we are</h2>
+    <p>
+      Cowork SG is a free, not-for-profit community. We don't sell courses, subscriptions, or certifications. Everything we produce — guides, prompt templates, workflow breakdowns, blog posts — is shared openly at no cost.
+    </p>
+    <p>
+      We exist because the gap between "AI is transforming everything" and "I actually know how to use it in my day job" is still enormous for most non-technical professionals. We're trying to close that gap, one practical workflow at a time.
+    </p>
+
+    <h2>Who we're for</h2>
+    <p>
+      Non-technical professionals who are serious about using AI tools — not just experimenting with them. People who use Claude, ChatGPT, Gemini, or other AI tools daily and want to go deeper. People who share what they learn rather than hoarding it.
+    </p>
+    <ul>
+      <li>HR professionals automating candidate screening and onboarding</li>
+      <li>Consultants building proposal and research workflows</li>
+      <li>Marketing and comms teams running content pipelines</li>
+      <li>Business owners and founders doing more with smaller teams</li>
+      <li>Anyone who wants to work smarter without writing code</li>
+    </ul>
+
+    <h2>Our values</h2>
+    <div class="about-values">
+      <div class="value-card">
+        <div class="value-icon">🔓</div>
+        <h3>Always free</h3>
+        <p>No paywalls. No premium tiers. Every resource is open to everyone, forever.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🛠️</div>
+        <h3>Practitioner-first</h3>
+        <p>Everything we share comes from people who use these tools in their actual work — not instructors teaching theory.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌐</div>
+        <h3>Tool-agnostic</h3>
+        <p>We use Claude heavily, but we share workflows for ChatGPT, Gemini, and whatever else works — no brand loyalty, just results.</p>
+      </div>
+    </div>
+
+    <h2>The founder</h2>
+    <div class="founder-card">
+      <div class="founder-avatar">W</div>
+      <div class="founder-info">
+        <h3>Wan Wei Soh</h3>
+        <p class="founder-title">Founder, Cowork SG · CEO, AI Visionary Society</p>
+        <p>
+          Wan Wei has spent years working with AI tools as a non-technical practitioner and building communities around practical AI adoption in Singapore and across Southeast Asia. She founded Cowork SG to create a space where people can share what genuinely works — without gatekeeping, jargon, or upsells.
+        </p>
+      </div>
+    </div>
+
+    <h2>Join us</h2>
+    <p>
+      The community lives primarily on WhatsApp, where members share workflows, ask questions, and get early access to every new resource. It's free to join and always will be.
+    </p>
+
+    <div class="about-cta">
+      <h3>Join the Cowork SG Community</h3>
+      <p>Free resources, live sessions, and a community of practitioners sharing what actually works with AI.</p>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-orange" style="color:white">Join on WhatsApp — Free →</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="uploads/cowork-sg-logo-dark.png" alt="Cowork SG" /></div>
+          <p>Singapore's free AI community for professionals who want to actually use Claude — not just talk about it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#blog">Resources</a></li>
+            <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Posts</h4>
+          <ul>
+            <li><a href="blog-claude-prompting-outcome-first.html">Outcome-First Prompting</a></li>
+            <li><a href="blog-claude-whatsapp.html">Claude + WhatsApp</a></li>
+            <li><a href="blog-claude-cowork-capabilities.html">7 Claude Capabilities</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Cowork SG. Not-for-profit community. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>
