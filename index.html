@@ -526,16 +526,36 @@
       letter-spacing: -0.02em;
       margin-top: 0.5rem;
     }
-    .photos-mosaic {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 280px 260px;
+    /* ── PHOTO MARQUEE ── */
+    .photos-marquee-wrap {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       gap: 0.75rem;
     }
+    .photos-marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+
+    .marquee-row {
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0.75rem;
+      width: max-content;
+    }
+    .marquee-track.scroll-left  { animation: marquee-left  55s linear infinite; }
+    .marquee-track.scroll-right { animation: marquee-right 55s linear infinite; }
+
+    @keyframes marquee-left  { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
     .photo-card {
       border-radius: var(--radius);
       overflow: hidden;
       position: relative;
+      flex-shrink: 0;
+      height: 240px;
+      width: 360px;
     }
     .photo-card img {
       width: 100%;
@@ -544,7 +564,7 @@
       display: block;
       transition: transform 0.4s ease;
     }
-    .photo-card:hover img { transform: scale(1.03); }
+    .photo-card:hover img { transform: scale(1.04); }
     .photo-overlay {
       position: absolute;
       bottom: 0;
@@ -558,12 +578,8 @@
       padding: 1.5rem 1rem 0.85rem;
     }
 
-    @media (max-width: 900px) {
-      .photos-mosaic { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
-      .photo-card { height: 220px; }
-    }
     @media (max-width: 600px) {
-      .photos-mosaic { grid-template-columns: 1fr; }
+      .photo-card { height: 190px; width: 280px; }
       .hero-event-photo { display: none; }
     }
 
@@ -942,7 +958,7 @@
           <a href="about.html" class="btn btn-outline-white">Learn More</a>
         </div>
         <div class="hero-event-photo fade-up">
-          <img src="uploads/DSC09401.jpg" alt="Cowork SG community event" />
+          <img src="uploads/ev-antler-group.png" alt="Cowork SG community event" />
           <span class="hero-photo-caption">Cowork SG Community — live in Singapore</span>
         </div>
         <div class="hero-trust fade-up">
@@ -1010,30 +1026,50 @@
       <span class="label label-coral">Community in Action</span>
       <h2 class="photos-strip-title">Real events. Real people. Real learning.</h2>
     </div>
-    <div class="photos-mosaic fade-up">
-      <div class="photo-card">
-        <img src="uploads/community-event-group.png" alt="Cowork SG community group photo" />
-        <div class="photo-overlay">Community Meetup · Q&amp;A Session</div>
+    <div class="photos-marquee-wrap fade-up">
+      <!-- Row 1 — scrolls left -->
+      <div class="marquee-row">
+        <div class="marquee-track scroll-left">
+          <!-- set A -->
+          <div class="photo-card"><img src="uploads/ev-antler-group.png" alt="Community event at Antler" /><div class="photo-overlay">Community Meetup · Antler SG</div></div>
+          <div class="photo-card"><img src="uploads/DSC09401.jpg" alt="Community workshop" /><div class="photo-overlay">Community Workshop · Singapore</div></div>
+          <div class="photo-card"><img src="uploads/ev-workshop-round.png" alt="AI workshop session" /><div class="photo-overlay">AI Workshop · Live Session</div></div>
+          <div class="photo-card"><img src="uploads/community-event-group.png" alt="Community Q&A" /><div class="photo-overlay">Community Meetup · Q&amp;A Session</div></div>
+          <div class="photo-card"><img src="uploads/ev-aigents.png" alt="AIgents of Change talk" /><div class="photo-overlay">AIgents of Change · Speaker Series</div></div>
+          <div class="photo-card"><img src="uploads/ev-panel.png" alt="Building the Self-Writing Internet panel" /><div class="photo-overlay">Panel · Building The Self-Writing Internet</div></div>
+          <div class="photo-card"><img src="uploads/Wanwei Luxury Update.png" alt="Cast Your First InkSpell" /><div class="photo-overlay">Cast Your First InkSpell · AI Event</div></div>
+          <!-- set B (duplicate for seamless loop) -->
+          <div class="photo-card"><img src="uploads/ev-antler-group.png" alt="Community event at Antler" /><div class="photo-overlay">Community Meetup · Antler SG</div></div>
+          <div class="photo-card"><img src="uploads/DSC09401.jpg" alt="Community workshop" /><div class="photo-overlay">Community Workshop · Singapore</div></div>
+          <div class="photo-card"><img src="uploads/ev-workshop-round.png" alt="AI workshop session" /><div class="photo-overlay">AI Workshop · Live Session</div></div>
+          <div class="photo-card"><img src="uploads/community-event-group.png" alt="Community Q&A" /><div class="photo-overlay">Community Meetup · Q&amp;A Session</div></div>
+          <div class="photo-card"><img src="uploads/ev-aigents.png" alt="AIgents of Change talk" /><div class="photo-overlay">AIgents of Change · Speaker Series</div></div>
+          <div class="photo-card"><img src="uploads/ev-panel.png" alt="Panel discussion" /><div class="photo-overlay">Panel · Building The Self-Writing Internet</div></div>
+          <div class="photo-card"><img src="uploads/Wanwei Luxury Update.png" alt="Cast Your First InkSpell" /><div class="photo-overlay">Cast Your First InkSpell · AI Event</div></div>
+        </div>
       </div>
-      <div class="photo-card">
-        <img src="uploads/DSC09401.jpg" alt="Cowork SG community workshop" />
-        <div class="photo-overlay">Community Workshop · Singapore</div>
-      </div>
-      <div class="photo-card">
-        <img src="uploads/Wanwei Luxury Update.png" alt="Cast Your First InkSpell AI event" />
-        <div class="photo-overlay">Cast Your First InkSpell · AI Event</div>
-      </div>
-      <div class="photo-card">
-        <img src="uploads/community-event-audience.png" alt="Cowork SG community learning session" />
-        <div class="photo-overlay">Live Learning · Community Talk</div>
-      </div>
-      <div class="photo-card">
-        <img src="uploads/community-event-cafe.png" alt="Cowork SG community café event" />
-        <div class="photo-overlay">Intimate Meetup · Café Event</div>
-      </div>
-      <div class="photo-card">
-        <img src="uploads/Screenshot 2026-04-26 at 8.22.11 PM.png" alt="Sarawak x Singapore AI hackathon" />
-        <div class="photo-overlay">Sarawak × Singapore AI Collaboration</div>
+      <!-- Row 2 — scrolls right -->
+      <div class="marquee-row">
+        <div class="marquee-track scroll-right">
+          <!-- set A -->
+          <div class="photo-card"><img src="uploads/community-event-audience.png" alt="Community talk" /><div class="photo-overlay">Live Learning · Community Talk</div></div>
+          <div class="photo-card"><img src="uploads/ev-cafe-group.png" alt="Community café meetup" /><div class="photo-overlay">Community Café Meetup</div></div>
+          <div class="photo-card"><img src="uploads/ev-hackathon-duo.png" alt="Hackathon participants" /><div class="photo-overlay">AI Hackathon · In Action</div></div>
+          <div class="photo-card"><img src="uploads/ev-innotribe.png" alt="Innotribe event" /><div class="photo-overlay">Innotribe · Singapore Fintech Festival</div></div>
+          <div class="photo-card"><img src="uploads/ev-hackathon-team.png" alt="Hackathon team" /><div class="photo-overlay">AI Hackathon · Team Session</div></div>
+          <div class="photo-card"><img src="uploads/ev-sarawak.png" alt="Sarawak collaboration" /><div class="photo-overlay">Sarawak × Singapore Collaboration</div></div>
+          <div class="photo-card"><img src="uploads/community-event-cafe.png" alt="Café event" /><div class="photo-overlay">Intimate Meetup · Café Event</div></div>
+          <div class="photo-card"><img src="uploads/ev-mall-group.png" alt="Casual community meetup" /><div class="photo-overlay">Casual Meetup · Community Lunch</div></div>
+          <!-- set B (duplicate for seamless loop) -->
+          <div class="photo-card"><img src="uploads/community-event-audience.png" alt="Community talk" /><div class="photo-overlay">Live Learning · Community Talk</div></div>
+          <div class="photo-card"><img src="uploads/ev-cafe-group.png" alt="Community café meetup" /><div class="photo-overlay">Community Café Meetup</div></div>
+          <div class="photo-card"><img src="uploads/ev-hackathon-duo.png" alt="Hackathon participants" /><div class="photo-overlay">AI Hackathon · In Action</div></div>
+          <div class="photo-card"><img src="uploads/ev-innotribe.png" alt="Innotribe event" /><div class="photo-overlay">Innotribe · Singapore Fintech Festival</div></div>
+          <div class="photo-card"><img src="uploads/ev-hackathon-team.png" alt="Hackathon team" /><div class="photo-overlay">AI Hackathon · Team Session</div></div>
+          <div class="photo-card"><img src="uploads/ev-sarawak.png" alt="Sarawak collaboration" /><div class="photo-overlay">Sarawak × Singapore Collaboration</div></div>
+          <div class="photo-card"><img src="uploads/community-event-cafe.png" alt="Café event" /><div class="photo-overlay">Intimate Meetup · Café Event</div></div>
+          <div class="photo-card"><img src="uploads/ev-mall-group.png" alt="Casual community meetup" /><div class="photo-overlay">Casual Meetup · Community Lunch</div></div>
+        </div>
       </div>
     </div>
   </div>
