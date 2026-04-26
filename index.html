@@ -526,18 +526,11 @@
       letter-spacing: -0.02em;
       margin-top: 0.5rem;
     }
-    .photos-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 1rem;
-      height: 420px;
-    }
-    .photos-grid-bottom {
+    .photos-mosaic {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      height: 280px;
-      margin-top: 1rem;
+      grid-template-rows: 280px 260px;
+      gap: 0.75rem;
     }
     .photo-card {
       border-radius: var(--radius);
@@ -557,26 +550,20 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(transparent, rgba(27,43,75,0.8));
+      background: linear-gradient(transparent, rgba(27,43,75,0.82));
       color: rgba(255,255,255,0.9);
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       font-weight: 600;
       letter-spacing: 0.04em;
       padding: 1.5rem 1rem 0.85rem;
     }
-    .photos-right {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .photos-right .photo-card {
-      flex: 1;
-    }
 
-    @media (max-width: 768px) {
-      .photos-grid { grid-template-columns: 1fr; height: auto; }
-      .photos-grid-bottom { grid-template-columns: 1fr; height: auto; }
+    @media (max-width: 900px) {
+      .photos-mosaic { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
       .photo-card { height: 220px; }
+    }
+    @media (max-width: 600px) {
+      .photos-mosaic { grid-template-columns: 1fr; }
       .hero-event-photo { display: none; }
     }
 
@@ -1023,26 +1010,18 @@
       <span class="label label-coral">Community in Action</span>
       <h2 class="photos-strip-title">Real events. Real people. Real learning.</h2>
     </div>
-    <div class="photos-grid fade-up">
-      <div class="photo-card photo-card-large">
-        <img src="uploads/DSC09401.jpg" alt="Cowork SG community workshop" />
-        <div class="photo-overlay">Community Workshop · Singapore</div>
-      </div>
-      <div class="photos-right">
-        <div class="photo-card">
-          <img src="uploads/Wanwei Luxury Update.png" alt="Cowork SG community members" />
-          <div class="photo-overlay">Cast Your First InkSpell · AI Event</div>
-        </div>
-        <div class="photo-card">
-          <img src="uploads/Screenshot 2026-04-26 at 8.22.11 PM.png" alt="Sarawak x Singapore AI hackathon" />
-          <div class="photo-overlay">Sarawak × Singapore AI Collaboration</div>
-        </div>
-      </div>
-    </div>
-    <div class="photos-grid-bottom fade-up">
+    <div class="photos-mosaic fade-up">
       <div class="photo-card">
         <img src="uploads/community-event-group.png" alt="Cowork SG community group photo" />
         <div class="photo-overlay">Community Meetup · Q&amp;A Session</div>
+      </div>
+      <div class="photo-card">
+        <img src="uploads/DSC09401.jpg" alt="Cowork SG community workshop" />
+        <div class="photo-overlay">Community Workshop · Singapore</div>
+      </div>
+      <div class="photo-card">
+        <img src="uploads/Wanwei Luxury Update.png" alt="Cast Your First InkSpell AI event" />
+        <div class="photo-overlay">Cast Your First InkSpell · AI Event</div>
       </div>
       <div class="photo-card">
         <img src="uploads/community-event-audience.png" alt="Cowork SG community learning session" />
@@ -1051,6 +1030,10 @@
       <div class="photo-card">
         <img src="uploads/community-event-cafe.png" alt="Cowork SG community café event" />
         <div class="photo-overlay">Intimate Meetup · Café Event</div>
+      </div>
+      <div class="photo-card">
+        <img src="uploads/Screenshot 2026-04-26 at 8.22.11 PM.png" alt="Sarawak x Singapore AI hackathon" />
+        <div class="photo-overlay">Sarawak × Singapore AI Collaboration</div>
       </div>
     </div>
   </div>
