@@ -217,8 +217,16 @@ hr { border: none; border-top: 1px solid var(--border); margin: 0; }
 }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+/* ── GUIDES GRID ── */
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
+  .guides-grid { grid-template-columns: 1fr; }
   .nav-mobile-toggle { display: flex; }
   .nav-links {
     display: none;
