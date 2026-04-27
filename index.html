@@ -968,7 +968,10 @@
           <img src="uploads/ev-smu-group.jpg" alt="Cowork SG community event" />
           <span class="hero-photo-caption">Cowork SG Community — live in Singapore</span>
         </div>
-        <div class="hero-trust fade-up">
+      </div>
+
+      <div class="fade-up">
+        <div class="hero-trust" style="margin-bottom:1.25rem;">
           <div class="trust-faces">
             <div class="trust-face" style="background:var(--coral)">S</div>
             <div class="trust-face" style="background:var(--orange-dark)">M</div>
@@ -978,9 +981,7 @@
           </div>
           <p class="trust-text"><strong>Consultants, founders &amp; SME owners</strong><br />learning AI the practical way</p>
         </div>
-      </div>
-
-      <div class="hero-card fade-up">
+        <div class="hero-card">
         <div class="hero-card-label">What the community gets</div>
         <div class="hero-card-item">
           <div class="hc-icon" style="background:rgba(232,97,74,0.15)">📄</div>
@@ -1010,7 +1011,8 @@
             <p>Prepare for Claude certifications together with like-minded professionals</p>
           </div>
         </div>
-      </div>
+        </div><!-- /hero-card -->
+      </div><!-- /right col wrapper -->
     </div>
   </div>
 </section>
@@ -1133,6 +1135,64 @@
     </div>
   </div>
 </section>
+
+
+<!-- EVENTS SECTION -->
+<section class="events-section" id="events">
+  <div class="container">
+    <div class="blog-header fade-up">
+      <div>
+        <span class="label label-coral">Community Events</span>
+        <h2>Events</h2>
+      </div>
+    </div>
+    <div class="events-grid fade-up">
+
+      <!-- UPCOMING EVENT -->
+      <div class="event-card event-card--upcoming">
+        <div class="event-card-badge">Upcoming</div>
+        <div class="event-card-body">
+          <h3>The New AI Natives Edition</h3>
+          <p>Celebrating experienced professionals from various industries who built AI agents using Claude Co-Work in a single day — no coding knowledge needed. Features agent showcases, networking, and live demos.</p>
+          <div class="event-meta">
+            <span class="event-meta-item">📍 Singapore</span>
+            <span class="event-meta-item">🎟 Free · Limited seats</span>
+          </div>
+          <a href="https://lu.ma/e9qp5vsv" target="_blank" rel="noopener" class="btn btn-coral" style="margin-top:1.25rem;display:inline-block">Register on Luma →</a>
+        </div>
+      </div>
+
+      <!-- PAST EVENT -->
+      <div class="event-card event-card--past">
+        <div class="event-card-badge event-card-badge--past">Past Event</div>
+        <div class="event-card-body">
+          <h3>AIGents of Change: Singapore's AI Showcase for Experienced Non-techies</h3>
+          <p>A community showcase where experienced, non-technical professionals presented AI agents they built using Claude Cowork in a single day — no coding required. Hosted at Singapore Management University.</p>
+          <div class="event-meta">
+            <span class="event-meta-item">📅 16 April 2026</span>
+            <span class="event-meta-item">📍 SMU, Singapore</span>
+          </div>
+          <a href="https://lu.ma/ignklb8h" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:1.25rem;display:inline-block">View on Luma →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+  .events-section { padding: 5rem 0; background: var(--surface); }
+  .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; margin-top: 2.5rem; }
+  .event-card { background: white; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+  .event-card--upcoming { border-color: var(--coral); }
+  .event-card-badge { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.45rem 1rem; background: var(--coral); color: white; }
+  .event-card-badge--past { background: var(--surface-2); color: var(--ink-3); }
+  .event-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+  .event-card-body h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; line-height: 1.35; }
+  .event-card-body p { font-size: 0.92rem; color: var(--ink-2); line-height: 1.7; margin-bottom: 1rem; }
+  .event-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+  .event-meta-item { font-size: 0.8rem; color: var(--ink-3); font-weight: 500; }
+  @media (max-width: 640px) { .events-grid { grid-template-columns: 1fr; } }
+</style>
 
 
 <!-- BLOG SECTION -->
