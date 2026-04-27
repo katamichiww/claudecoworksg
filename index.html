@@ -1639,5 +1639,31 @@
 </footer>
 
 <script src="nav.js"></script>
+<script>
+if (typeof navigator !== 'undefined' && 'modelContext' in navigator) {
+  navigator.modelContext.provideContext({
+    tools: [
+      {
+        name: "get-site-index",
+        description: "Get a structured index of all guides and resources on Cowork SG — the Singapore AI community for non-technical professionals.",
+        inputSchema: { type: "object", properties: {} },
+        execute: async () => {
+          const res = await fetch('/llms.txt');
+          return await res.text();
+        }
+      },
+      {
+        name: "get-blog-posts",
+        description: "List all blog posts and articles published on Cowork SG about Claude AI, Claude Code, and Claude Cowork for Singapore professionals.",
+        inputSchema: { type: "object", properties: {} },
+        execute: async () => {
+          const res = await fetch('/sitemap.xml');
+          return await res.text();
+        }
+      }
+    ]
+  });
+}
+</script>
 </body>
 </html>

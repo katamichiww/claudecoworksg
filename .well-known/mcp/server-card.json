@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "server": {
+    "name": "Cowork SG",
+    "version": "1.0.0",
+    "description": "AI community guides and resources for non-technical professionals in Singapore — Claude AI, Claude Code, and Claude Cowork."
+  },
+  "endpoint": "https://claudecowork.sg",
+  "transport": "http",
+  "capabilities": {
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    }
+  },
+  "resources": [
+    {
+      "uri": "https://claudecowork.sg/llms.txt",
+      "name": "Site content index",
+      "description": "Structured index of all guides and resources on Cowork SG",
+      "mimeType": "text/plain"
+    },
+    {
+      "uri": "https://claudecowork.sg/sitemap.xml",
+      "name": "Sitemap",
+      "description": "XML sitemap listing all pages on claudecowork.sg",
+      "mimeType": "application/xml"
+    }
+  ]
+}

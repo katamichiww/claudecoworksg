@@ -1,0 +1,21 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://claudecowork.sg/",
+      "service-doc": [
+        {
+          "href": "https://claudecowork.sg/llms.txt",
+          "type": "text/plain",
+          "title": "Cowork SG content index for AI agents"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://claudecowork.sg/sitemap.xml",
+          "type": "application/xml",
+          "title": "Sitemap"
+        }
+      ]
+    }
+  ]
+}

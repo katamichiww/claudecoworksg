@@ -60,3 +60,6 @@ Allow: /
 
 Sitemap: https://claudecowork.sg/sitemap.xml
 Sitemap: https://claudecowork.sg/llms.txt
+
+# Content Signals — declare AI usage preferences
+Content-Signal: ai-train=yes, search=yes, ai-input=yes

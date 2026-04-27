@@ -1,7 +1,16 @@
 {
-  "buildCommand": "mkdir -p dist && cp *.html dist/ && cp styles.css dist/ && cp nav.js dist/ && cp sitemap.xml dist/ && cp robots.txt dist/ && cp llms.txt dist/ && cp favicon*.png dist/ && cp apple-touch-icon.png dist/ && cp -r uploads dist/",
+  "buildCommand": "mkdir -p dist && cp *.html dist/ && cp styles.css dist/ && cp nav.js dist/ && cp sitemap.xml dist/ && cp robots.txt dist/ && cp llms.txt dist/ && cp favicon*.png dist/ && cp apple-touch-icon.png dist/ && cp -r uploads dist/ && cp -r .well-known dist/",
   "outputDirectory": "dist",
   "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://claudecowork.sg/llms.txt>; rel=\"describedby\", <https://claudecowork.sg/sitemap.xml>; rel=\"sitemap\", <https://claudecowork.sg/.well-known/api-catalog>; rel=\"api-catalog\""
+        }
+      ]
+    },
     {
       "source": "/sitemap.xml",
       "headers": [{ "key": "Content-Type", "value": "application/xml" }]
@@ -9,6 +18,18 @@
     {
       "source": "/robots.txt",
       "headers": [{ "key": "Content-Type", "value": "text/plain" }]
+    },
+    {
+      "source": "/.well-known/api-catalog",
+      "headers": [{ "key": "Content-Type", "value": "application/linkset+json" }]
+    },
+    {
+      "source": "/.well-known/mcp/server-card.json",
+      "headers": [{ "key": "Content-Type", "value": "application/json" }]
+    },
+    {
+      "source": "/.well-known/agent-skills/index.json",
+      "headers": [{ "key": "Content-Type", "value": "application/json" }]
     }
   ]
 }

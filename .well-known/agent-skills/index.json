@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agentskills.io/schemas/v0.2.0/index.json",
+  "skills": [
+    {
+      "name": "cowork-sg-guides",
+      "type": "information",
+      "description": "Access practical AI guides for non-technical Singapore professionals — covering Claude AI, Claude Code, and Claude Cowork. Written by practitioners, jargon-free.",
+      "url": "https://claudecowork.sg/llms.txt",
+      "sha256": "5586109ce175f7db949a6c1ec5e85034ae50b4f46c2a19ebd3ba8188e8a32828"
+    },
+    {
+      "name": "cowork-sg-blog",
+      "type": "information",
+      "description": "Read how-to blog posts and workflow guides published by Cowork SG — practical AI content for non-technical professionals in Singapore.",
+      "url": "https://claudecowork.sg/blog.html",
+      "sha256": ""
+    }
+  ]
+}
