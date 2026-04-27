@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Claude Architect Exam Decoded: 5 Domains That Matter | Cowork SG</title>
+  <meta name="description" content="Anthropic dropped a Claude Certified Architect exam. Here's the real breakdown of all 5 domains and what actually matters for passing it." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://claudecowork.sg/blog-claude-architect-exam.html" />
+  <meta property="og:title" content="The Claude Architect Exam Decoded: 5 Domains That Matter | Cowork SG" />
+  <meta property="og:description" content="Anthropic dropped a Claude Certified Architect exam. Here's the real breakdown of all 5 domains and what actually matters for passing it." />
+  <meta property="og:image" content="https://claudecowork.sg/uploads/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://claudecowork.sg/uploads/og-image.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .blog-hero {
+      background: var(--navy);
+      padding: 5rem 2rem 4rem;
+      color: white;
+    }
+    .blog-hero-inner { max-width: 820px; margin: 0 auto; }
+    .blog-hero .label { color: var(--coral); margin-bottom: 1.25rem; }
+    .blog-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .blog-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.55);
+      flex-wrap: wrap;
+    }
+    .blog-hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+
+    .blog-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+    .blog-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: 1.5rem;
+    }
+    .blog-body h2 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 2.5rem 0 1rem;
+    }
+    .blog-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 2rem 0 0.75rem;
+    }
+    .blog-body ul, .blog-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .blog-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: 0.5rem;
+    }
+    .blog-callout {
+      background: var(--surface);
+      border-left: 4px solid var(--coral);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .blog-callout p { margin: 0; font-size: 0.97rem; }
+    .domain-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.93rem;
+    }
+    .domain-table th {
+      background: var(--navy);
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .domain-table th:first-child { border-radius: 6px 0 0 0; }
+    .domain-table th:last-child { border-radius: 0 6px 0 0; }
+    .domain-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--ink-2); }
+    .domain-table tr:last-child td { border-bottom: none; }
+    .domain-table tr:nth-child(even) td { background: var(--surface); }
+    .domain-weight { font-weight: 700; color: var(--coral); }
+    .antipattern-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .antipattern-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .antipattern-card p { margin: 0; font-size: 0.97rem; }
+    .blog-code {
+      background: var(--navy-dark);
+      color: #E8F0FF;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .blog-cta-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .blog-cta-box h3 { font-family: var(--serif); font-size: 1.4rem; color: white; margin-bottom: 0.75rem; }
+    .blog-cta-box p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .blog-back { margin-bottom: 2.5rem; }
+    .blog-back a { font-size: 0.88rem; color: var(--coral); font-weight: 600; }
+    @media (max-width: 768px) {
+      .blog-hero { padding: 3.5rem 1.25rem 2.5rem; }
+      .blog-body { padding: 2.5rem 1.25rem 4rem; }
+      .domain-table { font-size: 0.82rem; }
+      .domain-table td, .domain-table th { padding: 0.6rem 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="uploads/cowork-sg-logo.png" alt="Cowork SG" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#blog" class="active">Blog</a></li>
+        <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free →</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <p class="label label-coral">Claude Code · Certification · Agents</p>
+      <h1>The Claude Architect Exam Decoded: 5 Domains That Matter</h1>
+      <div class="blog-hero-meta">
+        <span>Wan Wei · Cowork SG</span>
+        <span>27 Apr 2026</span>
+        <span>~9 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="blog-body">
+    <div class="blog-back"><a href="index.html#blog">← Back to all posts</a></div>
+
+    <p>
+      Anthropic just made it official: there's now a real exam that says you actually know what you're doing in Claude Code. Pass or fail. No participation trophies — and I am currently studying for the exam!
+    </p>
+    <p>
+      It's called the <strong>Claude Certified Architect</strong>, and after going through the full 40-page exam guide myself (yes, with my own eyes, not an LLM summary), I can tell you it's not fluff. I've also talked to many sempais who have passed the exams, and here are the tips they gave.
+    </p>
+    <p>
+      The following wisdom is structured around five domains that, honestly, even if you never sit the exam, will make you dangerously good at Claude Code if you master them.
+    </p>
+    <p>
+      So let's break down what actually matters — and where most people get it wrong.
+    </p>
+
+    <h2>The 5 Domains (and Why the Weights Matter)</h2>
+    <p>Here's how the exam splits the points:</p>
+
+    <table class="domain-table">
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Agent architecture</td><td><span class="domain-weight">27%</span></td></tr>
+        <tr><td>Claude Code configuration</td><td><span class="domain-weight">20%</span></td></tr>
+        <tr><td>Tool and MCP integration</td><td><span class="domain-weight">18%</span></td></tr>
+        <tr><td>Prompt engineering</td><td>split with ↓</td></tr>
+        <tr><td>Context management and reliability</td><td>remaining %</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      If you only have time to study one thing, study <strong>agent architecture</strong>. It's the heaviest section for a reason — it's how Claude actually thinks, coordinates, and respects rules you set. Everything else builds on top of it.
+    </p>
+
+    <div class="blog-callout">
+      <p>The thing most people miss: this isn't a vibes-based "know your tools" exam. The scenarios are specific. They'll ask you what to do when an agent skips a function call 12% of the time in production. That's a real business problem, not a textbook one.</p>
+    </div>
+
+    <h2>The Agentic Loop Is the Engine — Learn It Cold</h2>
+    <p>
+      Every single time you run Claude Code, the SDK, or anything built on Claude, the same loop is running underneath:
+    </p>
+    <ol>
+      <li>Your code sends a request to Claude.</li>
+      <li>Claude responds with a <code>stop_reason</code>.</li>
+      <li>If it says <code>tool_use</code>, you run the tool and feed the result back.</li>
+      <li>If it says <code>end_turn</code>, Claude is done.</li>
+    </ol>
+    <p>
+      That's it. That's the whole engine.
+    </p>
+    <p>The exam guide flags three classic anti-patterns — and they're worth burning into your brain:</p>
+
+    <div class="antipattern-card">
+      <div class="antipattern-icon">✗</div>
+      <p><strong>Don't read Claude's text</strong> looking for "I'm done" or "task complete." It's unreliable and breaks constantly.</p>
+    </div>
+    <div class="antipattern-card">
+      <div class="antipattern-icon">✗</div>
+      <p><strong>Don't hard-cap loops</strong> at some arbitrary number like 10. You might cut off work that genuinely needed 11 steps.</p>
+    </div>
+    <div class="antipattern-card">
+      <div class="antipattern-icon">✗</div>
+      <p><strong>Don't guess from the response text.</strong> There's a <code>stop_reason</code> field. Use it. That's literally what it's there for.</p>
+    </div>
+
+    <p>
+      Once you internalize this, multi-agent setups make way more sense — because now you understand what each sub-agent is actually doing in its own little loop.
+    </p>
+
+    <h2>Sub-Agents Don't Talk to Each Other (Yet)</h2>
+    <p>
+      Here's a concept that trips people up: when you spawn multiple sub-agents from a main coordinator, <strong>they don't share memory</strong>. Sub-agent A has zero clue what sub-agent B is doing. Each one has its own context window, its own world, and the main agent stitches it all together at the end.
+    </p>
+    <p>
+      The newer <strong>agent teams</strong> feature was specifically designed to fix this — it's basically giving each agent an email inbox so they can ping each other, see who's blocked, and actually collaborate. But by default? They're working in parallel silos.
+    </p>
+    <p>
+      The most common mistake here isn't technical, it's managerial. The coordinator agent breaks tasks down too narrowly. Tell it "research AI in creative industries" and it might spawn three sub-agents that all only look at visual arts — completely missing music, film, writing, and games.
+    </p>
+
+    <div class="blog-callout">
+      <p><strong>The fix:</strong> give the coordinator broad goals, not narrow checklists. Trust the sub-agents to figure out the breakdown.</p>
+    </div>
+
+    <p>
+      I tested this in Warp with a prompt like: "research the impact of AI on content creation by spawning three sub-agents in parallel — video, written, audio. Each should search the web and return a three-bullet summary." Broad assignment, narrow execution. All three came back, the main agent synthesised, done. That's the pattern.
+    </p>
+    <p>
+      If you want to play with these patterns hands-on without the exam pressure, the <a href="https://anchrlabs.com/claude-code-non-technical/claude-code-without-coding/" target="_blank" rel="noopener">Claude Code without coding guide</a> walks through this kind of orchestration in a way that doesn't assume you've been writing Python for 10 years.
+    </p>
+
+    <h2>Prompts Are Suggestions. Hooks Are Laws.</h2>
+    <p>
+      This might be the single most important distinction in the entire exam guide.
+    </p>
+    <p>
+      A <strong>prompt</strong> is best-effort. You tell Claude "always verify the customer before processing a refund" and it'll listen… most of the time. But the guide gives a real production scenario where 12% of the time, the agent just skipped the verification step. From a business standpoint, that's a fireable bug — you're refunding the wrong people.
+    </p>
+    <p>
+      A <strong>hook</strong> is a script that runs automatically before or after an action, and it can flat-out block Claude from doing something unless a condition is met. Not 99%. Not 99.9%. <strong>100%.</strong>
+    </p>
+    <p>Use them like this:</p>
+    <ul>
+      <li><strong>Prompts</strong> → style, tone, formatting, anything where 90% compliance is fine</li>
+      <li><strong>Hooks</strong> → compliance, financial actions, security, anything where one failure is catastrophic</li>
+    </ul>
+    <p>
+      The mistake I see all the time? People try to prompt-engineer their way out of a hook problem. They iterate on the prompt 5,000 times trying to get to 100%. It doesn't work. Some problems need code-level enforcement, full stop.
+    </p>
+    <p>
+      Quick tip: if you pop into your terminal and run <code>/hooks</code>, you'll see every hook available. Or ask the Claude Code guide agent whether your use case actually needs a hook or just a better prompt.
+    </p>
+
+    <h2>Tool Descriptions Are Where Money Leaks</h2>
+    <p>
+      Here's the silent killer: when you give Claude multiple tools with vague, overlapping descriptions, it picks the wrong one. A lot.
+    </p>
+    <p>
+      Imagine two tools — one "retrieves customer information," another "retrieves order details." Sounds clear to you. To Claude? Ambiguous. It'll guess. Sometimes wrong. Sometimes three times wrong before it lands on the right one.
+    </p>
+    <p>
+      And here's the catch: <strong>you often don't see the failures.</strong> You see the final correct output and assume it worked clean. But under the hood, it burned through your tokens trying tool A, then B, then back to A. Your bill shows up at the end of the month and you wonder where the money went.
+    </p>
+    <p>
+      Token efficiency isn't just about prompts being shorter. It's about tools picking right the <strong>first</strong> time. Write tool descriptions like you're onboarding a new hire — assume zero context, be obnoxiously specific about when to use this tool versus that one.
+    </p>
+    <p>
+      This is the kind of detail that separates people who use Claude from people who <a href="https://anchrlabs.com/claude-code-non-technical/claude-code-for-business-owners/" target="_blank" rel="noopener">actually run it as a business tool</a>.
+    </p>
+
+    <h2>What to Do Next</h2>
+    <p>
+      If you're going for the cert, start with <strong>agent architecture</strong>. It's 27% of the exam and the foundation for everything else. If you're not going for the cert but want to get sharper, pick the one domain you're weakest in and spend a weekend on it.
+    </p>
+    <p>
+      And if you're brand new to Claude Code and this whole loop-and-hooks thing sounds like another language — start with the <a href="https://anchrlabs.com/claude-code-non-technical/claude-code-setup-beginners/" target="_blank" rel="noopener">Claude Code setup for beginners guide</a> before touching the exam material. Trying to study certification content with no foundation is how people burn out in week one.
+    </p>
+    <p>
+      The exam isn't the goal. <strong>Becoming someone who actually ships with this stuff is.</strong> The cert is just proof — and the bonus.
+    </p>
+
+    <div class="blog-cta-box">
+      <h3>Join the Claude Architect Exam Study Group</h3>
+      <p>Interested in studying together? Join the Cowork SG community on WhatsApp and send a message — we're putting together a study group right now.</p>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-orange" style="color:white">Join Cowork SG Free →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="uploads/cowork-sg-logo-dark.png" alt="Cowork SG" /></div>
+          <p>Singapore's free AI community for professionals who want to actually use Claude — not just talk about it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Posts</h4>
+          <ul>
+            <li><a href="blog-claude-architect-exam.html">Claude Architect Exam</a></li>
+            <li><a href="blog-claude-prompting-outcome-first.html">Outcome-First Prompting</a></li>
+            <li><a href="blog-claude-whatsapp.html">Claude + WhatsApp</a></li>
+            <li><a href="blog-claude-cowork-capabilities.html">7 Claude Capabilities</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Cowork SG. Not-for-profit community. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>
