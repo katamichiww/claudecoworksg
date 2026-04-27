@@ -1,0 +1,48 @@
+# Cowork SG
+
+> A free, not-for-profit AI community for non-technical professionals in Singapore who use Claude and other AI tools.
+
+Cowork SG (claudecowork.sg) is a community website run by non-technical practitioners for non-technical practitioners. It publishes practical, jargon-free guides on using Claude AI, Claude Cowork, and Claude Code — with a focus on Singapore professionals including consultants, SME owners, founders, and corporate teams. The community also operates a free WhatsApp group and runs live events in Singapore.
+
+The site is tool-agnostic and not affiliated with Anthropic. All content is free.
+
+## Core Pages
+
+- [Home](https://claudecowork.sg/): Community hub with guides, events, and resources for non-technical Singapore professionals using AI tools.
+- [About](https://claudecowork.sg/about.html): Background on Cowork SG, its not-for-profit mission, and its community of non-technical AI practitioners in Singapore.
+- [Blog](https://claudecowork.sg/blog.html): All published blog posts — practical how-to guides and workflow articles written by and for non-technical professionals.
+
+## Claude Singapore Guides
+
+- [Claude AI Singapore: Complete Guide](https://claudecowork.sg/claude-singapore-guide.html): Everything Singapore professionals need to know about Claude AI — what it is, how it compares to ChatGPT, and how to start using it at work.
+- [How Singapore Professionals Use Claude AI](https://claudecowork.sg/claude-singapore-professionals.html): Real examples of how consultants, founders, and SME owners in Singapore use Claude AI to save 10+ hours per week.
+- [Claude vs ChatGPT in Singapore](https://claudecowork.sg/claude-singapore-vs-chatgpt.html): Honest side-by-side comparison of Claude and ChatGPT for Singapore professionals — writing quality, document handling, integrations, and pricing.
+
+## Claude Code Singapore Guides
+
+- [Claude Code Singapore: What It Is](https://claudecowork.sg/claude-code-singapore.html): What Claude Code is, what it can build, and whether non-technical Singapore professionals should try it.
+- [Claude Code Singapore: Setup Guide](https://claudecowork.sg/claude-code-singapore-setup.html): Step-by-step installation and first-project guide for non-technical professionals in Singapore — from zero to working project.
+- [What Singapore Non-Techies Built With Claude Code](https://claudecowork.sg/claude-code-singapore-examples.html): Five real projects shipped by non-technical Singapore professionals using Claude Code, with no coding background.
+
+## Claude Cowork Singapore Guides
+
+- [Claude Cowork Singapore: What It Is](https://claudecowork.sg/claude-cowork-singapore.html): Overview of Claude Cowork for Singapore professionals — what it does, how it differs from Claude Chat, and key use cases.
+- [Claude Cowork Singapore: First Automated Workflow](https://claudecowork.sg/claude-cowork-singapore-workflows.html): Step-by-step guide to setting up your first scheduled automation in Claude Cowork — from global instructions to live workflow.
+- [Claude Cowork vs Claude Code in Singapore](https://claudecowork.sg/claude-cowork-vs-claude-code-singapore.html): Which Anthropic tool is right for Singapore professionals — Claude Cowork or Claude Code? Decision guide with side-by-side comparison.
+
+## Blog Posts
+
+- [Claude Cowork for Beginners](https://claudecowork.sg/blog-claude-cowork-beginners.html): Beginner's guide to Claude Cowork — what it does, how it differs from Claude Chat and Claude Code, and where it shines for non-techies.
+- [AI Services Are the New Software](https://claudecowork.sg/blog-ai-services-new-software.html): Why selling AI-powered services beats selling AI software right now — and how non-techies are winning the arbitrage window.
+- [Shipped to Prod in 5 Hours With Claude Code](https://claudecowork.sg/blog-shipped-to-prod-5-hours.html): How a non-technical professional went from zero to production with Claude Code in 5 hours, including setup mistakes to avoid.
+- [Claude Architect Exam Decoded](https://claudecowork.sg/blog-claude-architect-exam.html): Breakdown of all 5 domains in Anthropic's Claude Certified Architect exam — agent architecture, hooks, tool descriptions, and more.
+- [Claude Cowork Prompting: Outcome-First](https://claudecowork.sg/blog-claude-prompting-outcome-first.html): The single biggest prompting shift for Claude Cowork users — outcome-first over task-first, with a reusable four-part template.
+- [Claude Cowork: 7 Capabilities to Know](https://claudecowork.sg/blog-claude-cowork-capabilities.html): Practical breakdown of Claude Cowork's core capabilities — file access, persistent memory, connectors, skills, and scheduled tasks.
+- [Claude AI + WhatsApp](https://claudecowork.sg/blog-claude-whatsapp.html): How to connect WhatsApp to Claude AI — sending messages, reading replies, and running personalised outreach from Claude desktop.
+
+## Contact & Community
+
+- Website: https://claudecowork.sg
+- Community: Free WhatsApp group at https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ
+- Location: Singapore
+- Author: Wan Wei Soh

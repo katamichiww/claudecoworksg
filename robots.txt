@@ -1,4 +1,62 @@
 User-agent: *
 Allow: /
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Google AI (Gemini / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI / ChatGPT Search
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Microsoft Bing / Copilot
+User-agent: Bingbot
+Allow: /
+
+# Amazon Alexa
+User-agent: Amazonbot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
 
 Sitemap: https://claudecowork.sg/sitemap.xml
+Sitemap: https://claudecowork.sg/llms.txt
