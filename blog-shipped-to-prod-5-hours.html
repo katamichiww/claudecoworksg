@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Shipped to Prod in 5 Hours With Claude Code (Non-Techie) | Cowork SG</title>
+  <meta name="description" content="How a non-techie went from zero to production with Claude Code in 5 hours — plus the setup mistakes nobody warns you about." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://claudecowork.sg/blog-shipped-to-prod-5-hours.html" />
+  <meta property="og:title" content="I Shipped to Prod in 5 Hours With Claude Code (Non-Techie) | Cowork SG" />
+  <meta property="og:description" content="How a non-techie went from zero to production with Claude Code in 5 hours — plus the setup mistakes nobody warns you about." />
+  <meta property="og:image" content="https://claudecowork.sg/uploads/blog-cover-shipped-to-prod.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://claudecowork.sg/uploads/blog-cover-shipped-to-prod.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .blog-hero {
+      background: var(--navy);
+      padding: 5rem 2rem 4rem;
+      color: white;
+    }
+    .blog-hero-inner { max-width: 820px; margin: 0 auto; }
+    .blog-hero .label { color: var(--coral); margin-bottom: 1.25rem; }
+    .blog-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .blog-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.55);
+      flex-wrap: wrap;
+    }
+
+    .blog-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+    .blog-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: 1.5rem;
+    }
+    .blog-body h2 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 2.5rem 0 1rem;
+    }
+    .blog-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 2rem 0 0.5rem;
+    }
+    .blog-body ul, .blog-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .blog-body li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: 0.5rem;
+    }
+    .blog-callout {
+      background: var(--surface);
+      border-left: 4px solid var(--coral);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .blog-callout p { margin: 0; font-size: 0.97rem; }
+    .hour-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .hour-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--coral);
+      flex-shrink: 0;
+      padding-top: 0.2rem;
+      min-width: 60px;
+    }
+    .hour-card p { margin: 0; font-size: 0.97rem; line-height: 1.7; color: var(--ink-2); }
+    .blog-cta-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .blog-cta-box h3 { font-family: var(--serif); font-size: 1.4rem; color: white; margin-bottom: 0.75rem; }
+    .blog-cta-box p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .blog-back { margin-bottom: 2.5rem; }
+    .blog-back a { font-size: 0.88rem; color: var(--coral); font-weight: 600; }
+    code {
+      background: var(--surface-2);
+      padding: 0.15em 0.45em;
+      border-radius: 4px;
+      font-size: 0.92em;
+      font-family: monospace;
+      color: var(--navy);
+    }
+    @media (max-width: 768px) {
+      .blog-hero { padding: 3.5rem 1.25rem 2.5rem; }
+      .blog-body { padding: 2.5rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="uploads/cowork-sg-logo.png" alt="Cowork SG" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#blog" class="active">Blog</a></li>
+        <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free →</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <p class="label label-coral">Claude Code · Non-Technical · Hackathon</p>
+      <h1>I Shipped to Prod in 5 Hours With Claude Code (Non-Techie)</h1>
+      <div class="blog-hero-meta">
+        <span>Wan Wei Soh · Cowork SG</span>
+        <span>27 Apr 2026</span>
+        <span>~9 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:820px;margin:0 auto;padding:0 1.25rem;">
+    <img src="uploads/blog-cover-shipped-to-prod.jpg" alt="Non-Technical. Real AI Agents. Live Showcase." style="width:100%;border-radius:12px;display:block;margin-bottom:0;" />
+  </div>
+
+  <div class="blog-body">
+    <div class="blog-back"><a href="index.html#blog">← Back to all posts</a></div>
+
+    <p>
+      Five hours. From "what's a CLI?" to a working product in production. No CS degree, no bootcamp, no "I've been coding since I was 12" backstory. Just me, a terminal I was scared of, and Claude Code.
+    </p>
+    <p>
+      If you've been watching tutorials and feeling like everyone skipped a chapter you didn't get — this one's for you.
+    </p>
+
+    <h2>The setup nobody actually walks you through</h2>
+    <p>
+      Most Claude Code tutorials start with "open your terminal" like that's a normal Tuesday for everyone. It isn't. So let me give you the real version.
+    </p>
+    <p>Here's what you actually need before you can do anything fun:</p>
+    <ul>
+      <li><strong>A Claude subscription</strong> — Pro is fine to start. Don't buy Max credits before you know if you'll use it.</li>
+      <li><strong>A terminal</strong> — PowerShell on Windows, Terminal on Mac. That's the black box where you'll type things.</li>
+      <li><strong>Git installed</strong> — this is the "undo button" for your code. Without it, when Claude makes a mess, you can't roll back.</li>
+      <li><strong>A GitHub account</strong> — free, takes 2 minutes, saves your work to the cloud so you don't lose everything if your laptop dies.</li>
+    </ul>
+    <p>
+      The funniest part? You can ask Claude Code itself to install Git for you. Just type <code>claude</code> in your terminal, hit enter, and ask it: <em>"can you install Git for me?"</em> It'll figure out the commands. If you get an error about admin permissions on Windows, right-click PowerShell and run it as administrator. Done.
+    </p>
+    <p>
+      This is the part that took me the longest to wrap my head around — Claude Code isn't an app you double-click. <strong>It lives inside your terminal.</strong> Every time you want to use it, you open the terminal and type <code>claude</code>. That's it.
+    </p>
+
+    <h2>Why a code editor changes everything</h2>
+    <p>
+      Here's where most non-techies give up: they stay in the terminal, can't see what's happening, and assume coding just feels confusing forever.
+    </p>
+    <p>It doesn't have to.</p>
+    <p>
+      Download <strong>Cursor</strong> (or VS Code if you want the OG). Open the folder you're working in. Now you can <em>see</em> every file Claude creates, every change it makes, every line of code on your screen — instead of squinting at terminal output.
+    </p>
+    <p>
+      This was the unlock for me. Suddenly I wasn't flying blind. I could watch Claude build something file by file, and when it broke, I could actually point at the broken thing and say "fix that."
+    </p>
+    <p>
+      If you've never touched a code editor in your life, that's totally fine. You don't need to understand the code. You just need to <strong>see it move</strong>. That's the difference between Claude Code and tools like the Claude desktop app — the desktop chat is great for thinking and planning, but Claude Code is where you actually ship.
+    </p>
+
+    <h2>The 5-hour sprint that taught me more than 5 months of tutorials</h2>
+    <p>
+      I went into a hackathon at Temasek Shophouse having never pushed anything to prod. Ever. I arrived at 7am — the official start was 7.30am. I was the first participant. The security guard was genuinely puzzled.
+    </p>
+    <p>
+      By lunch, I had a live product. Here's roughly how it went:
+    </p>
+
+    <div class="hour-card">
+      <span class="hour-label">Hour 1</span>
+      <p>Set up the folder, opened it in Cursor, ran <code>claude</code>, told it what I was building in plain English.</p>
+    </div>
+    <div class="hour-card">
+      <span class="hour-label">Hour 2</span>
+      <p>Watched it scaffold the whole thing. Said "yes" a lot when it asked permission to run commands. Said "no, redo this part" when it went off the rails.</p>
+    </div>
+    <div class="hour-card">
+      <span class="hour-label">Hour 3</span>
+      <p>Hit a wall. Asked the person next to me what a "spawn" was. Got humbled. Kept going. (Shoutout Sayyid — this was his 59th hackathon. That energy is contagious.)</p>
+    </div>
+    <div class="hour-card">
+      <span class="hour-label">Hour 4</span>
+      <p>Connected GitHub, pushed the code, deployed it.</p>
+    </div>
+    <div class="hour-card">
+      <span class="hour-label">Hour 5</span>
+      <p>It worked. In the real world. On the real internet. I almost cried.</p>
+    </div>
+
+    <p style="margin-top:1.5rem;">
+      The thing nobody tells you is that <strong>prompt-based coding is mostly about being clear, not being technical.</strong> If you can write a good brief for a designer or a VA, you can write a good prompt for Claude Code. The skill transfers.
+    </p>
+    <p>
+      What I couldn't have done alone: figure out the vocab. Words like CLI, repo, spawn, fork, prod, staging — these get fired at you constantly and nobody stops to define them. That's not your fault. That's the industry's fault.
+    </p>
+
+    <div class="blog-callout">
+      <p><strong>Quick glossary:</strong> CLI = the black box you type into. Repo = a folder for your code. Prod = the live version users see. Staging = the practice version. Spawn = starting a new process. That's it. That's the whole lesson.</p>
+    </div>
+
+    <h2>The dirty secret about "technical" work</h2>
+    <p>
+      A lot of what gets called "technical" is just <strong>vocabulary you haven't been taught yet.</strong>
+    </p>
+    <p>
+      Once you know the words, the wall comes down. And once the wall comes down, tools like Claude Code become genuinely accessible to anyone running a business, a team, or a side project. I've seen 55-year-olds build AI workflows from scratch and business owners ship internal tools they used to pay agencies $20k for.
+    </p>
+    <p>
+      The gap isn't intelligence. It's exposure. And exposure is fixable.
+    </p>
+    <p>
+      There's also something worth naming plainly: some techies deliberately use jargon as a moat. The jargon isn't incidental — it's the whole identity. That's elitism, it's annoying, and it actively pushes out the exact people who'd benefit most from being in the room. If you're on the receiving end of this: ignore it. Find safe spaces and attend those instead. There are enough good humans in this space — go find them.
+    </p>
+
+    <h2>What I'd do differently if I started over</h2>
+    <ul>
+      <li><strong>Don't read 10 tutorials. Pick one project and start.</strong> You'll learn more in 2 hours of breaking things than 2 weeks of YouTube.</li>
+      <li><strong>Use Git from minute one.</strong> Even if you don't understand it. It's your safety net.</li>
+      <li><strong>Sit next to someone who knows more than you</strong> — physically, virtually, doesn't matter. Watching someone work is worth 50 articles.</li>
+      <li><strong>Build something you actually want to use.</strong> Motivation is everything when you hit the wall at hour 3.</li>
+      <li><strong>Talk to Claude like a smart intern</strong>, not a search engine. Context matters. The more you tell it about what you're trying to do and why, the better it builds.</li>
+    </ul>
+
+    <h2>Hackathons beat tutorials — every time</h2>
+    <p>
+      If you're a non-techie trying to learn anything technical, hackathons beat courses, tutorials, and "watch me code" YouTube videos every time. Here's why:
+    </p>
+    <ul>
+      <li>You see what other people present — real projects, real problems, real shipped things.</li>
+      <li>You see HOW people build — not just the polished end result, but the messy middle.</li>
+      <li>Learning in a room full of people who actually enjoy what they're doing beats any structured curriculum. You absorb by osmosis and steal patterns from the person next to you.</li>
+    </ul>
+    <p>
+      I attended with Jess and Tracy from the Courage Chapter. Tracy is on Windows — her methods look completely different from mine, she was dealing with consoles and terminal stuff I'd never had to touch before. That's the other secret of hackathons: you see the edges of your own map.
+    </p>
+
+    <h2>Your next step</h2>
+    <p>
+      Stop watching. Open your terminal tonight. Type <code>claude</code>. Ask it to build the smallest possible version of something you actually want — a script that renames your files, a tiny website, a tool that scrapes one page. Anything.
+    </p>
+    <p>
+      The first time it works, something clicks that no tutorial can give you. You stop being someone who watches techies build things and start being someone who builds things.
+    </p>
+    <p>
+      That shift is worth way more than 5 hours.
+    </p>
+
+    <div class="blog-cta-box">
+      <h3>Come build with us</h3>
+      <p>Cowork SG is a free community where non-techies share what's actually working with Claude — no jargon, no gatekeeping. Join us on WhatsApp.</p>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-orange" style="color:white">Join Cowork SG Free →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="uploads/cowork-sg-logo-dark.png" alt="Cowork SG" /></div>
+          <p>Singapore's free AI community for professionals who want to actually use Claude — not just talk about it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Posts</h4>
+          <ul>
+            <li><a href="blog-shipped-to-prod-5-hours.html">Shipped to Prod in 5 Hours</a></li>
+            <li><a href="blog-claude-prompting-outcome-first.html">Outcome-First Prompting</a></li>
+            <li><a href="blog-claude-cowork-capabilities.html">7 Claude Capabilities</a></li>
+            <li><a href="blog-claude-whatsapp.html">Claude + WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Cowork SG. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>
