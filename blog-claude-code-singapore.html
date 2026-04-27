@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Code Singapore: What It Is and Why Non-Techies Are Using It | Cowork SG</title>
+  <meta name="description" content="Claude Code is Anthropic's most powerful AI tool — and Singapore non-techies are using it to build real products. Here's what it is, what it does, and whether it's right for you." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://claudecowork.sg/blog-claude-code-singapore.html" />
+  <meta property="og:title" content="Claude Code Singapore: What It Is and Why Non-Techies Are Using It | Cowork SG" />
+  <meta property="og:description" content="Claude Code is Anthropic's most powerful AI tool — and Singapore non-techies are using it to build real products. Here's what it is, what it does, and whether it's right for you." />
+  <meta property="og:image" content="https://claudecowork.sg/uploads/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .blog-hero { background: var(--navy); padding: 5rem 2rem 4rem; color: white; }
+    .blog-hero-inner { max-width: 820px; margin: 0 auto; }
+    .blog-hero .label { color: var(--coral); margin-bottom: 1.25rem; }
+    .blog-hero h1 { font-family: var(--serif); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; color: white; margin-bottom: 1.25rem; }
+    .blog-hero-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 0.83rem; color: rgba(255,255,255,0.55); flex-wrap: wrap; }
+    .blog-body { max-width: 820px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+    .blog-body p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-2); margin-bottom: 1.5rem; }
+    .blog-body h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 2.5rem 0 1rem; }
+    .blog-body ul, .blog-body ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .blog-body li { font-size: 1.05rem; line-height: 1.8; color: var(--ink-2); margin-bottom: 0.5rem; }
+    .blog-body a { color: var(--coral); font-weight: 600; }
+    .blog-callout { background: var(--surface); border-left: 4px solid var(--coral); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .blog-callout p { margin: 0; font-size: 0.97rem; }
+    .blog-cta-box { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: white; border-radius: 12px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+    .blog-cta-box h3 { font-family: var(--serif); font-size: 1.4rem; color: white; margin-bottom: 0.75rem; }
+    .blog-cta-box p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .blog-back { margin-bottom: 2.5rem; }
+    .blog-back a { font-size: 0.88rem; color: var(--coral); font-weight: 600; }
+    code { background: var(--surface-2); padding: 0.15em 0.45em; border-radius: 4px; font-size: 0.92em; font-family: monospace; color: var(--navy); }
+    .step-list { counter-reset: steps; list-style: none; padding: 0; margin: 1.5rem 0; }
+    .step-list li { counter-increment: steps; display: flex; gap: 1rem; margin-bottom: 1.25rem; font-size: 1.05rem; line-height: 1.8; color: var(--ink-2); }
+    .step-list li::before { content: counter(steps); background: var(--coral); color: white; font-weight: 700; font-size: 0.8rem; min-width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.25rem; }
+    .use-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin: 1.5rem 0; }
+    .use-case-card { border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.25rem; }
+    .use-case-card strong { display: block; font-size: 0.9rem; color: var(--navy); margin-bottom: 0.35rem; }
+    .use-case-card span { font-size: 0.85rem; color: var(--ink-2); line-height: 1.6; }
+    @media (max-width: 640px) { .use-case-grid { grid-template-columns: 1fr; } .blog-hero { padding: 3.5rem 1.25rem 2.5rem; } .blog-body { padding: 2.5rem 1.25rem 4rem; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="uploads/cowork-sg-logo.png" alt="Cowork SG" /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free →</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <p class="label label-coral">Claude Code Singapore · AI Tools · Non-Technical</p>
+      <h1>Claude Code Singapore: What It Is and Why Non-Techies Are Using It</h1>
+      <div class="blog-hero-meta">
+        <span>Wan Wei Soh · Cowork SG</span>
+        <span>27 Apr 2026</span>
+        <span>~8 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="blog-body">
+    <div class="blog-back"><a href="blog.html">← Back to all posts</a></div>
+
+    <p>Claude Code is the tool that most non-technical Singapore professionals dismiss too quickly. The name sounds like a developer tool. And technically, it is — it runs in your terminal and writes code. But a growing number of non-coders across Singapore are using it to ship real products, build internal tools, and automate workflows that would have cost them tens of thousands of dollars in developer fees just a year ago.</p>
+
+    <p>If you've heard the term and wondered whether it's actually for someone like you — a consultant, a founder, an SME owner with a specific problem you need solved — this post is the honest answer. We'll cover what Claude Code actually is, why it's caught the attention of the non-technical professional community here in Singapore, and how you can figure out whether it belongs in your toolkit.</p>
+
+    <h2>What Claude Code Actually Is</h2>
+
+    <p>Claude Code is Anthropic's agentic coding tool. "Agentic" means it doesn't just answer questions — it takes actions. It runs as a CLI (command-line interface), which means you open a terminal window on your Mac or PC, type a command, and you're talking directly to a very capable AI that can read your files, write code, execute that code, observe the results, and fix any errors it encounters — all without you having to intervene at each step.</p>
+
+    <p>Here's what that looks like in practice. You open Terminal on your Mac, navigate to a project folder, and type something like: "Build me a simple webpage that shows my consultancy services, includes a contact form, and looks professional." Claude Code reads your folder, asks a few clarifying questions if needed, then starts building. It creates the HTML, writes the CSS styling, adds the contact form logic, and when something doesn't work as expected, it diagnoses the problem and corrects it on its own.</p>
+
+    <p>You don't write a single line of code yourself. You direct. It builds. Think of it less like programming and more like briefing a very technically skilled contractor who happens to work at the speed of thought.</p>
+
+    <p>The key difference between Claude Code and the Claude you might already use in your browser is that Claude Code has <em>access to your computer</em>. It can read your local files, create new ones, run scripts, and interact with the file system directly. That's what makes it capable of producing real, working software rather than just code snippets you'd have to paste somewhere yourself.</p>
+
+    <h2>Why Singapore Professionals Are Paying Attention</h2>
+
+    <p>Singapore has a high density of consultants, agency owners, and SME founders who have very specific, solvable business problems — but not the budget or time to hire a developer to fix them. If you've ever received a quote of $15,000 to build a simple client portal, or been told a "basic automation script" will take six weeks and cost $8,000, you understand the gap that Claude Code is filling.</p>
+
+    <p>That gap used to be unbridgeable without technical co-founders, expensive contractors, or months of learning to code yourself. Claude Code has opened a window — not a magic door, but a real, workable window — where a determined non-technical professional can build a working web app, an internal dashboard, an automation script, or a client-facing tool in a weekend. Not always. Not without some friction. But it is genuinely happening, and it's happening with people who had no coding background six months ago.</p>
+
+    <p>The Cowork SG community is full of these stories. HR consultants who built their own proposal generators. Agency founders who automated weekly client reports. Career coaches who finally launched the website they'd been putting off for two years. The common thread is not technical skill — it's clarity about what they wanted to build and the willingness to sit with confusion for a few hours while the tool does its work.</p>
+
+    <p>For a detailed account of what this actually looks like end-to-end, see our post on <a href="blog-shipped-to-prod-5-hours.html">shipping to prod in 5 hours with Claude Code</a> — it walks through a real build from the first terminal command to a live, deployed product.</p>
+
+    <h2>What Claude Code Can Build</h2>
+
+    <p>The range is broader than most non-technical professionals expect. Here are the categories where we see the most traction in the Singapore professional community:</p>
+
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <strong>Client-facing web apps</strong>
+        <span>Landing pages, booking systems, lead capture tools — built clean, deployed live, and owned by you without a monthly Wix or Squarespace subscription.</span>
+      </div>
+      <div class="use-case-card">
+        <strong>Internal automation tools</strong>
+        <span>Scripts that process data, send emails, generate reports on a schedule, or move files between folders automatically every week.</span>
+      </div>
+      <div class="use-case-card">
+        <strong>Content systems</strong>
+        <span>Blog engines, newsletter formatting tools, social media post schedulers that pull from a shared document and post on a timer.</span>
+      </div>
+      <div class="use-case-card">
+        <strong>Data analysis pipelines</strong>
+        <span>Drop in a CSV export from your POS or CRM, get charts, plain-English summaries, and formatted PDF reports emailed to you automatically.</span>
+      </div>
+    </div>
+
+    <p>The common thread across all of these is that they're <em>specific</em>. Claude Code works best when you know exactly what problem you're solving. Vague requests produce vague results. The more clearly you can describe the input, the process, and the output you want, the better the tool performs. We cover this in depth in our guide on <a href="blog-claude-prompting-outcome-first.html">outcome-first prompting</a> — and the principles apply directly to Claude Code instructions too.</p>
+
+    <h2>The Honest Challenge: Setup</h2>
+
+    <p>There is one genuine barrier to entry for non-technical users, and it's worth being upfront about it: the initial setup requires you to use a terminal. On a Mac, that's the Terminal application. On Windows, it's the Command Prompt or PowerShell. Most people who have never used these tools find them intimidating the first time — they look like something from a 1990s film about hacking, and there's no friendly point-and-click interface to guide you.</p>
+
+    <p>The good news is that the setup process is well-documented and takes roughly 30 to 45 minutes for most people. You install Node.js (a free software package), then install Claude Code with a single command, then connect your Anthropic API key. That's it. Once you're past that threshold, the actual interaction with Claude Code feels much more natural — you're describing what you want in plain English, and Claude Code handles the technical execution.</p>
+
+    <p>But that first 30 minutes is where most non-technical users give up, usually because they hit a permission error or the terminal seems to hang and they're not sure if something is working. Our post on <a href="blog-shipped-to-prod-5-hours.html">shipping to prod in 5 hours</a> covers exactly what that setup looks like, including the moments of confusion and how to get through them. If setup is your barrier, start there.</p>
+
+    <h2>Claude Code vs Claude Cowork — Which One?</h2>
+
+    <p>This is a question we get often in the community, and the answer is simpler than it sounds. They're tools for different jobs.</p>
+
+    <p><strong>Claude Code</strong> is for building things. If you want to create a piece of software — a website, a script, an app, a tool — Claude Code is the right choice. It's a builder. It produces files, runs code, and ships working products.</p>
+
+    <p><strong>Claude Cowork</strong> is for automating your existing professional work. If you want to speed up how you write emails, structure documents, manage recurring tasks, process information, or communicate with clients — Claude Cowork is where you start. There's no terminal required. You interact through the browser, and the focus is on augmenting your day-to-day work rather than building new software.</p>
+
+    <p>For most non-technical Singapore professionals, the right sequence is: start with Claude Cowork, build confidence with AI tools in your existing workflow, and then explore Claude Code when you have a specific product or tool you want to build. If you haven't explored Cowork yet, our <a href="blog-claude-cowork-beginners.html">Claude Cowork for Beginners</a> guide is the right place to begin.</p>
+
+    <p>That said, these tools are not mutually exclusive. Many Cowork SG members use both — Cowork for daily workflow automation, Claude Code for the occasional build when they have a specific internal tool they need to create.</p>
+
+    <h2>Should You Try Claude Code?</h2>
+
+    <p>Honestly? It depends on where you are right now and what you're trying to do.</p>
+
+    <p>You should try Claude Code if: you have a specific product idea or internal tool you want to build, you can set aside 4–6 hours for setup and initial exploration, and you're comfortable sitting with confusion and uncertainty while you learn a new environment. The payoff — going from "I have an idea" to "I have a working product" in a single weekend — is real and significant for the right person.</p>
+
+    <p>You should start with Claude Cowork first if: you don't yet have a specific build in mind, you want to automate your working week rather than create new software, or you haven't yet used AI tools in a serious professional capacity. Get comfortable with the fundamentals of working with AI, understand what it's good at and where it needs guidance, and then layer in Claude Code when the moment is right.</p>
+
+    <p>For a broader view of how Claude fits into your professional toolkit in Singapore, see <a href="blog-claude-singapore-guide.html">our Claude Singapore guide</a> — it covers everything from basic usage to advanced builds in one place.</p>
+
+    <div class="blog-callout">
+      <p>The Cowork SG community has members at every stage — from their first Claude chat to building production apps with Claude Code. Wherever you're starting from, you're not starting alone.</p>
+    </div>
+
+    <p>The professionals in the Cowork SG community who have gotten the most out of Claude Code share one trait: they had a specific problem they were tired of not solving. They didn't set out to "learn AI" in the abstract — they had a thing they needed built, they committed to figuring it out, and Claude Code met them where they were.</p>
+
+    <p>If that sounds like you, the setup guide is waiting. If you're still figuring out what you'd build, the community is a good place to think it through.</p>
+
+    <div class="blog-cta-box">
+      <h3>Learn this with the community</h3>
+      <p>Cowork SG is where Singapore professionals share what's actually working with Claude — hands-on, no jargon, always free.</p>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-orange" style="color:white">Join Cowork SG Free →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="uploads/cowork-sg-logo-dark.png" alt="Cowork SG" /></div>
+          <p>Singapore's free AI community for professionals who want to actually use Claude — not just talk about it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">All Posts</a></li>
+            <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Posts</h4>
+          <ul>
+            <li><a href="blog-claude-cowork-beginners.html">Cowork for Beginners</a></li>
+            <li><a href="blog-shipped-to-prod-5-hours.html">Shipped to Prod in 5 Hours</a></li>
+            <li><a href="blog-claude-architect-exam.html">Claude Architect Exam</a></li>
+            <li><a href="blog-claude-prompting-outcome-first.html">Outcome-First Prompting</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Cowork SG. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="nav.js"></script>
+</body>
+</html>
