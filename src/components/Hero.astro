@@ -2,77 +2,80 @@
 ---
 
 <section class="relative overflow-hidden bg-navy py-20 md:py-28 lg:py-36 px-5">
-  <!-- Graph-paper grid texture -->
+  <!-- Grid texture -->
   <div class="grid-bg absolute inset-0 pointer-events-none"></div>
 
-  <!-- Giant anchor watermark -->
-  <div
-    class="absolute right-[-2rem] top-1/2 -translate-y-1/2 font-playfair italic text-[22rem] leading-none pointer-events-none select-none"
-    style="color: rgba(189,213,234,0.04);"
-    aria-hidden="true"
-  >
-    ⚓
+  <!-- Orbital watermark -->
+  <div class="absolute right-[-4rem] top-1/2 -translate-y-1/2 pointer-events-none select-none opacity-[0.04]" aria-hidden="true">
+    <svg width="480" height="480" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#FAFAFA" stroke-width="1.2" fill="none">
+        <ellipse cx="50" cy="50" rx="45" ry="18"/>
+        <ellipse cx="50" cy="50" rx="45" ry="18" transform="rotate(36 50 50)"/>
+        <ellipse cx="50" cy="50" rx="45" ry="18" transform="rotate(72 50 50)"/>
+        <ellipse cx="50" cy="50" rx="45" ry="18" transform="rotate(108 50 50)"/>
+        <ellipse cx="50" cy="50" rx="45" ry="18" transform="rotate(144 50 50)"/>
+      </g>
+    </svg>
   </div>
 
   <div class="relative max-w-4xl mx-auto">
     <!-- Eyebrow -->
     <div class="inline-flex items-center gap-2.5 mb-7">
-      <span class="w-2 h-2 rounded-full bg-terra animate-pulse"></span>
-      <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky">
-        Powered by ANCHR AI Labs
+      <span class="w-2 h-2 rounded-full bg-sea animate-pulse"></span>
+      <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky/70">
+        Practical AI Workflows · No Coding Required
       </span>
     </div>
 
-    <!-- Headline — Clash Display with Playfair italic accent -->
-    <h1 class="font-display font-semibold text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] tracking-tight text-salt mb-6">
-      Learn how professionals use<br class="hidden md:block" />
-      <span class="font-playfair italic text-sky">AI tools like Claude</span><br class="hidden md:block" />
-      to build real systems
+    <!-- Headline -->
+    <h1 class="font-display font-bold text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.05] tracking-tight text-salt mb-6">
+      AI for Non-Technical<br class="hidden md:block" />
+      Professionals —<br class="hidden md:block" />
+      <span class="font-display italic text-sky">No Coding, Just Results</span>
     </h1>
 
-    <!-- Body — DM Sans 800 at 50% opacity (brand spec) -->
+    <!-- Subheadline -->
     <p class="font-sans font-extrabold text-salt/50 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
-      Most people use AI tools. Operators build systems. Claude Cowork teaches non-technical professionals how to turn one-off prompts into repeatable workflows — using any AI tool in their stack.
+      Learn how to use AI tools like Claude, ChatGPT, and Gemini to build workflows that save time and generate real outcomes — no technical background needed.
     </p>
 
-    <!-- CTAs — pill buttons with decorative dot -->
+    <!-- CTAs -->
     <div class="flex flex-col sm:flex-row gap-4 mb-12">
       <a
-        href="/workshops"
+        href="/templates"
         class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-salt text-navy font-sans font-extrabold text-[17px] transition-transform hover:scale-[0.97]"
       >
         <span class="w-2.5 h-2.5 rounded-full bg-sea flex-shrink-0"></span>
-        Build your first AI system in 60 minutes
+        Build Your First AI Workflow
       </a>
       <a
         href="/blog"
         class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full border border-salt/20 text-salt font-sans font-bold text-[17px] transition-colors hover:border-sky/60 hover:text-sky"
       >
-        Read the blog →
+        Read the Blog →
       </a>
     </div>
 
-    <!-- Stats cards — from brand kit layout sample -->
+    <!-- Stats cards -->
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
       {[
         { label: 'AI Tools Covered', value: '5+' },
-        { label: 'Workflow Templates', value: '20+' },
-        { label: 'Daily Blog Updates', value: '✓' },
+        { label: 'Workflow Templates', value: '30+' },
+        { label: 'Use Cases', value: '10+' },
         { label: 'No Coding Required', value: '✓' },
       ].map(({ label, value }) => (
         <div
           class="rounded-xl p-4 border"
-          style="background: rgba(189,213,234,0.07); border-color: rgba(189,213,234,0.2);"
+          style="background: rgba(245,221,214,0.07); border-color: rgba(245,221,214,0.18);"
         >
-          <p class="font-mono text-[9px] tracking-[1px] uppercase text-sky/70 mb-1.5">{label}</p>
-          <p class="font-display font-semibold text-2xl text-sky leading-none">{value}</p>
+          <p class="font-mono text-[9px] tracking-[1px] uppercase text-sky/60 mb-1.5">{label}</p>
+          <p class="font-display font-bold text-2xl text-sky leading-none">{value}</p>
         </div>
       ))}
     </div>
 
-    <!-- Fine print -->
     <p class="mt-6 font-ui text-sm text-salt/30">
-      Tool-agnostic — Claude, ChatGPT, Gemini, and any AI in your stack.
+      Tool-agnostic — Claude, ChatGPT, Gemini, Perplexity, and any AI in your stack.
     </p>
   </div>
 </section>

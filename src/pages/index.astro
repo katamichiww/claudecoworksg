@@ -1,111 +1,85 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Ticker from '../components/Ticker.astro';
-import Hero from '../components/Hero.astro';
-import UseCaseCard from '../components/UseCaseCard.astro';
 import BlogCard from '../components/BlogCard.astro';
 import EmailCapture from '../components/EmailCapture.astro';
-import PoweredByAnchr from '../components/PoweredByAnchr.astro';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const recentPosts = allPosts
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3);
+  .slice(0, 6);
 
 function readingTime(body: string): number {
   return Math.max(1, Math.ceil(body.split(/\s+/).length / 200));
 }
-
-const useCases = [
-  {
-    icon: '📧',
-    title: 'Email & Comms Workflows',
-    description: 'Turn a single well-crafted prompt into a reusable template for client emails, follow-ups, and internal updates.',
-    time: '15 min to set up',
-  },
-  {
-    icon: '📊',
-    title: 'Report Generation',
-    description: 'Feed in raw data, get a structured executive summary — every time, in your format, at your standard.',
-    time: '30 min to automate',
-  },
-  {
-    icon: '🎯',
-    title: 'Content Repurposing',
-    description: 'One piece of content → blog post, LinkedIn update, email newsletter, social snippets. Systematically.',
-    time: '20 min to design',
-  },
-  {
-    icon: '🔍',
-    title: 'Research & Synthesis',
-    description: 'Replace 3-hour research sessions with a 20-minute structured prompt chain that returns exactly what you need.',
-    time: '45 min to build',
-  },
-  {
-    icon: '📋',
-    title: 'Meeting Prep & Notes',
-    description: 'From agenda to action items — a workflow that handles prep, captures key points, and writes the follow-up.',
-    time: '10 min to implement',
-  },
-  {
-    icon: '🚀',
-    title: 'Proposal & Pitch Decks',
-    description: "A system that takes your briefing notes and returns a first-draft proposal in your company's voice and structure.",
-    time: '60 min to design',
-  },
-];
 ---
 
-<BaseLayout title="Claude Cowork — Build real AI workflows. Powered by ANCHR AI Labs.">
+<BaseLayout
+  title="Cowork SG — Claude Code & AI Workflows for Non-Technical Professionals | claudecowork.sg"
+  description="Practical tutorials on Claude, Claude Code, and AI workflows for non-technical professionals. No coding background needed. New posts daily."
+>
 
-  <!-- ① Hero — navy + grid -->
-  <Hero />
+  <!-- Hero — single screen, no fluff -->
+  <section class="px-5 py-20 md:py-28 max-w-3xl mx-auto">
 
-  <!-- ② Ticker — Sky Blue scrolling band -->
-  <Ticker />
+    <!-- Eyebrow -->
+    <p class="font-mono text-[10px] tracking-[2.5px] uppercase text-sea dark:text-sea mb-6">
+      claudecowork.sg
+    </p>
 
-  <!-- ③ Use Cases Grid — Sand Cream bg -->
-  <section class="py-16 md:py-20 px-5 bg-sand dark:bg-white/[3%]">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <div class="inline-flex items-center gap-2 mb-4">
-          <span class="font-mono text-[10px] tracking-[2px] uppercase text-sea dark:text-sky">Fast Wins</span>
-        </div>
-        <h2 class="font-display font-semibold text-3xl md:text-4xl text-navy dark:text-salt mb-3 tracking-tight">
-          Real workflows for real professionals
-        </h2>
-        <p class="font-ui text-navy/60 dark:text-salt/50 max-w-lg mx-auto text-[15px]">
-          Not demos. Not theory. Actual workflows that professionals are running today — built with AI tools you already have.
-        </p>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {useCases.map((uc) => <UseCaseCard {...uc} />)}
-      </div>
-    </div>
+    <!-- Headline — keyword-rich, honest -->
+    <h1 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-navy dark:text-salt mb-6">
+      Learn Claude &amp; Claude Code —<br class="hidden md:block" />
+      <span class="font-display italic">without a tech background.</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="font-sans text-lg text-navy/60 dark:text-salt/50 max-w-xl leading-relaxed mb-10">
+      Practical tutorials on Claude, Claude Code, and AI workflows for consultants, founders, and professionals who want real results — not theory.
+    </p>
+
+    <!-- Email capture — inline, no box -->
+    <form
+      action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+      method="POST"
+      class="flex flex-col sm:flex-row gap-3 max-w-md"
+    >
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="your@email.com"
+        class="flex-1 px-4 py-3 rounded-full border border-sand dark:border-white/15 bg-salt dark:bg-white/5 text-navy dark:text-salt font-ui text-sm placeholder:text-navy/35 dark:placeholder:text-salt/35 focus:outline-none focus:ring-2 focus:ring-sea focus:border-transparent transition"
+      />
+      <button
+        type="submit"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-navy dark:bg-salt text-salt dark:text-navy font-sans font-bold text-[14px] transition-transform hover:scale-[0.97] whitespace-nowrap"
+      >
+        Notify me
+      </button>
+    </form>
+    <p class="font-mono text-[9px] tracking-[1px] uppercase text-navy/30 dark:text-salt/30 mt-3">
+      New posts daily · No spam
+    </p>
+
   </section>
 
-  <!-- ④ Latest Blog Posts -->
-  <section class="py-16 md:py-20 px-5 bg-salt dark:bg-navy">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex items-end justify-between mb-10">
-        <div>
-          <div class="inline-flex items-center gap-2 mb-3">
-            <span class="font-mono text-[10px] tracking-[2px] uppercase text-sea dark:text-sky">Daily Updates</span>
-          </div>
-          <h2 class="font-display font-semibold text-3xl md:text-4xl text-navy dark:text-salt tracking-tight">
-            Latest from the blog
-          </h2>
-          <p class="font-ui text-navy/60 dark:text-salt/50 text-[15px] mt-1">Daily breakdowns. Real workflows. No fluff.</p>
-        </div>
-        <a
-          href="/blog"
-          class="hidden sm:inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[1.5px] uppercase text-sea dark:text-sky hover:underline"
-        >
-          All posts →
-        </a>
+  <!-- Divider -->
+  <div class="max-w-3xl mx-auto px-5">
+    <div class="h-px bg-sand dark:bg-white/10"></div>
+  </div>
+
+  <!-- Blog posts or coming-soon state -->
+  <section class="max-w-3xl mx-auto px-5 py-16">
+    <h2 class="font-display font-bold text-xl text-navy dark:text-salt mb-8">Latest posts</h2>
+
+    {recentPosts.length === 0 ? (
+      <div class="py-16 text-center">
+        <p class="font-display text-2xl text-navy/30 dark:text-salt/30 mb-2">First post coming soon.</p>
+        <p class="font-ui text-[14px] text-navy/40 dark:text-salt/40">Subscribe above to be notified.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    ) : (
+      <div class="grid sm:grid-cols-2 gap-4">
         {recentPosts.map((post) => (
           <BlogCard
             title={post.data.title}
@@ -117,100 +91,15 @@ const useCases = [
           />
         ))}
       </div>
-      <div class="mt-6 sm:hidden">
-        <a href="/blog" class="font-mono text-[10px] tracking-[1.5px] uppercase text-sea dark:text-sky hover:underline">
+    )}
+
+    {recentPosts.length > 0 && (
+      <div class="mt-8">
+        <a href="/blog" class="font-mono text-[10px] tracking-[1.5px] uppercase text-sea hover:underline">
           All posts →
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- ⑤ Templates & Email Capture — Sky Blue (announcement bar style) -->
-  <section class="py-16 md:py-20 px-5 bg-sand dark:bg-white/[3%]">
-    <div class="max-w-2xl mx-auto">
-      <div class="text-center mb-8">
-        <div class="inline-flex items-center gap-2 mb-3">
-          <span class="font-mono text-[10px] tracking-[2px] uppercase text-sea dark:text-sky">Lead Magnet</span>
-        </div>
-        <h2 class="font-display font-semibold text-3xl text-navy dark:text-salt mb-2 tracking-tight">
-          Templates &amp; Prompts
-        </h2>
-        <p class="font-ui text-navy/60 dark:text-salt/50 text-[15px]">
-          We're building a library of tested workflow blueprints.{' '}
-          <a href="/templates" class="text-sea dark:text-sky hover:underline">Preview what's coming →</a>
-        </p>
-      </div>
-      <EmailCapture
-        heading="Get the weekly AI systems playbook"
-        subheading="One workflow breakdown, one prompt template, every week — free for operators."
-      />
-    </div>
-  </section>
-
-  <!-- ⑥ From Prompts to Systems — the bridge -->
-  <section class="py-16 md:py-20 px-5 bg-salt dark:bg-navy">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 mb-4">
-        <span class="font-mono text-[10px] tracking-[2px] uppercase text-sea dark:text-sky">The Framework</span>
-      </div>
-      <h2 class="font-display font-semibold text-3xl md:text-4xl text-navy dark:text-salt mb-3 tracking-tight">
-        From prompts <span class="font-playfair italic text-sea dark:text-sky">to systems</span>
-      </h2>
-      <p class="font-ui text-navy/60 dark:text-salt/50 max-w-lg mx-auto text-[15px] mb-14">
-        Tools change. Systems scale. Here's the three-step shift we teach in every workshop.
-      </p>
-
-      <div class="grid md:grid-cols-3 gap-4 text-left">
-        <div class="relative p-6 rounded-2xl border border-sand dark:border-white/10 bg-salt dark:bg-white/5 group hover:border-sky/40 transition-colors">
-          <div class="font-display font-semibold text-3xl text-sand dark:text-white/10 mb-3 group-hover:text-sky/20 dark:group-hover:text-sky/20 transition-colors">01</div>
-          <h3 class="font-display font-semibold text-[17px] text-navy dark:text-salt mb-2">Learn the tool</h3>
-          <p class="font-ui text-[13px] text-navy/60 dark:text-salt/50 leading-relaxed">
-            Pick any AI tool — Claude, ChatGPT, Gemini. Learn what it can do for your specific role and tasks.
-          </p>
-        </div>
-        <div class="relative p-6 rounded-2xl border border-sky/40 bg-sky/10 dark:bg-sky/10 group hover:border-sky/70 transition-colors">
-          <div class="font-display font-semibold text-3xl text-sky/30 mb-3">02</div>
-          <h3 class="font-display font-semibold text-[17px] text-navy dark:text-salt mb-2">Design the workflow</h3>
-          <p class="font-ui text-[13px] text-navy/60 dark:text-salt/50 leading-relaxed">
-            Map out the process. Define inputs, outputs, and checkpoints. Document what works so anyone can run it.
-          </p>
-        </div>
-        <div class="relative p-6 rounded-2xl border border-terra/30 bg-terra/5 dark:bg-terra/10 group hover:border-terra/60 transition-colors">
-          <div class="font-display font-semibold text-3xl text-terra/30 mb-3">03</div>
-          <h3 class="font-display font-semibold text-[17px] text-navy dark:text-salt mb-2">Scale the system</h3>
-          <p class="font-ui text-[13px] text-navy/60 dark:text-salt/50 leading-relaxed">
-            Once it's documented, it's teachable. Once it's teachable, it scales. That's how prompts become systems.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑦ Powered By ANCHR — always navy -->
-  <PoweredByAnchr />
-
-  <!-- ⑧ Final CTA -->
-  <section class="py-16 md:py-20 px-5 bg-salt dark:bg-navy">
-    <div class="max-w-xl mx-auto text-center">
-      <!-- Highlight bar motif -->
-      <div class="inline-block bg-navy dark:bg-salt px-4 py-2 rounded-md mb-6">
-        <span class="font-display font-semibold text-2xl text-salt dark:text-navy">
-          Ready to become an
-          <span class="font-playfair italic text-sky dark:text-sea"> operator</span>?
-        </span>
-      </div>
-
-      <p class="font-ui text-navy/60 dark:text-salt/50 text-[15px] mb-8">
-        Join our next workshop and build your first production-ready AI system in a single session — no coding required.
-      </p>
-      <a
-        href="/workshops"
-        class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-navy dark:bg-salt text-salt dark:text-navy font-sans font-extrabold text-[17px] transition-transform hover:scale-[0.97]"
-      >
-        <span class="w-2.5 h-2.5 rounded-full bg-sky dark:bg-sea flex-shrink-0"></span>
-        View workshops &amp; bootcamps →
-      </a>
-    </div>
+    )}
   </section>
 
 </BaseLayout>

@@ -1,69 +1,28 @@
 ---
 ---
 
-<footer class="relative overflow-hidden bg-navy">
-  <!-- Graph-paper grid -->
-  <div class="grid-bg absolute inset-0 pointer-events-none"></div>
+<footer class="border-t border-sand dark:border-white/10 mt-auto">
+  <div class="max-w-3xl mx-auto px-5 py-10">
 
-  <div class="relative max-w-6xl mx-auto px-5 py-12">
-    <div class="flex flex-col md:flex-row justify-between gap-10 mb-10">
-
-      <!-- Brand -->
-      <div class="max-w-xs">
-        <div class="flex items-baseline gap-1 mb-3">
-          <span class="font-display font-semibold text-xl text-salt tracking-tight">Claude Cowork</span>
-          <span class="text-terra text-lg leading-none ml-1">⚓</span>
-        </div>
-        <p class="font-mono text-[9px] tracking-[1px] uppercase text-sky/50 mb-3">claudecowork.sg</p>
-        <p class="font-ui text-[13px] text-salt/50 leading-relaxed">
-          Most people use AI tools.<br />
-          <span class="font-playfair italic text-sky text-[15px]">Operators build systems.</span>
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8">
+      <div>
+        <p class="font-display font-bold text-[15px] text-navy dark:text-salt mb-1">Cowork SG</p>
+        <p class="font-ui text-[12px] text-navy/40 dark:text-salt/40">
+          Built by <a href="https://anchrlabs.com" target="_blank" rel="noopener noreferrer" class="hover:text-sea transition-colors">ANCHR AI Labs</a>
         </p>
       </div>
-
-      <!-- Nav links -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
-        <div>
-          <p class="font-mono text-[9px] tracking-[2px] uppercase text-sky/50 mb-4">Learn</p>
-          <ul class="space-y-3 font-ui text-[13px] text-salt/50">
-            <li><a href="/blog" class="hover:text-sky transition-colors">Blog</a></li>
-            <li><a href="/templates" class="hover:text-sky transition-colors">Templates</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-mono text-[9px] tracking-[2px] uppercase text-sky/50 mb-4">Work with us</p>
-          <ul class="space-y-3 font-ui text-[13px] text-salt/50">
-            <li><a href="/workshops" class="hover:text-sky transition-colors">Workshops</a></li>
-            <li><a href="/about" class="hover:text-sky transition-colors">About</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-mono text-[9px] tracking-[2px] uppercase text-sky/50 mb-4">Subscribe</p>
-          <ul class="space-y-3 font-ui text-[13px] text-salt/50">
-            <li><a href="/rss.xml" class="hover:text-sky transition-colors">RSS Feed</a></li>
-          </ul>
-        </div>
-      </div>
+      <nav class="flex items-center gap-5">
+        <a href="/blog" class="font-mono text-[10px] tracking-[1.5px] uppercase text-navy/40 dark:text-salt/40 hover:text-sea transition-colors">Blog</a>
+        <a href="/about" class="font-mono text-[10px] tracking-[1.5px] uppercase text-navy/40 dark:text-salt/40 hover:text-sea transition-colors">About</a>
+        <a href="/rss.xml" class="font-mono text-[10px] tracking-[1.5px] uppercase text-navy/40 dark:text-salt/40 hover:text-sea transition-colors">RSS</a>
+      </nav>
     </div>
 
-    <!-- Bottom bar -->
-    <div
-      class="border-t pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3"
-      style="border-color: rgba(189,213,234,0.1);"
-    >
-      <!-- ANCHR logo treatment (from brand kit) -->
-      <div class="flex items-baseline gap-0">
-        <span class="font-display font-semibold text-[15px] text-salt/60 tracking-tight">Anchr</span>
-        <span class="font-playfair italic text-sky text-[17px] mx-1">AI</span>
-        <span class="font-mono text-[12px] tracking-[2px] uppercase text-salt/60">Labs</span>
-        <span class="text-terra ml-1 text-[13px]">⚓</span>
-        <span class="font-mono text-[9px] tracking-[1px] uppercase text-salt/30 ml-3">
-          · Built &amp; curated by ANCHR AI Labs
-        </span>
-      </div>
-      <p class="font-mono text-[9px] tracking-[1px] uppercase text-salt/30">
-        &copy; {new Date().getFullYear()} · Tool-agnostic · Systems-first
-      </p>
-    </div>
+    <!-- Legal disclaimer -->
+    <p class="font-ui text-[11px] text-navy/30 dark:text-salt/25 leading-relaxed">
+      Cowork SG is an independent educational resource and is not affiliated with, endorsed by, or associated with Anthropic or its products.
+      The domain "claudecowork.sg" is used for descriptive and informational purposes only. "Claude" is a trademark of its respective owner.
+      &copy; {new Date().getFullYear()} Cowork SG.
+    </p>
   </div>
 </footer>

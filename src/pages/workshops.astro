@@ -6,14 +6,15 @@ const workshops = [
   {
     badge: 'Most popular',
     icon: '⚡',
-    title: 'AI Systems in 60 Minutes',
+    title: 'AI Workflows in 60 Minutes',
     type: 'Live Workshop',
-    desc: 'Build your first complete, repeatable AI workflow from scratch. Designed for non-technical professionals. No coding required.',
+    desc: 'Build your first complete, repeatable AI workflow from scratch. Designed for non-technical professionals. No coding, no prior AI experience required.',
     features: [
-      'Workflow design framework',
-      'Live build session',
-      'Take-home template kit',
-      'Follow-up Q&A',
+      'Workflow design framework (step-by-step)',
+      'Live build session — design yours on the spot',
+      'Take-home prompt template kit',
+      'Works with Claude, ChatGPT, Gemini',
+      'Follow-up Q&A session',
     ],
   },
   {
@@ -21,11 +22,12 @@ const workshops = [
     icon: '🏢',
     title: 'Corporate AI Operator Training',
     type: 'Custom Program',
-    desc: "A full-day or multi-session program tailored to your team's specific workflows and business context. Includes workflow audit and implementation.",
+    desc: "A full-day or multi-session program tailored to your team's specific workflows, roles, and business context. Includes a workflow audit and custom prompt library.",
     features: [
-      'Workflow audit',
-      'Custom prompt library',
-      'Team-specific systems',
+      'Workflow audit across key departments',
+      'Custom prompt library for your team',
+      'Role-specific AI systems',
+      'Hands-on build sessions',
       'Ongoing support option',
     ],
   },
@@ -33,51 +35,69 @@ const workshops = [
 ---
 
 <BaseLayout
-  title="Workshops & Bootcamps — ANCHR AI Labs"
-  description="Practical, hands-on AI systems training. Build real workflows, not just prompts."
+  title="AI Workflow Workshops & Bootcamps — Cowork SG | claudecowork.sg"
+  description="Hands-on AI workflow training for non-technical professionals. Learn to build repeatable AI systems in a single session. No coding required. Powered by ANCHR AI Labs."
 >
   <!-- Header -->
   <div class="relative overflow-hidden bg-navy px-5 py-14">
     <div class="grid-bg absolute inset-0 pointer-events-none"></div>
-    <div
-      class="absolute right-0 bottom-0 font-playfair text-[16rem] leading-none pointer-events-none select-none translate-x-12 translate-y-6"
-      style="color: rgba(189,213,234,0.04);"
-      aria-hidden="true"
-    >⚓</div>
+    <div class="absolute right-0 bottom-0 pointer-events-none select-none opacity-[0.04] translate-x-12 translate-y-6" aria-hidden="true">
+      <svg width="280" height="280" viewBox="0 0 100 100" fill="none">
+        <g stroke="#FAFAFA" stroke-width="1.2" fill="none">
+          <ellipse cx="50" cy="50" rx="45" ry="18"/>
+          <ellipse cx="50" cy="50" rx="45" ry="18" transform="rotate(60 50 50)"/>
+          <ellipse cx="50" cy="50" rx="45" ry="18" transform="rotate(120 50 50)"/>
+        </g>
+      </svg>
+    </div>
     <div class="relative max-w-4xl mx-auto text-center">
       <div class="inline-flex items-center gap-2 mb-4">
-        <span class="w-2 h-2 rounded-full bg-terra animate-pulse"></span>
-        <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky">ANCHR AI Labs</span>
+        <span class="w-2 h-2 rounded-full bg-sea animate-pulse"></span>
+        <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky/70">ANCHR AI Labs</span>
       </div>
-      <h1 class="font-display font-semibold text-4xl md:text-5xl text-salt tracking-tight mb-4">
+      <h1 class="font-display font-bold text-4xl md:text-5xl text-salt tracking-tight mb-4">
         Workshops &amp; Bootcamps
       </h1>
       <p class="font-sans font-extrabold text-salt/50 text-lg max-w-xl mx-auto leading-relaxed">
-        Practical, hands-on training for professionals ready to move from experimenting with AI to building systems that actually scale.
+        Practical, hands-on training for professionals ready to move from experimenting with AI to building workflows that actually deliver results.
       </p>
     </div>
   </div>
 
   <section class="max-w-4xl mx-auto px-5 py-14">
 
+    <!-- Who it's for -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-14">
+      {[
+        { label: 'Consultants', icon: '💼' },
+        { label: 'Founders', icon: '🚀' },
+        { label: 'SME Owners', icon: '🏪' },
+        { label: 'Corporate Teams', icon: '🏢' },
+      ].map(({ label, icon }) => (
+        <div class="text-center p-4 rounded-xl border border-sand dark:border-white/10 bg-salt dark:bg-white/5">
+          <div class="text-2xl mb-2">{icon}</div>
+          <p class="font-display font-bold text-[14px] text-navy dark:text-salt">{label}</p>
+        </div>
+      ))}
+    </div>
+
     <!-- Workshop cards -->
     <div class="grid md:grid-cols-2 gap-5 mb-16">
       {workshops.map(({ badge, icon, title, type, desc, features }) => (
         <div class="relative p-6 rounded-2xl border border-sand dark:border-white/10 bg-salt dark:bg-white/5">
-          <!-- Badge -->
           <div class="absolute -top-3 left-6">
             <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-navy dark:bg-salt text-salt dark:text-navy font-mono text-[9px] tracking-[1.5px] uppercase">
               {badge}
             </span>
           </div>
           <div class="text-3xl mb-4 mt-2">{icon}</div>
-          <p class="font-mono text-[9px] tracking-[1.5px] uppercase text-sea dark:text-sky mb-1">{type}</p>
-          <h2 class="font-display font-semibold text-xl text-navy dark:text-salt mb-3">{title}</h2>
+          <p class="font-mono text-[9px] tracking-[1.5px] uppercase text-sea mb-1">{type}</p>
+          <h2 class="font-display font-bold text-xl text-navy dark:text-salt mb-3">{title}</h2>
           <p class="font-ui text-[13px] text-navy/60 dark:text-salt/50 leading-relaxed mb-5">{desc}</p>
           <ul class="space-y-2.5">
             {features.map((f) => (
               <li class="flex items-center gap-2.5 font-ui text-[13px] text-navy/70 dark:text-salt/60">
-                <svg class="w-4 h-4 text-sea dark:text-sky flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-4 h-4 text-sea flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                 </svg>
                 {f}
@@ -91,28 +111,30 @@ const workshops = [
     <!-- Registration waitlist -->
     <div class="text-center mb-12">
       <p class="font-ui text-navy/50 dark:text-salt/40 text-[14px] mb-6">
-        Scheduling and registration coming soon. Join the list to be notified first.
+        Registration opening soon. Join the list to be notified first and receive our AI starter kit.
       </p>
       <div class="max-w-md mx-auto">
         <EmailCapture
-          heading="Be first in line"
-          subheading="Get notified when workshops open for registration — plus our AI systems starter kit."
-          buttonText="Reserve my spot"
+          heading="Reserve your spot"
+          subheading="Get notified when workshops open — plus your free AI workflow template kit to get started now."
+          buttonText="Reserve My Spot"
         />
       </div>
     </div>
 
-    <!-- Custom enquiry — Navy with grid -->
+    <!-- Custom enquiry -->
     <div class="relative overflow-hidden rounded-2xl bg-navy p-8 text-center">
       <div class="grid-bg absolute inset-0 pointer-events-none"></div>
       <div class="relative">
-        <h3 class="font-display font-semibold text-xl text-salt mb-2">Need something custom?</h3>
+        <h3 class="font-display font-bold text-xl text-salt mb-2">Need something custom?</h3>
         <p class="font-ui text-[14px] text-salt/50 mb-5 max-w-sm mx-auto">
-          We design bespoke AI systems programs for corporate teams and high-growth companies.
+          ANCHR AI Labs designs bespoke AI systems programs for corporate teams and high-growth businesses.
         </p>
-        <p class="font-mono text-[11px] tracking-[1px] uppercase text-sky">
+        <p class="font-ui text-[13px] text-salt/60 mb-2">
           Reach us at{' '}
-          <a href="mailto:hello@anchr.ai" class="text-terra hover:underline">hello@anchr.ai</a>
+          <a href="mailto:hello@anchrlabs.com" class="text-sky hover:underline">hello@anchrlabs.com</a>
+          {' '}or visit{' '}
+          <a href="https://anchrlabs.com" target="_blank" rel="noopener noreferrer" class="text-sky hover:underline">anchrlabs.com</a>
         </p>
       </div>
     </div>

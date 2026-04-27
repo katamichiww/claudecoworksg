@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title,
-  description = 'Claude Cowork — AI tools for real workflows. Powered by ANCHR AI Labs.',
+  description = 'Cowork SG — Practical AI workflows for non-technical professionals. Learn to use AI tools like Claude, ChatGPT, and Gemini to build repeatable systems without coding.',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -22,7 +22,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
-    <link rel="alternate" type="application/rss+xml" title="Claude Cowork Blog" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Cowork SG Blog" href="/rss.xml" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -30,13 +30,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta name="robots" content="index, follow" />
 
-    <!-- ANCHR AI Labs fonts -->
-    <link rel="preconnect" href="https://api.fontshare.com" />
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/@fontsource/dm-sans/index.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/@fontsource/dm-sans/800.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/@fontsource/outfit/400.css" rel="stylesheet" />
@@ -63,41 +62,41 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   /* Graph-paper grid texture — dark sections */
   .grid-bg {
     background-image:
-      linear-gradient(rgba(189, 213, 234, 0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(189, 213, 234, 0.07) 1px, transparent 1px);
+      linear-gradient(rgba(196, 166, 152, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(196, 166, 152, 0.07) 1px, transparent 1px);
     background-size: 28px 28px;
   }
   /* Subtle grid for light sections */
   .grid-bg-light {
     background-image:
-      linear-gradient(rgba(30, 43, 56, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(30, 43, 56, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(27, 52, 100, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(27, 52, 100, 0.04) 1px, transparent 1px);
     background-size: 28px 28px;
   }
-  /* Prose typography overrides */
+  /* Prose overrides */
   .prose :where(blockquote) {
-    border-left-color: #4A90A4;
+    border-left-color: #C84330;
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-size: 1.15em;
-    color: #1E2B38;
+    color: #1B3464;
   }
   .dark .prose :where(blockquote) {
-    color: #BDD5EA;
+    color: #F5DDD6;
   }
   .prose :where(a) {
-    color: #4A90A4;
-    text-decoration-color: rgba(74, 144, 164, 0.4);
+    color: #C84330;
+    text-decoration-color: rgba(200, 67, 48, 0.4);
   }
   .prose :where(code):not(:where(pre code)) {
-    background: rgba(189, 213, 234, 0.2);
-    color: #1E2B38;
+    background: rgba(245, 221, 214, 0.4);
+    color: #1B3464;
     padding: 1px 5px;
     border-radius: 3px;
     font-size: 0.875em;
   }
   .dark .prose :where(code):not(:where(pre code)) {
-    background: rgba(189, 213, 234, 0.1);
-    color: #BDD5EA;
+    background: rgba(245, 221, 214, 0.12);
+    color: #F5DDD6;
   }
 </style>

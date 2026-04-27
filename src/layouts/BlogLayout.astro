@@ -19,20 +19,20 @@ const formattedDate = date.toLocaleDateString('en-SG', {
 });
 ---
 
-<BaseLayout title={`${title} — Claude Cowork`} description={description}>
+<BaseLayout title={`${title} — Cowork SG`} description={description}>
   <article class="max-w-2xl mx-auto px-5 py-16">
     <header class="mb-10">
       <!-- Tags -->
       <div class="flex flex-wrap gap-2 mb-5">
         {tags.map((tag) => (
-          <span class="inline-flex items-center px-3 py-1 rounded-full bg-sky/20 dark:bg-sky/15 font-mono text-[9px] tracking-[1.5px] uppercase text-navy/70 dark:text-sky">
+          <span class="inline-flex items-center px-3 py-1 rounded-full bg-sky/30 dark:bg-sky/10 font-mono text-[9px] tracking-[1.5px] uppercase text-navy/70 dark:text-sky/70">
             #{tag}
           </span>
         ))}
       </div>
 
-      <!-- Headline in Clash Display -->
-      <h1 class="font-display font-semibold text-3xl md:text-4xl leading-tight text-navy dark:text-salt mb-4">
+      <!-- Headline -->
+      <h1 class="font-display font-bold text-3xl md:text-4xl leading-tight text-navy dark:text-salt mb-4">
         {title}
       </h1>
 
@@ -42,11 +42,13 @@ const formattedDate = date.toLocaleDateString('en-SG', {
         </p>
       )}
 
-      <!-- Metadata in DM Mono -->
+      <!-- Metadata -->
       <div class="flex items-center gap-3 font-mono text-[10px] tracking-[1.5px] uppercase text-navy/40 dark:text-salt/40">
         <time datetime={date.toISOString()}>{formattedDate}</time>
         <span>·</span>
         <span>{readingTime} min read</span>
+        <span>·</span>
+        <a href="/blog" class="hover:text-sea transition-colors">← All posts</a>
       </div>
 
       <!-- Divider -->
@@ -55,17 +57,25 @@ const formattedDate = date.toLocaleDateString('en-SG', {
 
     <!-- Prose body -->
     <div class="prose prose-gray dark:prose-invert max-w-none
-      prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight
+      prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight
       prose-p:font-sans prose-p:font-extrabold prose-p:text-navy/70 dark:prose-p:text-salt/70
       prose-li:font-ui prose-li:text-navy/70 dark:prose-li:text-salt/70
       prose-strong:text-navy dark:prose-strong:text-salt
-      prose-a:text-sea dark:prose-a:text-sky prose-a:no-underline hover:prose-a:underline
+      prose-a:text-sea dark:prose-a:text-sea prose-a:no-underline hover:prose-a:underline
     ">
       <slot />
     </div>
 
+    <!-- Bridge CTA -->
     <div class="mt-14">
       <BridgeCTA />
+    </div>
+
+    <!-- Back to blog -->
+    <div class="mt-8 text-center">
+      <a href="/blog" class="font-mono text-[10px] tracking-[1.5px] uppercase text-sea hover:underline">
+        ← Back to all posts
+      </a>
     </div>
   </article>
 </BaseLayout>

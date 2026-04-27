@@ -2,39 +2,48 @@
 ---
 
 <section class="relative overflow-hidden bg-navy py-16 md:py-20 px-5">
-  <!-- Graph-paper grid -->
+  <!-- Grid texture -->
   <div class="grid-bg absolute inset-0 pointer-events-none"></div>
 
-  <!-- Watermark anchor -->
-  <div
-    class="absolute right-0 bottom-0 font-playfair text-[18rem] leading-none pointer-events-none select-none translate-x-16 translate-y-8"
-    style="color: rgba(189,213,234,0.04);"
-    aria-hidden="true"
-  >⚓</div>
+  <!-- Orbital watermark -->
+  <div class="absolute right-0 bottom-0 pointer-events-none select-none opacity-[0.04] translate-x-16 translate-y-8" aria-hidden="true">
+    <svg width="320" height="320" viewBox="0 0 100 100" fill="none">
+      <g stroke="#FAFAFA" stroke-width="1.5" fill="none">
+        <ellipse cx="50" cy="50" rx="45" ry="18"/>
+        <ellipse cx="50" cy="50" rx="45" ry="18" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="50" rx="45" ry="18" transform="rotate(90 50 50)"/>
+        <ellipse cx="50" cy="50" rx="45" ry="18" transform="rotate(135 50 50)"/>
+      </g>
+    </svg>
+  </div>
 
   <div class="relative max-w-4xl mx-auto">
     <!-- Eyebrow -->
     <div class="inline-flex items-center gap-2.5 mb-6">
-      <span class="w-2 h-2 rounded-full bg-terra"></span>
-      <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky">ANCHR AI Labs</span>
+      <span class="w-2 h-2 rounded-full bg-sea"></span>
+      <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky/70">ANCHR AI Labs</span>
     </div>
 
     <div class="flex flex-col md:flex-row gap-10 items-start">
       <!-- Left: copy -->
       <div class="flex-1">
-        <h2 class="font-display font-semibold text-3xl md:text-4xl text-salt leading-tight mb-4">
-          The authority<br />
-          <span class="font-playfair italic text-sky">behind</span> Claude Cowork
+        <h2 class="font-display font-bold text-3xl md:text-4xl text-salt leading-tight mb-4">
+          The team<br />
+          <span class="font-display italic text-sky">behind</span> Cowork SG
         </h2>
+        <p class="font-sans font-extrabold text-salt/50 text-[15px] leading-relaxed mb-5">
+          Cowork SG is built and curated by <a href="https://anchrlabs.com" target="_blank" rel="noopener noreferrer" class="text-sky hover:underline">ANCHR AI Labs</a>, a company specialising in AI systems and training for non-technical professionals.
+        </p>
         <p class="font-sans font-extrabold text-salt/50 text-[15px] leading-relaxed mb-7">
-          ANCHR AI Labs designs AI systems for businesses, runs bootcamps for professionals, and delivers corporate training for teams making the shift from AI users to AI operators.
+          At ANCHR AI Labs, we help non-technical professionals turn simple AI workflows like the ones you find here into full systems that drive real results — saved time, better proposals, and measurable business outcomes.
         </p>
 
         <ul class="space-y-3 mb-8">
           {[
-            '100+ global speaking engagements on AI, PR, and business systems',
-            'PR + AI positioning expertise for founders and corporate teams',
-            'AI systems consulting for businesses ready to scale beyond prompts',
+            'AI Systems Bootcamps for professionals at all levels',
+            'Corporate training programs for teams making the shift',
+            'AI workflow consulting for businesses ready to scale',
+            '100+ speaking engagements on AI, communications, and business systems',
           ].map((item) => (
             <li class="flex items-start gap-3 font-ui text-[13px] text-salt/60">
               <svg class="w-4 h-4 text-sea flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -46,35 +55,45 @@
         </ul>
 
         <a
-          href="/about"
+          href="https://anchrlabs.com"
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center gap-2 font-mono text-[11px] tracking-[1.5px] uppercase text-sky hover:text-salt transition-colors"
         >
-          Learn more about ANCHR AI Labs →
+          Visit ANCHR AI Labs →
         </a>
       </div>
 
-      <!-- Right: info card (brand kit layout card style) -->
+      <!-- Right: info card -->
       <div
-        class="md:w-60 rounded-2xl p-6 flex-shrink-0 border"
-        style="background: rgba(189,213,234,0.07); border-color: rgba(189,213,234,0.2);"
+        class="md:w-64 rounded-2xl p-6 flex-shrink-0 border"
+        style="background: rgba(245,221,214,0.07); border-color: rgba(245,221,214,0.18);"
       >
         <div
-          class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
-          style="background: rgba(193,127,90,0.2);"
+          class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+          style="background: rgba(200,67,48,0.2);"
         >
-          ⚓
+          <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
+            <g stroke="#F5DDD6" stroke-width="5" fill="none">
+              <ellipse cx="50" cy="50" rx="38" ry="15"/>
+              <ellipse cx="50" cy="50" rx="38" ry="15" transform="rotate(60 50 50)"/>
+              <ellipse cx="50" cy="50" rx="38" ry="15" transform="rotate(120 50 50)"/>
+            </g>
+            <circle cx="12" cy="50" r="6" fill="#C84330"/>
+            <circle cx="88" cy="50" r="6" fill="#D98B10"/>
+          </svg>
         </div>
-        <p class="font-display font-semibold text-salt text-[15px] mb-1">Founded in Singapore</p>
+        <p class="font-display font-bold text-salt text-[15px] mb-1">Founded in Singapore</p>
         <p class="font-ui text-[12px] text-salt/50 mb-5 leading-relaxed">
-          AI systems, communications strategy, and operator training.
+          AI systems, training, and operator development for non-technical professionals.
         </p>
-        <div class="border-t pt-4" style="border-color: rgba(189,213,234,0.15);">
+        <div class="border-t pt-4" style="border-color: rgba(245,221,214,0.15);">
           <p class="font-mono text-[8px] tracking-[1.5px] uppercase text-sky/50 mb-3">What we offer</p>
           <ul class="space-y-2 font-ui text-[12px] text-salt/60">
-            <li>→ AI Systems Bootcamp</li>
-            <li>→ Corporate Training</li>
+            <li>→ AI Workflow Bootcamp</li>
+            <li>→ Corporate Team Training</li>
             <li>→ 1:1 Consulting</li>
-            <li>→ Operator Certification</li>
+            <li>→ Prompt Library Access</li>
           </ul>
         </div>
       </div>

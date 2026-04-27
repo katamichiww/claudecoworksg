@@ -5,23 +5,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        // ANCHR AI Labs "Salt & Sand" palette
-        salt:  '#FAFAF8',   // Primary BG
-        sand:  '#F0EBE3',   // Alt BG / cards
-        sky:   '#BDD5EA',   // Ticker / highlights
-        sea:   '#4A90A4',   // CTA / links
-        terra: '#C17F5A',   // Accent / alert
-        navy:  '#1E2B38',   // Hero / footer / primary text
+        // Cowork SG Brand Identity Kit palette
+        salt:  '#FAFAFA',   // Light background (white)
+        sand:  '#F5F0EB',   // Alt BG / cards (cream)
+        sky:   '#F5DDD6',   // Light coral tint — ticker / card highlights
+        sea:   '#C84330',   // Coral CTAs / links (Pantone 16-1444 TCX)
+        terra: '#D98B10',   // Orange accent (Pantone 15-0945 TCX)
+        navy:  '#1B3464',   // Deep Blue — hero / footer / primary (Pantone 19-4004 TCX)
       },
       fontFamily: {
-        display:  ['"Clash Display"', 'sans-serif'],
+        // Cowork SG uses serif headings per brand kit
+        display:  ['"Playfair Display"', 'serif'],
         playfair: ['"Playfair Display"', 'serif'],
         sans:     ['"DM Sans"', 'sans-serif'],
         ui:       ['Outfit', 'sans-serif'],
         mono:     ['"DM Mono"', 'monospace'],
       },
       animation: {
-        'ticker': 'ticker-scroll 28s linear infinite',
+        'ticker': 'ticker-scroll 32s linear infinite',
       },
       keyframes: {
         'ticker-scroll': {

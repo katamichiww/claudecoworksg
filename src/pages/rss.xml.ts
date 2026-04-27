@@ -7,9 +7,9 @@ export async function GET(context: APIContext) {
   const sorted = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
   return rss({
-    title: 'Claude Cowork Blog',
+    title: 'Cowork SG Blog — AI Workflows for Non-Technical Professionals',
     description:
-      'Daily breakdowns on AI workflows, prompt design, and systems thinking for professionals.',
+      'Step-by-step AI workflow guides, prompt templates, and practical systems for non-technical professionals. No coding required.',
     site: context.site!.toString(),
     items: sorted.map((post) => ({
       title: post.data.title,

@@ -2,56 +2,211 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EmailCapture from '../components/EmailCapture.astro';
 
-const categories = [
-  { icon: '✉️', label: 'Email & comms templates' },
-  { icon: '📊', label: 'Report generation prompts' },
-  { icon: '🎯', label: 'Content repurposing workflows' },
-  { icon: '🔍', label: 'Research synthesis chains' },
-  { icon: '📋', label: 'Meeting & project templates' },
-  { icon: '🚀', label: 'Proposal & pitch frameworks' },
+const templates = [
+  {
+    icon: '📄',
+    title: 'Proposal Generator',
+    category: 'Business Development',
+    desc: 'Turn a client briefing into a full proposal draft. Covers scope, timeline, pricing structure, and next steps — in your voice.',
+    tags: ['Consulting', 'Sales', 'Freelancers'],
+    status: 'free',
+  },
+  {
+    icon: '📧',
+    title: 'Client Email System',
+    category: 'Communications',
+    desc: 'A 5-part email workflow: first contact, follow-up, onboarding welcome, check-in, and re-engagement — all AI-ready.',
+    tags: ['Client Management', 'Comms'],
+    status: 'free',
+  },
+  {
+    icon: '📊',
+    title: 'Executive Summary Builder',
+    category: 'Reporting',
+    desc: 'Feed in raw data or meeting notes, get a boardroom-ready executive summary. Define the audience once, use it every time.',
+    tags: ['Reports', 'Leadership', 'Data'],
+    status: 'free',
+  },
+  {
+    icon: '🎯',
+    title: 'Content Repurposing Engine',
+    category: 'Content & Marketing',
+    desc: 'One long-form piece → LinkedIn post, email newsletter, Twitter/X thread, and short-form hook. Runs on any AI tool.',
+    tags: ['Marketing', 'Social Media', 'Content'],
+    status: 'free',
+  },
+  {
+    icon: '🔍',
+    title: 'Research Synthesis Chain',
+    category: 'Research',
+    desc: 'A structured prompt chain that takes research inputs and returns a synthesised, cited summary with key insights.',
+    tags: ['Research', 'Strategy', 'Analysis'],
+    status: 'coming-soon',
+  },
+  {
+    icon: '📋',
+    title: 'Meeting Prep & Follow-Up',
+    category: 'Productivity',
+    desc: 'Before: agenda and questions. After: action items, decisions log, and follow-up email — fully AI-driven.',
+    tags: ['Meetings', 'Project Management'],
+    status: 'coming-soon',
+  },
+  {
+    icon: '🤝',
+    title: 'Client Onboarding Flow',
+    category: 'Client Management',
+    desc: 'Welcome message, intake questions, first-week communication, and expectations-setting — all templated and automated.',
+    tags: ['Onboarding', 'Client Relations'],
+    status: 'coming-soon',
+  },
+  {
+    icon: '💬',
+    title: 'Consultation Intake System',
+    category: 'Consulting',
+    desc: 'Pre-call questionnaire analysis and briefing doc — so every consultation starts with full context, automatically.',
+    tags: ['Consulting', 'Discovery', 'Prep'],
+    status: 'coming-soon',
+  },
+  {
+    icon: '🚀',
+    title: 'Pitch Deck Narrative Builder',
+    category: 'Business Development',
+    desc: 'From briefing notes to a structured story arc for your pitch. Problem, solution, proof, ask — all in your brand voice.',
+    tags: ['Pitching', 'Fundraising', 'Sales'],
+    status: 'coming-soon',
+  },
+  {
+    icon: '📰',
+    title: 'Newsletter Builder',
+    category: 'Content & Marketing',
+    desc: "A system that transforms your week's notes, links, and thoughts into a structured newsletter ready to send.",
+    tags: ['Newsletter', 'Email Marketing'],
+    status: 'coming-soon',
+  },
 ];
 ---
 
 <BaseLayout
-  title="Templates & Prompts — Claude Cowork"
-  description="A growing library of tested prompt templates and workflow blueprints for AI operators."
+  title="AI Prompt Library — Free Workflow Templates for Non-Technical Professionals | Cowork SG"
+  description="Download free AI prompt templates and workflow blueprints for consultants, founders, and professionals. No coding required. Works with Claude, ChatGPT, Gemini."
 >
   <!-- Header -->
   <div class="relative overflow-hidden bg-navy px-5 py-14">
     <div class="grid-bg absolute inset-0 pointer-events-none"></div>
     <div class="relative max-w-4xl mx-auto text-center">
       <div class="inline-flex items-center gap-2 mb-4">
-        <span class="w-2 h-2 rounded-full bg-terra"></span>
-        <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky">Coming Soon</span>
+        <span class="w-2 h-2 rounded-full bg-sea animate-pulse"></span>
+        <span class="font-mono text-[10px] tracking-[2.5px] uppercase text-sky/70">Free to Use</span>
       </div>
-      <h1 class="font-display font-semibold text-4xl md:text-5xl text-salt tracking-tight mb-4">
-        Templates &amp; Prompts
+      <h1 class="font-display font-bold text-4xl md:text-5xl text-salt tracking-tight mb-4">
+        Prompt Library
       </h1>
-      <p class="font-sans font-extrabold text-salt/50 text-lg max-w-lg mx-auto leading-relaxed">
-        A curated library of tested prompt templates and workflow blueprints — for professionals who want repeatable results from any AI tool.
+      <p class="font-sans font-extrabold text-salt/50 text-lg max-w-xl mx-auto leading-relaxed">
+        Tested prompt templates and workflow blueprints for non-technical professionals. Works with Claude, ChatGPT, Gemini, and any AI tool in your stack.
       </p>
     </div>
   </div>
 
-  <section class="max-w-4xl mx-auto px-5 py-14">
-    <div class="grid sm:grid-cols-2 gap-3 mb-14">
-      {categories.map(({ icon, label }) => (
-        <div class="flex items-center gap-3 p-4 rounded-xl border border-sand dark:border-white/10 bg-salt dark:bg-white/5">
-          <span class="text-xl flex-shrink-0">{icon}</span>
-          <span class="font-display font-semibold text-[14px] text-navy dark:text-salt">{label}</span>
-          <span class="ml-auto font-mono text-[9px] tracking-[1px] uppercase text-navy/30 dark:text-salt/30 whitespace-nowrap">
-            Coming soon
-          </span>
-        </div>
-      ))}
+  <section class="max-w-5xl mx-auto px-5 py-14">
+
+    <!-- Lead magnet highlight -->
+    <div class="mb-12 relative overflow-hidden rounded-2xl bg-navy p-8 text-center">
+      <div class="grid-bg absolute inset-0 pointer-events-none"></div>
+      <div class="relative">
+        <span class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-sea/20 border border-sea/30">
+          <span class="w-2 h-2 rounded-full bg-sea"></span>
+          <span class="font-mono text-[10px] tracking-[2px] uppercase text-sea">Free Download</span>
+        </span>
+        <h2 class="font-display font-bold text-2xl md:text-3xl text-salt mb-3">
+          10 AI Workflows Every Non-Technical<br class="hidden md:block" /> Professional Should Steal
+        </h2>
+        <p class="font-ui text-[14px] text-salt/50 mb-6 max-w-lg mx-auto">
+          Our most popular template collection — proposals, emails, reports, content, and more. All beginner-friendly and tested across real professional contexts.
+        </p>
+        <a href="#get-templates" class="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-salt text-navy font-sans font-extrabold text-[16px] transition-transform hover:scale-[0.97]">
+          <span class="w-2.5 h-2.5 rounded-full bg-sea flex-shrink-0"></span>
+          Get Free Templates (No Coding Needed)
+        </a>
+      </div>
     </div>
 
-    <div class="max-w-md mx-auto">
+    <!-- Template grid -->
+    <div class="mb-6">
+      <h2 class="font-display font-bold text-2xl text-navy dark:text-salt mb-2">All templates</h2>
+      <p class="font-ui text-[14px] text-navy/60 dark:text-salt/50 mb-8">
+        Copy, customise, and deploy. Each template includes the prompt structure, example inputs, and expected outputs.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {templates.map(({ icon, title, category, desc, tags, status }) => (
+          <div class="relative p-6 rounded-2xl border border-sand dark:border-white/10 bg-salt dark:bg-white/5 hover:border-sea/40 transition-colors">
+            {status === 'coming-soon' && (
+              <div class="absolute top-4 right-4">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-sand dark:bg-white/10 font-mono text-[9px] tracking-[1px] uppercase text-navy/40 dark:text-salt/40">
+                  Coming soon
+                </span>
+              </div>
+            )}
+            {status === 'free' && (
+              <div class="absolute top-4 right-4">
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-sea/15 font-mono text-[9px] tracking-[1px] uppercase text-sea">
+                  Free
+                </span>
+              </div>
+            )}
+            <div class="text-2xl mb-3">{icon}</div>
+            <p class="font-mono text-[9px] tracking-[1.5px] uppercase text-sea/70 dark:text-sea/60 mb-1">{category}</p>
+            <h3 class="font-display font-bold text-[17px] text-navy dark:text-salt mb-2">{title}</h3>
+            <p class="font-ui text-[13px] text-navy/60 dark:text-salt/50 leading-relaxed mb-4">{desc}</p>
+            <div class="flex flex-wrap gap-1.5">
+              {tags.map((tag) => (
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-sky/30 dark:bg-sky/10 font-mono text-[9px] tracking-[1px] text-navy/60 dark:text-sky/70">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Email capture / get templates -->
+    <div id="get-templates" class="max-w-xl mx-auto pt-8">
+      <div class="text-center mb-6">
+        <h2 class="font-display font-bold text-2xl text-navy dark:text-salt mb-2">Get the full template kit</h2>
+        <p class="font-ui text-[14px] text-navy/60 dark:text-salt/50">
+          Enter your email and we'll send the complete library — plus weekly workflow breakdowns from ANCHR AI Labs.
+        </p>
+      </div>
       <EmailCapture
-        heading="Get early access to templates"
-        subheading="We'll notify you when the library launches and send you the first batch free."
-        buttonText="Notify me"
+        heading="Get your free AI workflow templates"
+        subheading="The complete prompt library + weekly workflow breakdowns. For non-technical professionals who want real results from AI tools."
+        buttonText="Get Free Templates (No Coding Needed)"
       />
+    </div>
+
+    <!-- Bridge to ANCHR -->
+    <div class="mt-16 relative overflow-hidden rounded-2xl bg-navy p-8">
+      <div class="grid-bg absolute inset-0 pointer-events-none"></div>
+      <div class="relative flex flex-col md:flex-row gap-6 items-center">
+        <div class="flex-1">
+          <p class="font-mono text-[10px] tracking-[2px] uppercase text-sky/60 mb-2">Want more than templates?</p>
+          <h3 class="font-display font-bold text-xl text-salt mb-2">
+            Turn these into systems at ANCHR AI Labs
+          </h3>
+          <p class="font-ui text-[13px] text-salt/60 leading-relaxed">
+            At ANCHR AI Labs, we help non-technical professionals turn simple AI workflows like these into full systems that drive real results — faster proposals, better content, and measurable time savings.
+          </p>
+        </div>
+        <a
+          href="https://anchrlabs.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-salt text-navy font-sans font-extrabold text-[15px] transition-transform hover:scale-[0.97] flex-shrink-0"
+        >
+          <span class="w-2 h-2 rounded-full bg-sea flex-shrink-0"></span>
+          Visit ANCHR AI Labs →
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

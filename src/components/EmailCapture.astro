@@ -7,19 +7,28 @@ interface Props {
 }
 
 const {
-  heading = 'Get the weekly AI systems playbook',
-  subheading = 'One workflow breakdown, one prompt template, every week. Free.',
-  buttonText = 'Send me the playbook',
+  heading = '10 AI Workflows Every Non-Technical Professional Should Steal',
+  subheading = 'Get our free template kit — tested workflows for proposals, reports, client comms, and more. No coding needed.',
+  buttonText = 'Get Free Templates (No Coding Needed)',
   formspreeId = 'YOUR_FORMSPREE_ID',
 } = Astro.props;
 ---
 
-<!-- Announcement-bar style (Sky Blue — brand motif) -->
-<div class="bg-sky dark:bg-navy border border-sky/30 dark:border-sky/20 rounded-2xl p-7">
+<!-- Lead magnet email capture -->
+<div class="bg-sky dark:bg-navy/80 border border-sea/20 dark:border-sky/20 rounded-2xl p-7">
   <div class="flex items-start gap-3 mb-5">
-    <span class="text-terra text-2xl leading-none mt-0.5">⚓</span>
+    <!-- Orbital icon -->
+    <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 mt-0.5">
+      <g stroke="#1B3464" stroke-width="4" fill="none" class="dark:stroke-salt opacity-70">
+        <ellipse cx="50" cy="50" rx="38" ry="15"/>
+        <ellipse cx="50" cy="50" rx="38" ry="15" transform="rotate(60 50 50)"/>
+        <ellipse cx="50" cy="50" rx="38" ry="15" transform="rotate(120 50 50)"/>
+      </g>
+      <circle cx="12" cy="50" r="6" fill="#C84330"/>
+      <circle cx="88" cy="50" r="6" fill="#D98B10"/>
+    </svg>
     <div>
-      <h3 class="font-display font-semibold text-[18px] text-navy dark:text-salt leading-snug mb-1">{heading}</h3>
+      <h3 class="font-display font-bold text-[18px] text-navy dark:text-salt leading-snug mb-1">{heading}</h3>
       <p class="font-ui text-[13px] text-navy/70 dark:text-salt/60">{subheading}</p>
     </div>
   </div>
@@ -34,13 +43,13 @@ const {
       name="email"
       required
       placeholder="you@company.com"
-      class="flex-1 px-4 py-2.5 rounded-full border border-navy/20 dark:border-white/20 bg-salt dark:bg-navy/60 text-navy dark:text-salt font-ui text-sm placeholder:text-navy/40 dark:placeholder:text-salt/40 focus:outline-none focus:ring-2 focus:ring-sea dark:focus:ring-sky focus:border-transparent transition"
+      class="flex-1 px-4 py-2.5 rounded-full border border-navy/20 dark:border-white/20 bg-salt dark:bg-navy/60 text-navy dark:text-salt font-ui text-sm placeholder:text-navy/40 dark:placeholder:text-salt/40 focus:outline-none focus:ring-2 focus:ring-sea focus:border-transparent transition"
     />
     <button
       type="submit"
-      class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-navy dark:bg-salt text-salt dark:text-navy font-sans font-extrabold text-[15px] transition-transform hover:scale-[0.97] whitespace-nowrap"
+      class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-navy dark:bg-salt text-salt dark:text-navy font-sans font-extrabold text-[14px] transition-transform hover:scale-[0.97] whitespace-nowrap"
     >
-      <span class="w-2 h-2 rounded-full bg-sky dark:bg-sea flex-shrink-0"></span>
+      <span class="w-2 h-2 rounded-full bg-sea flex-shrink-0"></span>
       {buttonText}
     </button>
   </form>
