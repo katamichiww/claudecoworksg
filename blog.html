@@ -176,6 +176,58 @@
       .blog-index-hero { padding: 3.5rem 1.25rem 2.5rem; }
       .blog-index-body { padding: 2.5rem 1.25rem 4rem; }
     }
+    .blog-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 2.5rem 0 1rem;
+    }
+    .blog-pagination-prev,
+    .blog-pagination-next {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--coral);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--coral);
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+    .blog-pagination-prev:hover,
+    .blog-pagination-next:hover {
+      background: var(--coral);
+      color: white;
+    }
+    .blog-pagination-prev.disabled,
+    .blog-pagination-next.disabled {
+      color: var(--border);
+      border-color: var(--border);
+      pointer-events: none;
+      cursor: default;
+    }
+    .blog-pagination-page {
+      font-size: 0.88rem;
+      font-weight: 700;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: var(--ink-2);
+    }
+    .blog-pagination-page.active {
+      background: var(--navy);
+      color: white;
+    }
+    a.blog-pagination-page {
+      text-decoration: none;
+      color: var(--ink-2);
+    }
+    a.blog-pagination-page:hover {
+      background: var(--surface);
+    }
   </style>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
@@ -319,6 +371,12 @@
         </div>
       </a>
 
+    </div>
+
+    <div class="blog-pagination">
+      <span class="blog-pagination-prev disabled">← Prev</span>
+      <span class="blog-pagination-page active">1</span>
+      <span class="blog-pagination-next disabled">Next →</span>
     </div>
   </div>
 
