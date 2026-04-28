@@ -1,6 +1,10 @@
 {
   "buildCommand": "mkdir -p dist && cp *.html dist/ && cp styles.css dist/ && cp nav.js dist/ && cp sitemap.xml dist/ && cp robots.txt dist/ && cp llms.txt dist/ && cp favicon*.png dist/ && cp apple-touch-icon.png dist/ && cp -r uploads dist/ && cp -r .well-known dist/",
   "outputDirectory": "dist",
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/blog.html", "destination": "/blog", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/",
