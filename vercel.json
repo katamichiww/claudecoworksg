@@ -3,7 +3,15 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/blog.html", "destination": "/blog", "permanent": true }
+    { "source": "/blog.html", "destination": "/blog", "permanent": true },
+    { "source": "/blog-ai-services-new-software", "destination": "/blog/ai-services-new-software", "permanent": true },
+    { "source": "/blog-claude-architect-exam", "destination": "/blog/claude-architect-exam", "permanent": true },
+    { "source": "/blog-claude-cowork-beginners", "destination": "/blog/claude-cowork-beginners", "permanent": true },
+    { "source": "/blog-claude-cowork-capabilities", "destination": "/blog/claude-cowork-capabilities", "permanent": true },
+    { "source": "/blog-claude-prompting-outcome-first", "destination": "/blog/claude-prompting-outcome-first", "permanent": true },
+    { "source": "/blog-claude-whatsapp", "destination": "/blog/claude-whatsapp", "permanent": true },
+    { "source": "/blog-shipped-to-prod-5-hours", "destination": "/blog/shipped-to-prod-5-hours", "permanent": true },
+    { "source": "/blog-claude-cowork-what-it-is", "destination": "/blog/claude-cowork-what-it-is", "permanent": true }
   ],
   "headers": [
     {
