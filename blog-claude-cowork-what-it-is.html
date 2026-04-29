@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Wan Wei Soh" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Cowork: From AI That Talks to AI That Does | Cowork SG</title>
+  <meta name="description" content="Most professionals are still using Claude and ChatGPT the same way they did two years ago. Claude Cowork changes the model entirely — here's what it actually does and why it matters." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://claudecowork.sg/blog-claude-cowork-what-it-is.html" />
+  <meta property="og:title" content="Claude Cowork: From AI That Talks to AI That Does | Cowork SG" />
+  <meta property="og:description" content="Most professionals are still using Claude and ChatGPT the same way they did two years ago. Claude Cowork changes the model entirely — here's what it actually does and why it matters." />
+  <meta property="og:image" content="https://claudecowork.sg/uploads/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://claudecowork.sg/blog-claude-cowork-what-it-is.html" />
+  <meta name="twitter:title" content="Claude Cowork: From AI That Talks to AI That Does" />
+  <meta name="twitter:description" content="Most professionals are still using Claude and ChatGPT the same way they did two years ago. Claude Cowork changes the model entirely." />
+  <meta name="twitter:image" content="https://claudecowork.sg/uploads/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Claude Cowork: From AI That Talks to AI That Does",
+    "description": "Most professionals are still using Claude and ChatGPT the same way they did two years ago. Claude Cowork changes the model entirely — here's what it actually does and why it matters.",
+    "url": "https://claudecowork.sg/blog-claude-cowork-what-it-is.html",
+    "datePublished": "2026-04-29",
+    "dateModified": "2026-04-29",
+    "image": "https://claudecowork.sg/uploads/og-image.png",
+    "author": {
+      "@type": "Person",
+      "name": "Wan Wei Soh"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cowork SG",
+      "url": "https://claudecowork.sg"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .blog-hero {
+      background: var(--navy);
+      padding: 5rem 2rem 4rem;
+      color: white;
+    }
+    .blog-hero-inner { max-width: 820px; margin: 0 auto; }
+    .blog-hero .label { color: var(--coral); margin-bottom: 1.25rem; }
+    .blog-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .blog-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.55);
+      flex-wrap: wrap;
+    }
+    .blog-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+    .blog-body p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-2); margin-bottom: 1.5rem; }
+    .blog-body h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 2.5rem 0 1rem; }
+    .blog-body ul, .blog-body ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .blog-body li { font-size: 1.05rem; line-height: 1.8; color: var(--ink-2); margin-bottom: 0.5rem; }
+    .blog-body a { color: var(--coral); font-weight: 600; }
+    .blog-callout {
+      background: var(--surface);
+      border-left: 4px solid var(--coral);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .blog-callout p { margin: 0; font-size: 0.97rem; }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .compare-card {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    .compare-card.highlight { border-color: var(--coral); background: #FEF3F1; }
+    .compare-card .cc-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 0.5rem;
+    }
+    .compare-card h4 { font-size: 0.97rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .compare-card p { font-size: 0.88rem; line-height: 1.6; color: var(--ink-2); margin: 0; }
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+    .use-case-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+    }
+    .use-case-card strong { display: block; font-size: 0.9rem; color: var(--navy); margin-bottom: 0.35rem; }
+    .use-case-card span { font-size: 0.85rem; color: var(--ink-2); line-height: 1.6; }
+    .feature-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+    .feature-list li {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--ink-2);
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list li strong { color: var(--navy); min-width: 160px; flex-shrink: 0; }
+    .blog-cta-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .blog-cta-box h3 { font-family: var(--serif); font-size: 1.4rem; color: white; margin-bottom: 0.75rem; }
+    .blog-cta-box p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .blog-back { margin-bottom: 2.5rem; }
+    .blog-back a { font-size: 0.88rem; color: var(--coral); font-weight: 600; }
+    @media (max-width: 640px) {
+      .compare-grid { grid-template-columns: 1fr; }
+      .use-case-grid { grid-template-columns: 1fr; }
+      .blog-hero { padding: 3.5rem 1.25rem 2.5rem; }
+      .blog-body { padding: 2.5rem 1.25rem 4rem; }
+      .feature-list li { flex-direction: column; gap: 0.25rem; }
+      .feature-list li strong { min-width: unset; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="uploads/cowork-sg-logo.png" alt="Cowork SG" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="/blog" class="active">Blog</a></li>
+        <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free →</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <p class="label label-coral">Claude Cowork · AI Agents · Non-Technical</p>
+      <h1>Claude Cowork: From AI That Talks to AI That Does</h1>
+      <div class="blog-hero-meta">
+        <span>Wan Wei Soh · Cowork SG</span>
+        <span>29 Apr 2026</span>
+        <span>~7 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="blog-body">
+    <div class="blog-back"><a href="/blog">← Back to all posts</a></div>
+
+    <p>Most professionals are still using Claude, ChatGPT, and Gemini the same way they did two years ago. You ask a question, you get an answer, and then you still do all the actual work yourself. You write the report. You paste the text into the email draft. You fix the bullet point formatting. The AI helped you think — but you remained the one doing.</p>
+
+    <p>Claude Cowork changes that model. If you want the most practical non-technical way to start using AI agents with your existing tools — your email, your calendar, your documents, your files — this is the place to start.</p>
+
+    <h2>What Claude Cowork Actually Is</h2>
+
+    <p>Cowork is a feature inside the Claude Desktop application. The distinction from Claude Chat isn't cosmetic — it's a different category of tool.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <p class="cc-label">Claude Chat</p>
+        <h4>AI assistant</h4>
+        <p>You ask, it answers. You still do the work. Useful for drafting, thinking, brainstorming — but everything stays inside the chat window.</p>
+      </div>
+      <div class="compare-card highlight">
+        <p class="cc-label">Claude Cowork ← This is the upgrade</p>
+        <h4>AI colleague</h4>
+        <p>You describe the outcome. It does the work. You review. Connects to your actual tools. Produces real files. Runs on a schedule.</p>
+      </div>
+    </div>
+
+    <p>In practice: Cowork can organise files on your computer, produce email drafts sitting in your Gmail ready to review and send, make actual updates to your Notion pages, and generate real Excel spreadsheets and Word documents. Not suggestions. Not copy-paste text. The work itself.</p>
+
+    <p>Once you give it a task, Cowork makes a plan and completes it step by step, keeping you informed as it goes. No code. No terminal. No technical knowledge required.</p>
+
+    <div class="blog-callout">
+      <p>The clearest way to state it: Claude Chat is an assistant who answers questions. Claude Cowork is a colleague who completes tasks.</p>
+    </div>
+
+    <h2>Who This Is For</h2>
+
+    <p>Cowork is the right tool if any of these apply to you:</p>
+
+    <ul>
+      <li>You use Claude or ChatGPT's web app and feel like you're still doing all the heavy lifting yourself.</li>
+      <li>You want the power of AI agents but assumed they require coding skills to set up.</li>
+      <li>You have repetitive, multi-step tasks that take real time every week — and you want AI to handle the full task, not just the first part of it.</li>
+      <li>You want to recover 5 to 10 hours a week without rebuilding your entire workflow.</li>
+    </ul>
+
+    <p>This is not a tool for developers. It is specifically for professionals — consultants, founders, managers, analysts — who want AI that operates inside the tools they already use every day.</p>
+
+    <h2>What Makes Cowork Different</h2>
+
+    <ul class="feature-list">
+      <li>
+        <strong>Connects to your tools</strong>
+        Gmail, Google Drive, Slack, Microsoft 365, and a growing list of connectors. Cowork pulls from and writes to the apps you already use — it doesn't ask you to move your work somewhere new.
+      </li>
+      <li>
+        <strong>Uses your browser</strong>
+        Need competitor research, industry news, or data from a website? Cowork can search the internet, navigate pages, and turn what it finds into a deliverable — a summary, a report, a formatted document.
+      </li>
+      <li>
+        <strong>Learns your preferences</strong>
+        You can build reusable instructions that teach Cowork your specific processes — your reporting format, your communication style, your guardrails. Apply them to any task with a single line.
+      </li>
+      <li>
+        <strong>Comes with role-specific plugins</strong>
+        Official plugins built for functions like sales, legal, and marketing — each a bundle of capabilities and connectors ready to use without any setup from you.
+      </li>
+      <li>
+        <strong>Runs on autopilot</strong>
+        Schedule tasks once and Cowork handles the recurring work automatically. Daily briefings, weekly reports, competitor tracking. You configure it once and it runs — whether or not you remember to open the app.
+      </li>
+    </ul>
+
+    <h2>Real Examples of What Cowork Can Handle</h2>
+
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <strong>Client Lead Tracker</strong>
+        <span>Pull contact and deal data from your CRM or files, structure it into a formatted tracker, and flag anything overdue or needing follow-up.</span>
+      </div>
+      <div class="use-case-card">
+        <strong>Meeting Insight System</strong>
+        <span>Connect your meeting notes (Fireflies, Otter, or a shared folder) and generate structured summaries with action items and follow-up priorities surfaced automatically.</span>
+      </div>
+      <div class="use-case-card">
+        <strong>Document Review</strong>
+        <span>Feed in a folder of NDAs, contracts, or policy documents and get a structured analysis — key clauses, risk flags, and differences across documents — without reading each one manually.</span>
+      </div>
+      <div class="use-case-card">
+        <strong>Weekly Research Brief</strong>
+        <span>Every Monday morning, Cowork scours industry sources and delivers an actionable summary of relevant news, competitor moves, and signals worth acting on — ready before your first meeting.</span>
+      </div>
+    </div>
+
+    <p>These aren't hypothetical. They're the kinds of workflows professionals are running in Cowork right now. What they have in common: each one handles a genuinely recurring task that used to take real manual time every week.</p>
+
+    <p>One example worth highlighting for scale: a single press release put into Cowork produced 100 outputs — Slack messages, Gmail drafts, a LinkedIn post, and a Customer Support FAQ — all formatted and ready to review. That's the kind of leverage that changes what a small team can produce in a week.</p>
+
+    <h2>The Shift That Makes It Useful</h2>
+
+    <p>The fundamental change Cowork creates is moving you from operator to reviewer. In Claude Chat, you are always initiating — every output requires your prompt and your follow-up. In Cowork, the AI is proactively completing the work and reporting back to you. Your job becomes checking and approving, not producing.</p>
+
+    <p>That shift compounds. An hour saved on Monday. A report you didn't have to write Wednesday. A brief that was waiting in your Slack when you woke up on Friday. Over a working month, the time recovered is significant — and the cognitive load of remembering recurring tasks simply disappears.</p>
+
+    <h2>How to Get Started</h2>
+
+    <p>Download the Claude Desktop app at <a href="https://claude.com/download" target="_blank" rel="noopener">claude.com/download</a>. It's available for Mac and Windows. Installation takes about five minutes. Sign in with your existing Claude account or create one — the free tier is enough to explore Cowork, though paid plans unlock higher limits and additional connectors.</p>
+
+    <p>Before you run your first task, set up your global instructions. In Settings, find the Global Instructions field. Write a clear paragraph covering who you are, what you do, how you prefer outputs formatted, and any rules you always want applied. This single step is what separates professionals who get immediate value from those who feel like the tool isn't quite delivering.</p>
+
+    <p>Then connect the tools you already use. Go to Connectors and link whichever of Gmail, Google Calendar, Notion, or Slack your first workflow will actually need. Start with one workflow, run it a few times, then expand.</p>
+
+    <p>For a full walkthrough — including how to write effective global instructions and build your first scheduled task — see our <a href="blog-claude-cowork-beginners.html">Claude Cowork for Beginners guide</a>.</p>
+
+    <div class="blog-cta-box">
+      <h3>Learn this with professionals doing it right now</h3>
+      <p>Cowork SG is Singapore's free community for professionals sharing what's actually working with Claude — practical, no jargon, always free.</p>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-orange" style="color:white">Join Cowork SG Free →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="uploads/cowork-sg-logo-dark.png" alt="Cowork SG" /></div>
+          <p>Singapore's free AI community for professionals who want to actually use Claude — not just talk about it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="/blog">All Posts</a></li>
+            <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Posts</h4>
+          <ul>
+            <li><a href="blog-claude-cowork-beginners.html">Cowork for Beginners</a></li>
+            <li><a href="blog-claude-prompting-outcome-first.html">Outcome-First Prompting</a></li>
+            <li><a href="blog-claude-cowork-capabilities.html">7 Claude Capabilities</a></li>
+            <li><a href="blog-claude-whatsapp.html">Claude + WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Cowork SG. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="nav.js"></script>
+</body>
+</html>
