@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Wan Wei Soh" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Cowork for Beginners: Build Your Own PA | Cowork SG</title>
+  <meta name="description" content="How to set up Claude Cowork as a personal AI assistant that remembers, writes in your voice, and runs your operating system — no coding needed." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://claudecowork.sg/blog/claude-cowork-beginners-pa" />
+  <meta property="og:title" content="Claude Cowork for Beginners: Build Your Own PA | Cowork SG" />
+  <meta property="og:description" content="How to set up Claude Cowork as a personal AI assistant that remembers, writes in your voice, and runs your operating system — no coding needed." />
+  <meta property="og:image" content="https://claudecowork.sg/uploads/blog-cover-beginners-pa.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://claudecowork.sg/blog/claude-cowork-beginners-pa" />
+  <meta name="twitter:title" content="Claude Cowork for Beginners: Build Your Own PA" />
+  <meta name="twitter:description" content="How to set up Claude Cowork as a personal AI assistant that remembers, writes in your voice, and runs your operating system — no coding needed." />
+  <meta name="twitter:image" content="https://claudecowork.sg/uploads/blog-cover-beginners-pa.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Claude Cowork for Beginners: Build Your Own PA",
+    "description": "How to set up Claude Cowork as a personal AI assistant that remembers, writes in your voice, and runs your operating system — no coding needed.",
+    "url": "https://claudecowork.sg/blog/claude-cowork-beginners-pa",
+    "datePublished": "2026-04-29",
+    "dateModified": "2026-04-29",
+    "image": "https://claudecowork.sg/uploads/blog-cover-beginners-pa.png",
+    "author": { "@type": "Person", "name": "Wan Wei Soh" },
+    "publisher": { "@type": "Organization", "name": "Cowork SG", "url": "https://claudecowork.sg" }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .blog-hero { background: var(--navy); padding: 5rem 2rem 4rem; color: white; }
+    .blog-hero-inner { max-width: 820px; margin: 0 auto; }
+    .blog-hero .label { color: var(--coral); margin-bottom: 1.25rem; }
+    .blog-hero h1 { font-family: var(--serif); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; color: white; margin-bottom: 1.25rem; }
+    .blog-hero-meta { display: flex; align-items: center; gap: 1.5rem; font-size: 0.83rem; color: rgba(255,255,255,0.55); flex-wrap: wrap; }
+    .blog-body { max-width: 820px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+    .blog-body p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-2); margin-bottom: 1.5rem; }
+    .blog-body h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 2.5rem 0 1rem; }
+    .blog-body ul, .blog-body ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .blog-body li { font-size: 1.05rem; line-height: 1.8; color: var(--ink-2); margin-bottom: 0.5rem; }
+    .blog-body strong { color: var(--ink); }
+    .blog-callout { background: var(--surface); border-left: 4px solid var(--coral); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .blog-callout p { margin: 0; font-size: 0.97rem; }
+    .blog-cta-box { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: white; border-radius: 12px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+    .blog-cta-box h3 { font-family: var(--serif); font-size: 1.4rem; color: white; margin-bottom: 0.75rem; }
+    .blog-cta-box p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .blog-back { margin-bottom: 2.5rem; }
+    .blog-back a { font-size: 0.88rem; color: var(--coral); font-weight: 600; }
+    @media (max-width: 768px) { .blog-hero { padding: 3.5rem 1.25rem 2.5rem; } .blog-body { padding: 2.5rem 1.25rem 4rem; } }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../uploads/cowork-sg-logo.png" alt="Cowork SG" /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="/blog" class="active">Blog</a></li>
+        <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free →</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <p class="label label-coral">Claude Cowork · Beginners · AI Setup</p>
+      <h1>Claude Cowork for Beginners: Build Your Own PA</h1>
+      <div class="blog-hero-meta">
+        <span>Wan Wei · Cowork SG</span>
+        <span>29 Apr 2026</span>
+        <span>~9 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="blog-body">
+    <div class="blog-back"><a href="/blog">← Back to all posts</a></div>
+
+    <img src="../uploads/blog-cover-beginners-pa.png" alt="Claude Cowork for Beginners: Build Your Own PA" style="width:100%;border-radius:12px;display:block;margin-bottom:2.5rem;" />
+
+    <p>What if your AI knew what you were working on, remembered what you said yesterday, and wrote your newsletter in your exact voice — without you re-explaining yourself every single time?</p>
+
+    <p>That's not a fantasy. That's a Tuesday morning with <strong>Claude Cowork</strong> set up properly.</p>
+
+    <p>I've watched too many people open Claude, type a one-line prompt, get a mediocre answer, and conclude that AI is "overhyped." The problem isn't the model. The problem is that they're treating a system capable of running your operating system like a glorified search bar. Here's how to fix that.</p>
+
+    <h2>The One Insight That Changes Everything</h2>
+
+    <p>Before we touch a single file, internalize this: <strong>everything you're about to build is just plain text</strong>.</p>
+
+    <p>That's it. That's the whole secret.</p>
+
+    <p>When people first peek inside a <code>claude.md</code> file, they panic. It looks like code. It feels like code. But if you copy-paste the contents into a Notes app, you'll see headers, bullet points, and sentences written in plain English. "At the start of every session, read memory.md before responding." That's not programming. That's an instruction you'd give a new PA on day one.</p>
+
+    <p>The mental shift here is everything. You're not coding. You're <strong>writing rules for a teammate who happens to read very fast and never forgets</strong>. If you can write a Slack message, you can build this. (For more on this mindset shift, I wrote about <a href="https://anchrlabs.com/claude-cowork-training/what-is-claude-cowork/">what Claude Cowork actually is</a> — worth a read before you start building.)</p>
+
+    <h2>The ASEAN Analogy: How Cowork Actually Thinks</h2>
+
+    <p>Here's the model that finally made this click for me.</p>
+
+    <p>ASEAN operates on a layered system of rules. The <strong>ASEAN Charter</strong> sits at the top — a set of foundational principles every member state agreed to follow, no matter what. Then Singapore has its own national legislation that <em>stacks on top</em> of those regional commitments. A business operating in Singapore has to comply with both the regional framework and domestic law.</p>
+
+    <p>Your Claude Cowork workspace works exactly the same way:</p>
+    <ul>
+      <li><strong>Root level (the ASEAN Charter):</strong> A <code>claude.md</code> file at the top of your folder that governs everything Cowork does, no matter the task.</li>
+      <li><strong>Workstation level (national laws):</strong> Sub-folders like Email HQ, Newsletter HQ, or Personal Finances, each with their own <code>claude.md</code> that only kicks in when you're working in that area.</li>
+      <li><strong>Project level (local regulations):</strong> Even more specific rules for individual projects. We'll skip this today — start simple.</li>
+    </ul>
+
+    <p>So when you ask Cowork to draft an email, it reads your root rules <em>plus</em> your Email HQ rules. When you ask it to write a newsletter, it reads the root rules <em>plus</em> your Newsletter HQ rules. The right context loads at the right time. No bloated prompts. No wasted tokens.</p>
+
+    <p>This is the architecture that separates a toy from a tool.</p>
+
+    <h2>The Three Files That Run the Whole System</h2>
+
+    <p>At the root level, you only need three things:</p>
+    <ul>
+      <li><strong><code>claude.md</code></strong> — the instruction manual. Tells Cowork how to behave, where to find things, and which rules apply when.</li>
+      <li><strong><code>memory.md</code></strong> — the notepad. Stores anything Cowork should remember between sessions (active projects, preferences, things you said "remember this" about).</li>
+      <li><strong><code>00-resources/</code> folder</strong> — detailed knowledge files Cowork only loads when needed. Your voice principles live here.</li>
+    </ul>
+
+    <p>The magic move is this line inside your root <code>claude.md</code>:</p>
+
+    <div class="blog-callout">
+      <p><em>"At the start of every session, read memory.md before responding. When I say 'remember this,' write the information to memory.md."</em></p>
+    </div>
+
+    <p>That's how Cowork gets persistent memory. Two sentences. That's it.</p>
+
+    <p>Now when you open a fresh session and say <em>"What did I tell you about my Q2 priorities?"</em> — it actually knows. Because it just read the notepad.</p>
+
+    <h2>Building Your First Workstation (And Why Email Is the Best Place to Start)</h2>
+
+    <p>Once your root level is set up, the next move is building a <strong>workstation</strong> — a sub-folder for one specific area of your work life. I always tell people: start with email.</p>
+
+    <p>Why email?</p>
+    <ul>
+      <li>You already have hundreds of writing samples sitting in your Sent folder.</li>
+      <li>The patterns are <em>consistent</em> (greetings, sign-offs, tone) which makes it easy for Cowork to learn.</li>
+      <li>The ROI hits immediately. Inbox zero in 20 minutes instead of 90.</li>
+    </ul>
+
+    <p>The workflow looks like this:</p>
+    <ol>
+      <li>Connect your Gmail to Claude via connectors.</li>
+      <li>Drop a prompt into Cowork that tells it to analyze your last 30 sent emails and extract your voice patterns.</li>
+      <li>Cowork automatically creates an <code>email-hq/</code> folder with its own <code>claude.md</code>, <code>memory.md</code>, and resources folder.</li>
+      <li>Inside that <code>claude.md</code>, it lists rules like your default greeting, your sign-off, when you use bullets vs. paragraphs, and how formal you get with different audiences.</li>
+    </ol>
+
+    <p>That's rule stacking in action. When Cowork drafts an email, it reads your global voice principles ("warm, direct, lead with transparency") <em>and</em> your email-specific conventions ("default greeting: 'Hey [name],' default sign-off: 'Cheers,'"). The output sounds like you because it <em>is</em> you, distilled into rules.</p>
+
+    <p>If you want to see how this compares to the developer-focused cousin, <a href="https://anchrlabs.com/claude-code-non-technical/claude-code-vs-cowork/">Cowork vs Claude Code</a> breaks down when to use which.</p>
+
+    <h2>The Voice Principles File: Your Secret Weapon</h2>
+
+    <p>The single highest-leverage file in your entire setup is <code>voice-principles.md</code>.</p>
+
+    <p>This is the document that captures <em>how you write</em>. Not what you write about — <em>how</em>. Sentence rhythm. Word choices you'd never use ("synergy," "leverage" as a verb, "circle back"). Phrases that sound unmistakably like you.</p>
+
+    <p>You don't write this file by hand. You let Cowork build it from your existing writing — emails, past newsletters, LinkedIn posts, whatever you've got. Then it lives in your <code>00-resources/</code> folder, and any workstation that produces written content references it first.</p>
+
+    <p>This is the difference between AI output that sounds like a press release and AI output that sounds like <em>you on a good day</em>. My own voice principles file is over 150 lines long now, and it grows every time I tell Cowork "actually, I'd never phrase it that way — remember that."</p>
+
+    <h2>Your Next Step</h2>
+
+    <p>Don't try to build the whole operating system in one sitting. That's how people burn out and abandon the project on day three.</p>
+
+    <p>Here's what to do instead, this week:</p>
+    <ul>
+      <li>Create the parent folder. Drop in your three starter files (<code>claude.md</code>, <code>memory.md</code>, and the resources folder with your voice principles).</li>
+      <li>Open one new Cowork session and test the memory loop. Tell it to remember something. Start a new session. Ask it what you said. Watch the magic.</li>
+      <li>Build <em>one</em> workstation. Email HQ is the easiest win.</li>
+    </ul>
+
+    <p>That's it. Once that foundation is in place, every new workstation you add — newsletter, finances, client work — compounds in value because the root rules are already doing the heavy lifting.</p>
+
+    <p>If you want to go deeper into <a href="https://anchrlabs.com/claude-cowork-training/claude-cowork-workflows/">Cowork workflows</a> or see how this scales <a href="https://anchrlabs.com/claude-cowork-training/claude-cowork-for-teams/">for teams</a>, those are your next stops.</p>
+
+    <p>Build the PA. Stop typing one-line prompts into a tool that can do so much more.</p>
+
+    <div class="blog-cta-box">
+      <h3>Learn this live — with the community.</h3>
+      <p>Join the Cowork SG WhatsApp group. Free walkthroughs, workflow templates, and Q&amp;A with people building the same things you are.</p>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-coral">Join the Community →</a>
+    </div>
+
+    <div class="blog-back" style="margin-top:2rem;margin-bottom:0;"><a href="/blog">← Back to all posts</a></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><img src="../uploads/cowork-sg-logo.png" alt="Cowork SG" /></a>
+        <p>Practical AI workflows for non-technical professionals.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="/blog">Resources</a>
+        <a href="../about.html">About</a>
+        <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Community</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Resources — Page 2 | Cowork SG</title>
+  <meta name="description" content="Practical AI guides and how-tos written for non-technical professionals — by the Cowork SG community. Always free." />
+  <link rel="canonical" href="https://claudecowork.sg/blog/page-2" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://claudecowork.sg/blog/page-2" />
+  <meta property="og:title" content="Blog & Resources — Page 2 | Cowork SG" />
+  <meta property="og:description" content="Practical AI guides and how-tos written for non-technical professionals — by the Cowork SG community. Always free." />
+  <meta property="og:image" content="https://claudecowork.sg/uploads/og-image.png" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .blog-index-hero { background: var(--navy); padding: 5rem 2rem 3.5rem; }
+    .blog-index-hero-inner { max-width: 900px; margin: 0 auto; }
+    .blog-index-hero h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: white; margin: 0.75rem 0 0.5rem; }
+    .blog-index-hero p { font-size: 1rem; color: rgba(255,255,255,0.55); max-width: 520px; margin: 0; }
+    .blog-index-body { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .blog-index-meta-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+    .blog-post-count { font-size: 0.82rem; color: var(--ink-3); }
+    .blog-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .blog-card { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; transition: box-shadow 0.2s, border-color 0.2s; background: white; }
+    .blog-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-color: var(--coral); }
+    .blog-card-image { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .blog-card-body { padding: 1.25rem 1.25rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .blog-card-meta { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+    .blog-card-tag { font-size: 0.72rem; color: var(--ink-3); }
+    .blog-card-date { font-size: 0.72rem; color: var(--ink-3); white-space: nowrap; }
+    .blog-card-body h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--navy); line-height: 1.35; margin-bottom: 0.6rem; }
+    .blog-card-body p { font-size: 0.88rem; color: var(--ink-2); line-height: 1.65; margin-bottom: 1rem; flex: 1; }
+    .blog-card-read { font-size: 0.82rem; font-weight: 600; color: var(--coral); margin-top: auto; }
+    .blog-card-read span { font-weight: 400; color: var(--ink-3); margin-left: 0.25rem; }
+    .blog-pagination { display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 2.5rem 0 1rem; }
+    .blog-pagination-prev, .blog-pagination-next { font-size: 0.88rem; font-weight: 600; color: var(--coral); text-decoration: none; padding: 0.5rem 1rem; border: 1px solid var(--coral); border-radius: 6px; transition: background 0.15s; }
+    .blog-pagination-prev:hover, .blog-pagination-next:hover { background: var(--coral); color: white; }
+    .blog-pagination-prev.disabled, .blog-pagination-next.disabled { color: var(--border); border-color: var(--border); pointer-events: none; cursor: default; }
+    .blog-pagination-page { font-size: 0.88rem; font-weight: 700; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--ink-2); }
+    .blog-pagination-page.active { background: var(--navy); color: white; }
+    a.blog-pagination-page { text-decoration: none; color: var(--ink-2); }
+    a.blog-pagination-page:hover { background: var(--surface); }
+    @media (max-width: 900px) { .blog-card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .blog-card-grid { grid-template-columns: 1fr; } .blog-index-hero { padding: 3.5rem 1.25rem 2.5rem; } .blog-index-body { padding: 2.5rem 1.25rem 4rem; } }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../uploads/cowork-sg-logo.png" alt="Cowork SG" /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="/blog" class="active">Blog</a></li>
+        <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free →</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="blog-index-hero">
+    <div class="blog-index-hero-inner">
+      <span class="label">Community Resources</span>
+      <h1>All Posts</h1>
+      <p>Practical guides written by non-technical professionals, for non-technical professionals. No jargon. No gatekeeping. Always free.</p>
+    </div>
+  </section>
+
+  <div class="blog-index-body">
+    <div class="blog-index-meta-row">
+      <span class="blog-post-count">9 posts · Page 2</span>
+    </div>
+
+    <div class="blog-card-grid">
+
+      <a href="../blog-claude-whatsapp.html" class="blog-card">
+        <img class="blog-card-image" src="../uploads/blog-cover-whatsapp.png" alt="Claude AI Can Now Use WhatsApp" style="object-position:center 15%;" />
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Claude · WhatsApp · MCP</span>
+            <span class="blog-card-date">26 Apr 2026</span>
+          </div>
+          <h3>Claude AI Can Now Use WhatsApp — Here's How I Pulled It Off</h3>
+          <p>Hook up your personal WhatsApp to Claude AI — sending messages, reading replies, running personalised outreach — all from inside Claude desktop. Step-by-step setup included.</p>
+          <span class="blog-card-read">Read post → <span>~7 min</span></span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="blog-pagination">
+      <a href="/blog" class="blog-pagination-prev">← Prev</a>
+      <a href="/blog" class="blog-pagination-page">1</a>
+      <span class="blog-pagination-page active">2</span>
+      <span class="blog-pagination-next disabled">Next →</span>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="../uploads/cowork-sg-logo-dark.png" alt="Cowork SG" /></div>
+          <p>Singapore's free AI community for professionals who want to actually use Claude — not just talk about it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="/blog">All Posts</a></li>
+            <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Cowork SG. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../nav.js"></script>
+</body>
+</html>
