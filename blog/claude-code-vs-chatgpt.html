@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Wan Wei Soh" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Code vs ChatGPT: Why It's Not Even Close | Cowork SG</title>
+  <meta name="description" content="One week of using Claude Code as a non-techie completely rewired how I work. Here's why it makes ChatGPT feel like a toy — and what to actually build with it." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://claudecowork.sg/blog/claude-code-vs-chatgpt" />
+  <meta property="og:title" content="Claude Code vs ChatGPT: Why It's Not Even Close | Cowork SG" />
+  <meta property="og:description" content="One week of using Claude Code as a non-techie completely rewired how I work. Here's why it makes ChatGPT feel like a toy — and what to actually build with it." />
+  <meta property="og:image" content="https://claudecowork.sg/uploads/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://claudecowork.sg/blog/claude-code-vs-chatgpt" />
+  <meta name="twitter:title" content="Claude Code vs ChatGPT: Why It's Not Even Close" />
+  <meta name="twitter:description" content="One week of using Claude Code as a non-techie completely rewired how I work. Here's why it makes ChatGPT feel like a toy — and what to actually build with it." />
+  <meta name="twitter:image" content="https://claudecowork.sg/uploads/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Claude Code vs ChatGPT: Why It's Not Even Close",
+    "description": "One week of using Claude Code as a non-techie completely rewired how I work. Here's why it makes ChatGPT feel like a toy — and what to actually build with it.",
+    "url": "https://claudecowork.sg/blog/claude-code-vs-chatgpt",
+    "datePublished": "2026-04-30",
+    "dateModified": "2026-04-30",
+    "image": "https://claudecowork.sg/uploads/og-image.png",
+    "author": {
+      "@type": "Person",
+      "name": "Wan Wei Soh"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cowork SG",
+      "url": "https://claudecowork.sg"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .blog-hero {
+      background: var(--navy);
+      padding: 5rem 2rem 4rem;
+      color: white;
+    }
+    .blog-hero-inner { max-width: 820px; margin: 0 auto; }
+    .blog-hero .label { color: var(--coral); margin-bottom: 1.25rem; }
+    .blog-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .blog-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.55);
+      flex-wrap: wrap;
+    }
+    .blog-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+    .blog-body p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-2); margin-bottom: 1.5rem; }
+    .blog-body h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 2.5rem 0 1rem; }
+    .blog-body ul, .blog-body ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+    .blog-body li { font-size: 1.05rem; line-height: 1.8; color: var(--ink-2); margin-bottom: 0.5rem; }
+    .blog-body a { color: var(--coral); font-weight: 600; }
+    .blog-body strong { color: var(--navy); }
+    .blog-callout {
+      background: var(--surface);
+      border-left: 4px solid var(--coral);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .blog-callout p { margin: 0; font-size: 0.97rem; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .two-col-card {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    .two-col-card .cc-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 0.5rem;
+    }
+    .two-col-card h4 { font-size: 0.97rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .two-col-card p { font-size: 0.88rem; line-height: 1.6; color: var(--ink-2); margin: 0; }
+    .two-col-card.highlight { border-color: var(--coral); background: #FEF3F1; }
+    .stack-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+    .stack-list li {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--ink-2);
+    }
+    .stack-list li:last-child { border-bottom: none; }
+    .stack-list li strong { color: var(--navy); min-width: 160px; flex-shrink: 0; }
+    .blog-cta-box {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .blog-cta-box h3 { font-family: var(--serif); font-size: 1.4rem; color: white; margin-bottom: 0.75rem; }
+    .blog-cta-box p { color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .blog-back { margin-bottom: 2.5rem; }
+    .blog-back a { font-size: 0.88rem; color: var(--coral); font-weight: 600; }
+    code { background: var(--surface-2); padding: 0.15em 0.45em; border-radius: 4px; font-size: 0.92em; font-family: monospace; color: var(--navy); }
+    @media (max-width: 640px) {
+      .two-col { grid-template-columns: 1fr; }
+      .blog-hero { padding: 3.5rem 1.25rem 2.5rem; }
+      .blog-body { padding: 2.5rem 1.25rem 4rem; }
+      .stack-list li { flex-direction: column; gap: 0.25rem; }
+      .stack-list li strong { min-width: unset; }
+    }
+  </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../uploads/cowork-sg-logo.png" alt="Cowork SG" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="/blog" class="active">Blog</a></li>
+        <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="nav-cta">Join Free →</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <p class="label label-coral">Claude Code · AI Tools · Non-Technical</p>
+      <h1>Claude Code vs ChatGPT: Why It's Not Even Close</h1>
+      <div class="blog-hero-meta">
+        <span>Wan Wei Soh · Cowork SG</span>
+        <span>30 Apr 2026</span>
+        <span>~9 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="blog-body">
+    <div class="blog-back"><a href="/blog">← Back to all posts</a></div>
+
+    <p>I built a database that knows more about my own life than I do. Every person I've ever had a meeting with has their own profile — what we talked about, decisions we made, things I forgot to follow up on, topics for next time. It tracks the evolution of my relationships. I built it in a weekend without writing a single line of code.</p>
+
+    <p>This is what one week with Claude Code looks like, since I was shortlisted to join two Claude hackathons as a participant. And once you see it, you can't unsee it.</p>
+
+    <h2>ChatGPT Tells You. Claude Code Does It.</h2>
+
+    <p>Here's the cleanest way to explain the difference.</p>
+
+    <div class="two-col">
+      <div class="two-col-card">
+        <p class="cc-label">ChatGPT</p>
+        <h4>Smart friend who never gets off the couch</h4>
+        <p>You ask, it answers. If you want to actually do something with that answer — paste it into a doc, build a slide, send an email — that's still on you.</p>
+      </div>
+      <div class="two-col-card highlight">
+        <p class="cc-label">Claude Code</p>
+        <h4>Gets off the couch</h4>
+        <p>You give it access to your tools and files, and it executes. One sentence and it pulls notes, scans for action items, checks your calendar, drops the brief in the right folder.</p>
+      </div>
+    </div>
+
+    <p>One sentence — <em>"I have a meeting with Sarah tomorrow, prep everything I need"</em> — and Claude Code pulls last meeting's notes, scans for unresolved action items, checks your agenda, drops a brief into the right folder. ChatGPT gives you a generic checklist. Claude Code shows up to the meeting prepped.</p>
+
+    <div class="blog-callout">
+      <p><strong>Chatbots inform. Claude Code operates.</strong> That's the line that matters. One is a conversation. The other is a coworker. For the full side-by-side, see our <a href="../claude-cowork-vs-claude-code-singapore.html">Claude Cowork vs Claude Code comparison</a>.</p>
+    </div>
+
+    <h2>Skills: Stop Re-Explaining Yourself Every Morning</h2>
+
+    <p>The most exhausting part of using AI is re-prompting the same context every single time. Tone, format, your preferences, the things you don't want it to do. It's like training a new intern every morning.</p>
+
+    <p>Skills kill that problem.</p>
+
+    <p>A Skill is a saved process. You teach Claude Code how you do something once, and it runs that way forever. I have one called <code>/plan my day</code>. When I run it in the morning:</p>
+
+    <ul>
+      <li><strong>Checks Google Calendar</strong> for meetings and blocked time</li>
+      <li><strong>Pulls my Notion task database</strong> — what's due, overdue, high priority</li>
+      <li><strong>Scans Gmail</strong> for anything urgent</li>
+      <li><strong>Applies my own rules</strong> — high-energy hours for deep work, low-energy hours for admin, ADHD-friendly task batching</li>
+      <li><strong>Builds the actual schedule</strong> with realistic time estimates based on how long things actually take me</li>
+    </ul>
+
+    <p>It's not generic productivity advice. It's <em>my</em> productivity logic, automated. I'm essentially cloning my own thinking process and letting it run on repeat. You can build a Skill for anything you do more than twice — writing in your voice, doing research a specific way, drafting client emails, ideating content. Once you understand Skills, the practical use cases multiply fast.</p>
+
+    <h2>Your Second Brain, Actually Connected</h2>
+
+    <p>Skills handle the <em>how</em>. But they're only as useful as the knowledge they can reach.</p>
+
+    <p>I keep everything in Obsidian — book notes, meeting notes, half-baked ideas, random thoughts I'd otherwise lose. When I connected Claude Code to it, something genuinely unexpected happened: it started building my brain's Wikipedia.</p>
+
+    <p>Every note gets connected. Ideas sitting in different folders for months suddenly link up. It surfaces gaps — <em>you wrote about X here, but you never finished the thought you started in this other note</em>. It organises files the way I taught it to. It finds patterns I couldn't see myself.</p>
+
+    <p>If you have ADHD, you know the feeling — ideas firing in 40 directions, none of them landing anywhere. Now there's a place to see the branches. The thoughts have somewhere to go.</p>
+
+    <p>This is the part most people miss. Claude Code isn't just a faster ChatGPT. It's the connective tissue between everything you already know.</p>
+
+    <h2>MCP Servers: The Connectors That Make It All Work</h2>
+
+    <p>None of this happens unless Claude Code can talk to your tools. That's what MCP servers are — think of them as plugins. Install the Notion plugin and Claude can read and write to your Notion. Install Google Calendar and it can check your schedule and create events.</p>
+
+    <p>My current stack:</p>
+
+    <ul class="stack-list">
+      <li><strong>Obsidian</strong> Personal knowledge base — notes, ideas, meeting history</li>
+      <li><strong>Notion</strong> Tasks, projects, team collaboration</li>
+      <li><strong>Google Calendar</strong> Scheduling and time blocking</li>
+      <li><strong>Gmail</strong> Email — reading, drafting, flagging urgents</li>
+      <li><strong>YouTube API</strong> Channel analytics and content planning</li>
+      <li><strong>Slack</strong> Team communications</li>
+    </ul>
+
+    <p>Claude Code sits in the middle — central brain, every dot connected. I can ask <em>"what video should I make this week?"</em> and it pulls recent YouTube performance, cross-references my idea notes, checks how much editing time I have on the calendar, and recommends something realistic <em>and</em> likely to perform. Try doing that with vanilla ChatGPT.</p>
+
+    <h2>The Honest Scoreboard: Where It Shines and Where It Trips</h2>
+
+    <p>Two weeks in, here's the real assessment.</p>
+
+    <p><strong>Where it genuinely shines:</strong></p>
+    <ul>
+      <li>Anything text-based — writing, summarising, organising, research</li>
+      <li>Following your specific process once you've taught it as a Skill</li>
+      <li>Context — it knows your files, your emails, your patterns</li>
+      <li>Connecting tools that don't normally talk to each other</li>
+      <li>Building things — websites, scripts, small internal tools</li>
+    </ul>
+
+    <p><strong>Where it still trips:</strong></p>
+    <ul>
+      <li><strong>It sometimes does things you didn't ask for.</strong> It once deleted 20 of my Obsidian notes while "organising" them. Recovered from backup — lesson learned. Be explicit in your Skills about what it should never touch. Always back up.</li>
+      <li><strong>Long sessions lose context.</strong> Push a complex task for hours and it starts forgetting the early details. Better than it used to be, but real.</li>
+      <li><strong>It's not always faster.</strong> For things you could do in 10 seconds yourself, watching Claude Code spin up is annoying. The win is in medium-to-complex work you'd normally avoid entirely.</li>
+    </ul>
+
+    <p>On safety: don't feed it bank details, confidential client information, or anything sensitive. Treat it like a capable contractor, not a vault.</p>
+
+    <h2>Should You Actually Bother?</h2>
+
+    <p>If your work involves information, planning, or writing — yes. This is the biggest leverage shift I've seen since the smartphone, and the people who get fluent with it now will look like a different category of professional in twelve months.</p>
+
+    <p>If you just want to ask quick questions and get answers, ChatGPT is fine for that.</p>
+
+    <p>For everyone in between: the setup is easier than the name suggests. Download Claude Code, get the subscription, and — this is the useful part — you can ask Claude Code to help you set it up. It walks you through everything. No coding required.</p>
+
+    <p><strong>Your next step:</strong> pick one process you do every week that drains you. Just one. A weekly report, a content planning ritual, a client follow-up sequence. Write down the steps the way you'd explain them to a new hire. That's your first Skill. Build that, and you'll get it. If you want to start with the workflow and tool-connection side first, the <a href="/blog/claude-cowork-beginners">Claude Cowork for Beginners guide</a> is a good entry point.</p>
+
+    <p>Stop re-prompting from scratch every morning. Start encoding how you work instead.</p>
+
+    <div class="blog-cta-box">
+      <h3>Build your first Skill with the community</h3>
+      <p>Cowork SG is where Singapore professionals share what's actually working — hands-on walkthroughs, no jargon, always free.</p>
+      <a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener" class="btn btn-orange" style="color:white">Join Cowork SG Free →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="../uploads/cowork-sg-logo-dark.png" alt="Cowork SG" /></div>
+          <p>Singapore's free AI community for professionals who want to actually use Claude — not just talk about it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="/blog">All Posts</a></li>
+            <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Posts</h4>
+          <ul>
+            <li><a href="/blog/claude-cowork-what-it-is">From AI That Talks to AI That Does</a></li>
+            <li><a href="/blog/claude-cowork-beginners">Cowork for Beginners</a></li>
+            <li><a href="/blog/claude-prompting-outcome-first">Outcome-First Prompting</a></li>
+            <li><a href="/blog/claude-cowork-capabilities">7 Claude Capabilities</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Cowork SG. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../nav.js"></script>
+</body>
+</html>
