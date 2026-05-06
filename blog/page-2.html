@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="author" content="Wan Wei Soh" />
   <meta name="robots" content="index, follow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog & Resources — Page 2 | Cowork SG</title>
@@ -15,24 +16,26 @@
   <link rel="stylesheet" href="../styles.css" />
   <style>
     .blog-index-hero { background: var(--navy); padding: 5rem 2rem 3.5rem; }
-    .blog-index-hero-inner { max-width: 900px; margin: 0 auto; }
+    .blog-index-hero-inner { max-width: 960px; margin: 0 auto; }
     .blog-index-hero h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: white; margin: 0.75rem 0 0.5rem; }
     .blog-index-hero p { font-size: 1rem; color: rgba(255,255,255,0.55); max-width: 520px; margin: 0; }
-    .blog-index-body { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .blog-index-body { max-width: 960px; margin: 0 auto; padding: 3rem 2rem 5rem; }
     .blog-index-meta-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
-    .blog-post-count { font-size: 0.82rem; color: var(--ink-3); }
-    .blog-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .blog-card { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; transition: box-shadow 0.2s, border-color 0.2s; background: white; }
-    .blog-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-color: var(--coral); }
-    .blog-card-image { width: 100%; height: 180px; object-fit: cover; display: block; }
-    .blog-card-body { padding: 1.25rem 1.25rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
-    .blog-card-meta { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
-    .blog-card-tag { font-size: 0.72rem; color: var(--ink-3); }
-    .blog-card-date { font-size: 0.72rem; color: var(--ink-3); white-space: nowrap; }
-    .blog-card-body h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--navy); line-height: 1.35; margin-bottom: 0.6rem; }
-    .blog-card-body p { font-size: 0.88rem; color: var(--ink-2); line-height: 1.65; margin-bottom: 1rem; flex: 1; }
-    .blog-card-read { font-size: 0.82rem; font-weight: 600; color: var(--coral); margin-top: auto; }
-    .blog-card-read span { font-weight: 400; color: var(--ink-3); margin-left: 0.25rem; }
+    .blog-post-count { font-size: 0.82rem; color: var(--ink-3); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .blog-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+    .blog-card { display: flex; flex-direction: column; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; background: white; transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease; }
+    .blog-card:hover { border-color: var(--coral); box-shadow: 0 6px 24px rgba(232,97,74,0.10); transform: translateY(-2px); }
+    .blog-card-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center top; display: block; background: var(--surface-2); }
+    .blog-card-image-placeholder { width: 100%; aspect-ratio: 16 / 9; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); display: flex; align-items: center; justify-content: center; }
+    .blog-card-image-placeholder span { font-size: 2.5rem; }
+    .blog-card-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .blog-card-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.85rem; }
+    .blog-card-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--coral); }
+    .blog-card-date { font-size: 0.78rem; color: var(--ink-3); margin-left: auto; }
+    .blog-card-body h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; line-height: 1.35; color: var(--navy); margin-bottom: 0.65rem; }
+    .blog-card-body p { font-size: 0.9rem; line-height: 1.7; color: var(--ink-2); margin-bottom: 1.25rem; flex: 1; }
+    .blog-card-read { font-size: 0.83rem; font-weight: 600; color: var(--coral); }
+    .blog-card-read span { font-weight: 400; color: var(--ink-3); }
     .blog-pagination { display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 2.5rem 0 1rem; }
     .blog-pagination-prev, .blog-pagination-next { font-size: 0.88rem; font-weight: 600; color: var(--coral); text-decoration: none; padding: 0.5rem 1rem; border: 1px solid var(--coral); border-radius: 6px; transition: background 0.15s; }
     .blog-pagination-prev:hover, .blog-pagination-next:hover { background: var(--coral); color: white; }
@@ -41,8 +44,7 @@
     .blog-pagination-page.active { background: var(--navy); color: white; }
     a.blog-pagination-page { text-decoration: none; color: var(--ink-2); }
     a.blog-pagination-page:hover { background: var(--surface); }
-    @media (max-width: 900px) { .blog-card-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 600px) { .blog-card-grid { grid-template-columns: 1fr; } .blog-index-hero { padding: 3.5rem 1.25rem 2.5rem; } .blog-index-body { padding: 2.5rem 1.25rem 4rem; } }
+    @media (max-width: 640px) { .blog-card-grid { grid-template-columns: 1fr; } .blog-index-hero { padding: 3.5rem 1.25rem 2.5rem; } .blog-index-body { padding: 2.5rem 1.25rem 4rem; } }
   </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
@@ -73,17 +75,29 @@
 
   <div class="blog-index-body">
     <div class="blog-index-meta-row">
-      <span class="blog-post-count">9 posts · Page 2</span>
+      <span class="blog-post-count">11 posts · Page 2 of 2</span>
     </div>
 
     <div class="blog-card-grid">
-
-      <a href="/blog/claude-whatsapp" class="blog-card">
-        <img class="blog-card-image" src="../uploads/blog-cover-whatsapp.png" alt="Claude AI Can Now Use WhatsApp" style="object-position:center 15%;" />
+      <a href="/blog/claude-prompting-outcome-first" class="blog-card">
+        <img class="blog-card-image" src="../uploads/blog-cover-prompting.jpg" alt="Claude Cowork Prompting: Outcome-First >> Task-First" />
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span class="blog-card-tag">Claude · WhatsApp · MCP</span>
-            <span class="blog-card-date">26 Apr 2026</span>
+            <span class="blog-card-tag">Claude Cowork · AI Prompting · Workflows</span>
+            <span class="blog-card-date">27 Apr 2026</span>
+          </div>
+          <h3>Claude Cowork Prompting: Outcome-First >> Task-First</h3>
+          <p>The biggest mistake non-techies make with Claude Cowork is prompting it like Claude Chat. Here's the shift that changes everything.</p>
+          <span class="blog-card-read">Read post → <span>~6 min</span></span>
+        </div>
+      </a>
+
+      <a href="/blog/claude-whatsapp" class="blog-card">
+        <img class="blog-card-image" src="../uploads/blog-cover-whatsapp.png" alt="Claude AI Can Now Use WhatsApp — Here's How I Pulled It Off" />
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Claude · WhatsApp · Outreach</span>
+            <span class="blog-card-date">27 Apr 2026</span>
           </div>
           <h3>Claude AI Can Now Use WhatsApp — Here's How I Pulled It Off</h3>
           <p>Hook up your personal WhatsApp to Claude AI — sending messages, reading replies, running personalised outreach — all from inside Claude desktop. Step-by-step setup included.</p>
@@ -91,6 +105,18 @@
         </div>
       </a>
 
+      <a href="/blog/shipped-to-prod-5-hours" class="blog-card">
+        <img class="blog-card-image" src="../uploads/blog-cover-shipped-to-prod.jpg" alt="I Shipped to Prod in 5 Hours With Claude Code (Non-Techie)" />
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Claude Code · Non-Technical · Hackathon</span>
+            <span class="blog-card-date">27 Apr 2026</span>
+          </div>
+          <h3>I Shipped to Prod in 5 Hours With Claude Code (Non-Techie)</h3>
+          <p>How a non-techie went from zero to production with Claude Code in 5 hours — plus the setup mistakes nobody warns you about.</p>
+          <span class="blog-card-read">Read post → <span>~9 min</span></span>
+        </div>
+      </a>
     </div>
 
     <div class="blog-pagination">
@@ -114,6 +140,16 @@
             <li><a href="../index.html">Home</a></li>
             <li><a href="/blog">All Posts</a></li>
             <li><a href="https://chat.whatsapp.com/FZXRkgwcwjA4EOaWIOBPGQ" target="_blank" rel="noopener">Join WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Posts</h4>
+          <ul>
+            <li><a href="/blog/shipped-to-prod-5-hours">Shipped to Prod in 5 Hours</a></li>
+            <li><a href="/blog/claude-architect-exam">Claude Architect Exam</a></li>
+            <li><a href="/blog/claude-prompting-outcome-first">Outcome-First Prompting</a></li>
+            <li><a href="/blog/claude-cowork-capabilities">7 Claude Capabilities</a></li>
+            <li><a href="/blog/claude-whatsapp">Claude + WhatsApp</a></li>
           </ul>
         </div>
       </div>
